@@ -108,41 +108,41 @@ export default function OurServices() {
       </div>
 
       {/* Success Stories */}
-      <div className="mt-32">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-purple-800 mb-6 text-center"
-        >
-          শিক্ষার্থীদের সফলতার গল্প
-        </motion.h2>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-sm leading-relaxed"
-        >
-          <div className="bg-purple-50 p-6 rounded-2xl shadow-md">
-            <p>
-              “আমি দিগন্ত কোচিং সেন্টারের সহায়তায় মেডিকেল ভর্তি পরীক্ষায় সফল
-              হয়েছি। তাদের নিয়মিত টেস্ট, সমস্যা সমাধান ক্লাস এবং ফিডব্যাক
-              আমাকে দুর্দান্তভাবে প্রস্তুত করেছে।”
-            </p>
-            <p className="mt-4 font-semibold text-purple-800">
-              - সুমাইয়া ইসলাম
-            </p>
-          </div>
-          <div className="bg-purple-50 p-6 rounded-2xl shadow-md">
-            <p>
-              “বিশ্ববিদ্যালয় ভর্তির জন্য প্রস্তুতি নিতে গিয়ে দিগন্তের অনলাইন
-              ক্লাস এবং মক টেস্ট আমার আত্মবিশ্বাস অনেক বাড়িয়েছিল। তাদের
-              শিক্ষকরা সবসময় পাশে থেকেছেন।”
-            </p>
-            <p className="mt-4 font-semibold text-purple-800">- রাহুল আহমেদ</p>
-          </div>
-        </motion.div>
-      </div>
+        {/* <div className="mt-32">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-purple-800 mb-6 text-center"
+          >
+            শিক্ষার্থীদের সফলতার গল্প
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-sm leading-relaxed"
+          >
+            <div className="bg-purple-50 p-6 rounded-2xl shadow-md">
+              <p>
+                “আমি দিগন্ত কোচিং সেন্টারের সহায়তায় মেডিকেল ভর্তি পরীক্ষায় সফল
+                হয়েছি। তাদের নিয়মিত টেস্ট, সমস্যা সমাধান ক্লাস এবং ফিডব্যাক
+                আমাকে দুর্দান্তভাবে প্রস্তুত করেছে।”
+              </p>
+              <p className="mt-4 font-semibold text-purple-800">
+                - সুমাইয়া ইসলাম
+              </p>
+            </div>
+            <div className="bg-purple-50 p-6 rounded-2xl shadow-md">
+              <p>
+                “বিশ্ববিদ্যালয় ভর্তির জন্য প্রস্তুতি নিতে গিয়ে দিগন্তের অনলাইন
+                ক্লাস এবং মক টেস্ট আমার আত্মবিশ্বাস অনেক বাড়িয়েছিল। তাদের
+                শিক্ষকরা সবসময় পাশে থেকেছেন।”
+              </p>
+              <p className="mt-4 font-semibold text-purple-800">- রাহুল আহমেদ</p>
+            </div>
+          </motion.div>
+        </div> */}
 
       {/* Call To Action */}
       <div className="mt-32 text-center">
@@ -182,6 +182,21 @@ const services = [
     ],
     description:
       "শিক্ষার্থীদের প্রতিটি অধ্যায় ভালোভাবে আয়ত্ত করানোর জন্য প্রতিদিনের পরিকল্পনা অনুযায়ী ক্লাস নেয়া হয়।",
+  },
+  {
+    icon: FaAward,
+    title: "পুরস্কার ও অনুপ্রেরণা",
+    features: [
+      "মেধাবী শিক্ষার্থীদের সম্মাননা",
+      "সেরা শিক্ষার্থীদের পুরস্কার প্রদান",
+      "মাইলস্টোন অর্জনের জন্য রিওয়ার্ড সিস্টেম",
+      "সাপ্তাহিক ও মাসিক টপ পারফর্মার রিওয়ার্ড",
+      "উৎসাহমূলক কর্মশালা ও সেমিনার",
+      "সফলতার গল্প শেয়ার সেশন",
+      "নিজস্ব ক্রেস্ট এবং সার্টিফিকেট প্রদান",
+    ],
+    description:
+      "ছাত্রছাত্রীদের সাফল্যের প্রতি ভালোবাসা জাগাতে আমরা পুরস্কার ও অনুপ্রেরণা দিয়ে থাকি।",
   },
   {
     icon: FaChartLine,
@@ -227,21 +242,6 @@ const services = [
     ],
     description:
       "শিক্ষার্থীরা যাতে তাদের ক্যারিয়ার সঠিক পথে গড়তে পারে, তার জন্য আলাদা মেন্টরশিপ সাপোর্ট দেয়া হয়।",
-  },
-  {
-    icon: FaAward,
-    title: "পুরস্কার ও অনুপ্রেরণা",
-    features: [
-      "মেধাবী শিক্ষার্থীদের সম্মাননা",
-      "সেরা শিক্ষার্থীদের পুরস্কার প্রদান",
-      "মাইলস্টোন অর্জনের জন্য রিওয়ার্ড সিস্টেম",
-      "সাপ্তাহিক ও মাসিক টপ পারফর্মার রিওয়ার্ড",
-      "উৎসাহমূলক কর্মশালা ও সেমিনার",
-      "সফলতার গল্প শেয়ার সেশন",
-      "নিজস্ব ক্রেস্ট এবং সার্টিফিকেট প্রদান",
-    ],
-    description:
-      "ছাত্রছাত্রীদের সাফল্যের প্রতি ভালোবাসা জাগাতে আমরা পুরস্কার ও অনুপ্রেরণা দিয়ে থাকি।",
   },
   {
     icon: FaHeadset,

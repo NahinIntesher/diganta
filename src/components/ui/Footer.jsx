@@ -109,7 +109,8 @@ export default function Footer() {
 
       {/* Bottom Copyright */}
       <div className="text-center text-gray-400 text-sm mt-10">
-        © {new Date().getFullYear()} দিগন্ত। সর্বস্বত্ব সংরক্ষিত।
+        © {new Date().getFullYear()} © 2025 Diganta Coaching Center. All rights
+        reserved.
       </div>
     </footer>
   );
