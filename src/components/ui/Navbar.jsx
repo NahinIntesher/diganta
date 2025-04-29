@@ -6,14 +6,21 @@ import { Menu, X } from "lucide-react";
 import logo from "../../../public/images/DiganataLogo.png";
 import SearchBox from "./SearchBar";
 
-const navItems = ["হোম", "আমাদের সেবা", "আমাদের সম্পর্কে", "যোগাযোগ করুন"];
+const navItems = [
+  "হোম",
+  "আমাদের কোর্সসমূহ",
+  "আমাদের সেবা",
+  "আমাদের সম্পর্কে",
+  "যোগাযোগ করুন",
+];
 
 const getLink = (item) => {
   const links = {
     হোম: "/",
+    "আমাদের কোর্সসমূহ": "/our-courses",
+    "আমাদের সেবা": "/our-services",
     "আমাদের সম্পর্কে": "/about-us",
     "যোগাযোগ করুন": "/contact-us",
-    "আমাদের সেবা": "/our-services",
   };
   return links[item] || "/";
 };
@@ -51,13 +58,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white backdrop-blur-3xl sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
+      className={`bg-white backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
         scrolled ? "shadow-md bg-opacity-25 py-2" : "py-2 bg-opacity-90"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="relative group flex flex-1">
+        <div className="relative group flex flex-">
           <Link
             href="/"
             className="group flex items-center gap-2 text-sm font-extrabold text-cyan-500 transition-all duration-300"
@@ -71,7 +78,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-4 lg:space-x-6 text-gray-700 font-medium mr-4">
+        <ul className="hidden md:flex space-x-2 text-gray-700 font-medium mr-4">
           {navItems.map((item) => (
             <li key={item} className="relative group">
               <Link
@@ -91,8 +98,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
         {/* Mobile Menu Button */}
         <button

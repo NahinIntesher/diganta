@@ -27,7 +27,7 @@ const serviceVariants = {
 
 export default function OurServices() {
   return (
-    <section className="py-16 px-6 md:px-20 bg-white">
+    <section className="py-16 px-6 md:px-20 bg-cyan-50">
       {/* Header */}
       <div className="text-center mb-20">
         <motion.h1
@@ -52,7 +52,7 @@ export default function OurServices() {
       </div>
 
       {/* Services */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -61,7 +61,7 @@ export default function OurServices() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ y: -8 }}
-            className="bg-cyan-50 border border-cyan-200 rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[500px]"
+            className="bg-white border border-cyan-500 rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[500px]"
           >
             <div>
               <div className="flex justify-center mb-6 text-cyan-600 text-5xl">
@@ -85,64 +85,6 @@ export default function OurServices() {
         ))}
       </div>
 
-      {/* Mission and Vision */}
-      <div className="mt-32">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-cyan-800 mb-6 text-center"
-        >
-          আমাদের লক্ষ্য ও উদ্দেশ্য
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-gray-700 text-md leading-relaxed text-center"
-        >
-          আমাদের লক্ষ্য হলো শিক্ষার্থীদের একাডেমিক দক্ষতা, আত্মবিশ্বাস ও বাস্তব
-          জীবন দক্ষতা গড়ে তোলা। আমরা চাই প্রতিটি শিক্ষার্থী যেন সাফল্যের নতুন
-          দিগন্তে পৌঁছাতে পারে।
-        </motion.p>
-      </div>
-
-      {/* Success Stories */}
-        {/* <div className="mt-32">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-cyan-800 mb-6 text-center"
-          >
-            শিক্ষার্থীদের সফলতার গল্প
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-sm leading-relaxed"
-          >
-            <div className="bg-cyan-50 p-6 rounded-2xl shadow-md">
-              <p>
-                “আমি দিগন্ত কোচিং সেন্টারের সহায়তায় মেডিকেল ভর্তি পরীক্ষায় সফল
-                হয়েছি। তাদের নিয়মিত টেস্ট, সমস্যা সমাধান ক্লাস এবং ফিডব্যাক
-                আমাকে দুর্দান্তভাবে প্রস্তুত করেছে।”
-              </p>
-              <p className="mt-4 font-semibold text-cyan-800">
-                - সুমাইয়া ইসলাম
-              </p>
-            </div>
-            <div className="bg-cyan-50 p-6 rounded-2xl shadow-md">
-              <p>
-                “বিশ্ববিদ্যালয় ভর্তির জন্য প্রস্তুতি নিতে গিয়ে দিগন্তের অনলাইন
-                ক্লাস এবং মক টেস্ট আমার আত্মবিশ্বাস অনেক বাড়িয়েছিল। তাদের
-                শিক্ষকরা সবসময় পাশে থেকেছেন।”
-              </p>
-              <p className="mt-4 font-semibold text-cyan-800">- রাহুল আহমেদ</p>
-            </div>
-          </motion.div>
-        </div> */}
 
       {/* Call To Action */}
       <div className="mt-32 text-center">

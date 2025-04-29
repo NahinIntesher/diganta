@@ -3,6 +3,7 @@ import React from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { BrainCircuit } from "lucide-react";
 import {
+  FaWhatsapp,
   FaGraduationCap,
   FaChalkboardTeacher,
   FaUsers,
@@ -156,18 +157,13 @@ export default function Home() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden ">
       {/* Hero Section with Parallax Effect */}
       <motion.section
         style={{ scale, opacity }}
         className="relative bg-gradient-to-br from-cyan-900 to-cyan-700 h-screen flex items-center justify-center text-center px-6"
       >
-        <div
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1533327325824-76bc4e62d560?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-20"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-        />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551892589-865f69869476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-30" />
 
         <div className="max-w-4xl relative z-10">
           <motion.h1
@@ -197,7 +193,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 1 }}
           >
             <motion.a
-              href="#courses"
+              href="/our-courses"
               className="bg-white text-cyan-700 font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition"
               whileHover={{
                 scale: 1.05,
@@ -208,7 +204,7 @@ export default function Home() {
               আমাদের কোর্স
             </motion.a>
             <motion.a
-              href="#contact"
+              href="/contact-us"
               className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-cyan-700 transition"
               whileHover={{
                 scale: 1.05,
@@ -359,7 +355,7 @@ export default function Home() {
                   ম্যাটেরিয়াল
                 </p>
                 <motion.a
-                  href="#"
+                  href="/our-courses"
                   className="inline-block mt-4 text-cyan-600 font-medium"
                   whileHover={{ x: 5 }}
                 >
@@ -372,20 +368,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Floating Contact Banner */}
+      {/* Floating WhatsApp Contact Button */}
       <motion.section
         className="fixed bottom-8 right-8 z-50"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
-        <motion.div
-          className="bg-cyan-600 text-white p-4 rounded-full shadow-xl cursor-pointer"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+        <a
+          href="https://wa.me/8801778286422?text=হ্যালো!%20আপনাদের%20আমি%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp এ চ্যাট করুন"
         >
-          <FaPhone className="text-2xl" />
-        </motion.div>
+          <motion.div
+            className="bg-green-500 text-white p-4 rounded-full shadow-xl cursor-pointer hover:bg-green-600 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaWhatsapp className="text-2xl" />
+          </motion.div>
+        </a>
       </motion.section>
     </div>
   );

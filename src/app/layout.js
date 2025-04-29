@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#e7fff6" />
       </head>
-      <body className={`${quicksand.className} bg-[#e7fff6] text-gray-900`}>
+      <body className={`${quicksand.className} bg-cyan-50 text-gray-900`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

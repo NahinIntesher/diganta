@@ -30,17 +30,17 @@ export default function Footer() {
           <h2 className="text-2xl font-bold mb-4">সেবাসমূহ</h2>
           <ul className="space-y-2 text-gray-500 text-sm">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/our-courses" className="hover:underline">
                 ৬ষ্ঠ - ৮ম শ্রেণী
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/our-courses" className="hover:underline">
                 ৯ম - ১০ম শ্রেণী সকল বিভাগ
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/our-courses" className="hover:underline">
                 ১১শ ও ১২শ শ্রেণী শুধু কমার্স বিভাগ
               </a>
             </li>
@@ -56,26 +56,10 @@ export default function Footer() {
         >
           <h2 className="text-2xl font-bold mb-4">রিসোর্স</h2>
           <ul className="space-y-2 text-gray-500 text-sm">
-            <li>
-              <a href="#" className="hover:underline">
-                তথ্য কেন্দ্র
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                ব্লগ
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                কেস স্টাডি
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                ফ্রি রিসোর্স
-              </a>
-            </li>
+            <li>তথ্য কেন্দ্র</li>
+            <li>ব্লগ</li>
+            <li>কেস স্টাডি</li>
+            <li>ফ্রি রিসোর্স</li>
           </ul>
         </motion.div>
 
@@ -89,17 +73,17 @@ export default function Footer() {
           <h2 className="text-2xl font-bold mb-4">দিগন্ত কোচিং</h2>
           <ul className="space-y-2 text-gray-500 text-sm">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/about-us" className="hover:underline">
                 আমাদের সম্পর্কে
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/contact-us" className="hover:underline">
                 যোগাযোগ
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/our-services" className="hover:underline">
                 আমাদের সেবা
               </a>
             </li>
@@ -109,7 +93,7 @@ export default function Footer() {
 
       {/* Bottom Copyright */}
       <div className="text-center text-gray-400 text-sm mt-10">
-        © {new Date().getFullYear()} © 2025 Diganta Coaching Center. All rights
+        © {new Date().getFullYear()} Diganta Coaching Center. All rights
         reserved.
       </div>
     </footer>
