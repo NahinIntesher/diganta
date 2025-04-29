@@ -167,18 +167,26 @@ export default function Home() {
 
         <motion.div className="max-w-4xl mx-4 sm:mx-6 relative z-10">
           <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.2,
+              delay: 0.5,
+              ease: "easeOut",
+            }}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 sm:mb-6"
           >
             দিগন্ত কোচিং সেন্টার
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1.2,
+              ease: "easeInOut",
+            }}
             className="text-xl sm:text-sm md:text-3xl font-bold text-cyan-200 mb-6 sm:mb-8"
           >
             দিগন্ত পেরিয়ে সম্ভাবনার পথে
@@ -186,9 +194,13 @@ export default function Home() {
 
           <motion.div
             className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 1.8,
+              ease: "easeOut",
+            }}
           >
             <motion.a
               href="/our-courses"
@@ -196,8 +208,10 @@ export default function Home() {
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
+                backgroundColor: "#f8fafc",
               }}
               whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
             >
               আমাদের কোর্স
             </motion.a>
@@ -208,8 +222,10 @@ export default function Home() {
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
+                backgroundColor: "rgba(255,255,255,0.1)",
               }}
               whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
             >
               ফ্রি কাউন্সেলিং
             </motion.a>
