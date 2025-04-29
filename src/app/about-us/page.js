@@ -332,7 +332,7 @@ export default function AboutUs() {
       </motion.div>
 
       {/* Achievement Section */}
-      <motion.div
+      {/* <motion.div
         className="max-w-5xl mx-auto mt-24 mb-12 text-center"
         initial="hidden"
         whileInView="visible"
@@ -367,7 +367,7 @@ export default function AboutUs() {
             <p className="text-gray-600">সাফল্যের হার</p>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

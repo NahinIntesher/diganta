@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { Clock, Moon } from "lucide-react";
 
 export default function EducationCenter() {
   const [activeTab, setActiveTab] = useState("schedule");
@@ -56,11 +57,11 @@ export default function EducationCenter() {
 
               <div className="space-y-6">
                 {/* Afternoon Batch */}
-                <div className="bg-cyan-50 rounded-xl p-6 transition-all hover:shadow-md">
-                  <div className="flex items-center justify-between">
+                <div className="bg-cyan-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-cyan-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-600">
-                        <span className="text-xl">🕓</span>
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-600 shadow-sm">
+                        <Clock size={24} />
                       </div>
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-cyan-800">
@@ -69,27 +70,27 @@ export default function EducationCenter() {
                         <p className="text-gray-600">প্রতিদিন ক্লাস</p>
                       </div>
                     </div>
-                    <div className="bg-cyan-700 text-white py-2 px-6 rounded-full font-medium">
+                    <div className="bg-cyan-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-cyan-800 transition-colors">
                       ৪:০০ PM - ৭:০০ PM
                     </div>
                   </div>
                 </div>
 
                 {/* Evening Batch */}
-                <div className="bg-blue-50 rounded-xl p-6 transition-all hover:shadow-md">
-                  <div className="flex items-center justify-between">
+                <div className="bg-blue-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-blue-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600">
-                        <span className="text-xl">🌙</span>
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 shadow-sm">
+                        <Moon size={24} />
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-xl font-semibold text-cyan-800">
+                        <h3 className="text-xl font-semibold text-blue-800">
                           সান্ধ্যকালীন ব্যাচ
                         </h3>
                         <p className="text-gray-600">প্রতিদিন ক্লাস</p>
                       </div>
                     </div>
-                    <div className="bg-blue-700 text-white py-2 px-6 rounded-full font-medium">
+                    <div className="bg-blue-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-blue-800 transition-colors">
                       ৭:৩০ PM - ১০:০০ PM
                     </div>
                   </div>

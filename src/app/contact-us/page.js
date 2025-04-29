@@ -111,7 +111,7 @@ export default function ContactUs() {
       id: 4,
       icon: <Clock className="text-cyan-600" size={22} />,
       title: "সময়সূচী",
-      content: ["সকাল ৮:০০ - রাত ১০:০০", "শুক্রবার বন্ধ"],
+      content: ["বিকাল ৪:০০ - রাত ১০:০০"],
     },
   ];
 
