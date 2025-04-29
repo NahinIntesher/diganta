@@ -61,7 +61,7 @@ export default function EducationCenter() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-600 shadow-sm">
-                        <Clock size={24} />
+                        <span className="text-xl">🕓</span>
                       </div>
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-cyan-800">
@@ -81,7 +81,7 @@ export default function EducationCenter() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 shadow-sm">
-                        <Moon size={24} />
+                        <span className="text-xl">🌙</span>
                       </div>
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-blue-800">
