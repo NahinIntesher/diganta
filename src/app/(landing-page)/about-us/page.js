@@ -9,14 +9,14 @@ import { FaChalkboard } from "react-icons/fa";
 import { motion } from "framer-motion";
 export default function AboutUs() {
   return (
-    <div className="py-16 px-6 md:px-20 bg-gradient-to-b from-purple-50 to-white">
+    <div className="py-16 px-6 md:px-20 bg-gradient-to-b from-cyan-50 to-white">
       {/* Top Heading Section with Bengali */}
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-cyan-800 mb-6">
           দিগন্ত কোচিং সেন্টার
         </h1>
         <div className="flex justify-center mb-4">
-          <div className="h-1 w-24 bg-purple-600 rounded"></div>
+          <div className="h-1 w-24 bg-cyan-600 rounded"></div>
         </div>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
           "দিগন্ত পেরিয়ে সম্ভাবনার পথে" - একটি নির্ভরযোগ্য শিক্ষাপ্রতিষ্ঠান
@@ -42,14 +42,14 @@ export default function AboutUs() {
           {/* Info 1: Teaching Method */}
           <motion.div
             whileHover={{ y: -10 }}
-            className="text-center rounded-xl p-8 bg-white shadow-lg hover:shadow-xl transition-all border-t-4 border-purple-500"
+            className="text-center rounded-xl p-8 bg-white shadow-lg hover:shadow-xl transition-all border-t-4 border-cyan-500"
           >
             <div className="flex justify-center mb-6">
-              <div className="bg-purple-100 p-4 rounded-full">
-                <FaChalkboardTeacher className="text-4xl text-purple-600" />
+              <div className="bg-cyan-100 p-4 rounded-full">
+                <FaChalkboardTeacher className="text-4xl text-cyan-600" />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-purple-800 mb-4">
+            <h3 className="text-xl font-bold text-cyan-800 mb-4">
               শিক্ষণ পদ্ধতি
             </h3>
             <ul className="text-gray-600 text-left space-y-2">
@@ -63,14 +63,14 @@ export default function AboutUs() {
           {/* Info 2: Our Mission */}
           <motion.div
             whileHover={{ y: -10 }}
-            className="text-center rounded-xl p-8 bg-white shadow-lg hover:shadow-xl transition-all border-t-4 border-purple-500"
+            className="text-center rounded-xl p-8 bg-white shadow-lg hover:shadow-xl transition-all border-t-4 border-cyan-500"
           >
             <div className="flex justify-center mb-6">
-              <div className="bg-purple-100 p-4 rounded-full">
-                <FaBullseye className="text-4xl text-purple-600" />
+              <div className="bg-cyan-100 p-4 rounded-full">
+                <FaBullseye className="text-4xl text-cyan-600" />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-purple-800 mb-4">
+            <h3 className="text-xl font-bold text-cyan-800 mb-4">
               আমাদের লক্ষ্য
             </h3>
             <p className="text-gray-600">
@@ -82,14 +82,14 @@ export default function AboutUs() {
           {/* Info 3: Facilities */}
           <motion.div
             whileHover={{ y: -10 }}
-            className="text-center rounded-xl p-8 bg-white shadow-lg hover:shadow-xl transition-all border-t-4 border-purple-500"
+            className="text-center rounded-xl p-8 bg-white shadow-lg hover:shadow-xl transition-all border-t-4 border-cyan-500"
           >
             <div className="flex justify-center mb-6">
-              <div className="bg-purple-100 p-4 rounded-full">
-                <FaBook className="text-4xl text-purple-600" />
+              <div className="bg-cyan-100 p-4 rounded-full">
+                <FaBook className="text-4xl text-cyan-600" />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-purple-800 mb-4">সুবিধাদি</h3>
+            <h3 className="text-xl font-bold text-cyan-800 mb-4">সুবিধাদি</h3>
             <ul className="text-gray-600 text-left space-y-2">
               <li>• আধুনিক শ্রেণিকক্ষ</li>
               <li>• নিয়মিত অভিভাবক সমাবেশ</li>
@@ -99,12 +99,12 @@ export default function AboutUs() {
         </div>
       </div>
       // Add this section to the AboutUs component
-      <section className="py-16 bg-purple-50">
+      <section className="py-16 bg-cyan-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-3xl font-bold text-center text-purple-800 mb-12"
+            className="text-3xl font-bold text-center text-cyan-800 mb-12"
           >
             আমাদের শিক্ষকরা
           </motion.h2>
@@ -164,10 +164,10 @@ export default function AboutUs() {
                   className="w-full h-64 object-cover rounded-xl"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-purple-800">
+                  <h3 className="text-xl font-bold text-cyan-800">
                     {teacher.name}
                   </h3>
-                  <p className="text-purple-600 font-medium">
+                  <p className="text-cyan-600 font-medium">
                     {teacher.subject}
                   </p>
                   <p className="text-gray-600 mt-2">{teacher.qualification}</p>
@@ -183,24 +183,24 @@ export default function AboutUs() {
           আমাদের মূল্যবোধ
         </h2>
         <div className="flex justify-center mb-6">
-          <div className="h-1 w-16 bg-purple-600 rounded"></div>
+          <div className="h-1 w-16 bg-cyan-600 rounded"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition-all">
-            <h3 className="text-xl font-bold text-purple-600 mb-3">উদ্ভাবন</h3>
+            <h3 className="text-xl font-bold text-cyan-600 mb-3">উদ্ভাবন</h3>
             <p className="text-gray-600">
               আমরা নতুন সমাধান এবং পদ্ধতি খুঁজি যা আমাদের গ্রাহকদের চাহিদা পূরণ
               করে।
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition-all">
-            <h3 className="text-xl font-bold text-purple-600 mb-3">দক্ষতা</h3>
+            <h3 className="text-xl font-bold text-cyan-600 mb-3">দক্ষতা</h3>
             <p className="text-gray-600">
               আমরা সর্বোচ্চ মানের পণ্য ও সেবা সরবরাহ করতে প্রতিশ্রুতিবদ্ধ।
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition-all">
-            <h3 className="text-xl font-bold text-purple-600 mb-3">
+            <h3 className="text-xl font-bold text-cyan-600 mb-3">
               বিশ্বাসযোগ্যতা
             </h3>
             <p className="text-gray-600">
@@ -209,7 +209,7 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition-all">
-            <h3 className="text-xl font-bold text-purple-600 mb-3">সহযোগিতা</h3>
+            <h3 className="text-xl font-bold text-cyan-600 mb-3">সহযোগিতা</h3>
             <p className="text-gray-600">
               আমরা বিশ্বাস করি যে একসাথে কাজ করে আমরা আরও বেশি অর্জন করতে পারি।
             </p>

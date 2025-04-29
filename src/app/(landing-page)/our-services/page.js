@@ -34,7 +34,7 @@ export default function OurServices() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-purple-800 mb-4"
+          className="text-4xl md:text-5xl font-bold text-cyan-800 mb-4"
         >
           আমাদের সেবাসমূহ
         </motion.h1>
@@ -61,13 +61,13 @@ export default function OurServices() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ y: -8 }}
-            className="bg-purple-50 border border-purple-200 rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[500px]"
+            className="bg-cyan-50 border border-cyan-200 rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[500px]"
           >
             <div>
-              <div className="flex justify-center mb-6 text-purple-600 text-5xl">
+              <div className="flex justify-center mb-6 text-cyan-600 text-5xl">
                 {<service.icon />}
               </div>
-              <h3 className="text-2xl font-semibold text-purple-800 mb-4">
+              <h3 className="text-2xl font-semibold text-cyan-800 mb-4">
                 {service.title}
               </h3>
             </div>
@@ -91,7 +91,7 @@ export default function OurServices() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-purple-800 mb-6 text-center"
+          className="text-3xl font-bold text-cyan-800 mb-6 text-center"
         >
           আমাদের লক্ষ্য ও উদ্দেশ্য
         </motion.h2>
@@ -113,7 +113,7 @@ export default function OurServices() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-purple-800 mb-6 text-center"
+            className="text-3xl font-bold text-cyan-800 mb-6 text-center"
           >
             শিক্ষার্থীদের সফলতার গল্প
           </motion.h2>
@@ -123,23 +123,23 @@ export default function OurServices() {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-sm leading-relaxed"
           >
-            <div className="bg-purple-50 p-6 rounded-2xl shadow-md">
+            <div className="bg-cyan-50 p-6 rounded-2xl shadow-md">
               <p>
                 “আমি দিগন্ত কোচিং সেন্টারের সহায়তায় মেডিকেল ভর্তি পরীক্ষায় সফল
                 হয়েছি। তাদের নিয়মিত টেস্ট, সমস্যা সমাধান ক্লাস এবং ফিডব্যাক
                 আমাকে দুর্দান্তভাবে প্রস্তুত করেছে।”
               </p>
-              <p className="mt-4 font-semibold text-purple-800">
+              <p className="mt-4 font-semibold text-cyan-800">
                 - সুমাইয়া ইসলাম
               </p>
             </div>
-            <div className="bg-purple-50 p-6 rounded-2xl shadow-md">
+            <div className="bg-cyan-50 p-6 rounded-2xl shadow-md">
               <p>
                 “বিশ্ববিদ্যালয় ভর্তির জন্য প্রস্তুতি নিতে গিয়ে দিগন্তের অনলাইন
                 ক্লাস এবং মক টেস্ট আমার আত্মবিশ্বাস অনেক বাড়িয়েছিল। তাদের
                 শিক্ষকরা সবসময় পাশে থেকেছেন।”
               </p>
-              <p className="mt-4 font-semibold text-purple-800">- রাহুল আহমেদ</p>
+              <p className="mt-4 font-semibold text-cyan-800">- রাহুল আহমেদ</p>
             </div>
           </motion.div>
         </div> */}
@@ -150,7 +150,7 @@ export default function OurServices() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-purple-800 mb-6"
+          className="text-3xl font-bold text-cyan-800 mb-6"
         >
           আপনার সফলতার যাত্রা আজই শুরু করুন!
         </motion.h2>
@@ -158,7 +158,7 @@ export default function OurServices() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-700 transition-all"
+          className="bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-cyan-700 transition-all"
         >
           যোগাযোগ করুন
         </motion.button>

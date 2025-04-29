@@ -17,7 +17,7 @@ export default function GlobalNotFound() {
 
           <Link
             href="/"
-            className="mt-6 inline-block rounded-xl bg-purple-600 px-5 py-3 text-sm font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring"
+            className="mt-6 inline-block rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring"
           >
             Go Back Home
           </Link>

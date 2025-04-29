@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="relative group flex flex-1">
           <Link
             href="/"
-            className="group flex items-center gap-2 text-sm font-extrabold text-purple-500 transition-all duration-300"
+            className="group flex items-center gap-2 text-sm font-extrabold text-cyan-500 transition-all duration-300"
           >
             <Image
               src={logo}
@@ -76,14 +76,14 @@ export default function Navbar() {
             <li key={item} className="relative group">
               <Link
                 href={getLink(item)}
-                className={`px-2 lg:px-3 py-2 text-sm transition-all duration-300 hover:text-purple-500 ${
-                  activeItem === item ? "text-purple-600" : ""
+                className={`px-2 lg:px-3 py-2 text-sm transition-all duration-300 hover:text-cyan-500 ${
+                  activeItem === item ? "text-cyan-600" : ""
                 }`}
                 onClick={() => handleItemClick(item)}
               >
                 {item}
                 <span
-                  className={`absolute left-0 bottom-[-4px] h-0.5 bg-purple-500 w-0 group-hover:w-full transition-all duration-300 ease-in-out ${
+                  className={`absolute left-0 bottom-[-4px] h-0.5 bg-cyan-500 w-0 group-hover:w-full transition-all duration-300 ease-in-out ${
                     activeItem === item ? "w-full" : ""
                   }`}
                 ></span>
@@ -97,7 +97,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-purple-500 focus:outline-none transition-all duration-300 hover:text-purple-600 transform hover:scale-110"
+          className="md:hidden text-cyan-500 focus:outline-none transition-all duration-300 hover:text-cyan-600 transform hover:scale-110"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -113,7 +113,7 @@ export default function Navbar() {
                     href={getLink(item)}
                     className={`block px-4 py-2 rounded-md transition-all duration-300 ${
                       activeItem === item
-                        ? "bg-purple-100 text-purple-600"
+                        ? "bg-cyan-100 text-cyan-600"
                         : "hover:bg-gray-100"
                     }`}
                     onClick={() => handleItemClick(item)}

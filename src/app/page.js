@@ -143,9 +143,9 @@ const GlowingIcon = ({ icon: Icon, delay = 0 }) => {
         type: "spring",
         stiffness: 200,
       }}
-      className="bg-purple-100 p-4 rounded-full"
+      className="bg-cyan-100 p-4 rounded-full"
     >
-      <Icon className="text-purple-600 text-2xl" />
+      <Icon className="text-cyan-600 text-2xl" />
     </motion.div>
   );
 };
@@ -160,7 +160,7 @@ export default function Home() {
       {/* Hero Section with Parallax Effect */}
       <motion.section
         style={{ scale, opacity }}
-        className="relative bg-gradient-to-br from-purple-900 to-purple-700 h-screen flex items-center justify-center text-center px-6"
+        className="relative bg-gradient-to-br from-cyan-900 to-cyan-700 h-screen flex items-center justify-center text-center px-6"
       >
         <div
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1533327325824-76bc4e62d560?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-20"
@@ -180,7 +180,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
-            className="text-2xl md:text-3xl font-bold text-purple-200 mb-8"
+            className="text-2xl md:text-3xl font-bold text-cyan-200 mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -198,7 +198,7 @@ export default function Home() {
           >
             <motion.a
               href="#courses"
-              className="bg-white text-purple-700 font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition"
+              className="bg-white text-cyan-700 font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
@@ -209,7 +209,7 @@ export default function Home() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-purple-700 transition"
+              className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-cyan-700 transition"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
@@ -235,11 +235,11 @@ export default function Home() {
           }}
         >
           <motion.div
-            className="w-8 h-12 border-2 border-purple-300 rounded-full flex justify-center"
+            className="w-8 h-12 border-2 border-cyan-300 rounded-full flex justify-center"
             whileHover={{ scale: 1.2 }}
           >
             <motion.div
-              className="w-1 h-3 bg-purple-300 rounded-full mt-3"
+              className="w-1 h-3 bg-cyan-300 rounded-full mt-3"
               animate={{
                 y: [0, 6],
                 opacity: [1, 0],
@@ -259,7 +259,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              আমাদের <span className="text-purple-600">বিশেষ সুবিধা</span>
+              আমাদের <span className="text-cyan-600">বিশেষ সুবিধা</span>
             </h2>
           </FadeIn>
 
@@ -272,7 +272,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FloatingCard delay={0.3}>
-              <div className="bg-purple-50 p-8 rounded-xl shadow-lg border border-purple-100">
+              <div className="bg-cyan-50 p-8 rounded-xl shadow-lg border border-cyan-100">
                 <div className="flex justify-center mb-6">
                   <GlowingIcon icon={FaChalkboardTeacher} />
                 </div>
@@ -286,7 +286,7 @@ export default function Home() {
             </FloatingCard>
 
             <FloatingCard delay={0.5}>
-              <div className="bg-purple-50 p-8 rounded-xl shadow-lg border border-purple-100">
+              <div className="bg-cyan-50 p-8 rounded-xl shadow-lg border border-cyan-100">
                 <div className="flex justify-center mb-6">
                   <GlowingIcon icon={FaUsers} />
                 </div>
@@ -300,7 +300,7 @@ export default function Home() {
             </FloatingCard>
 
             <FloatingCard delay={0.7}>
-              <div className="bg-purple-50 p-8 rounded-xl shadow-lg border border-purple-100">
+              <div className="bg-cyan-50 p-8 rounded-xl shadow-lg border border-cyan-100">
                 <div className="flex justify-center mb-6">
                   <GlowingIcon icon={BookOpen} />
                 </div>
@@ -317,11 +317,11 @@ export default function Home() {
       </section>
 
       {/* Courses Section with Staggered Animation */}
-      <section className="py-20 bg-purple-50" id="courses">
+      <section className="py-20 bg-cyan-50" id="courses">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-              আমাদের <span className="text-purple-600">কোর্স সমূহ</span>
+              আমাদের <span className="text-cyan-600">কোর্স সমূহ</span>
             </h2>
           </FadeIn>
 
@@ -346,11 +346,11 @@ export default function Home() {
               >
                 <div className="flex items-center mb-4">
                   <motion.div
-                    className="bg-purple-100 p-3 rounded-full mr-4"
+                    className="bg-cyan-100 p-3 rounded-full mr-4"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 1 }}
                   >
-                    <course.icon className="text-purple-600 text-xl" />
+                    <course.icon className="text-cyan-600 text-xl" />
                   </motion.div>
                   <h3 className="text-xl font-semibold">{course.title}</h3>
                 </div>
@@ -360,7 +360,7 @@ export default function Home() {
                 </p>
                 <motion.a
                   href="#"
-                  className="inline-block mt-4 text-purple-600 font-medium"
+                  className="inline-block mt-4 text-cyan-600 font-medium"
                   whileHover={{ x: 5 }}
                 >
                   বিস্তারিত জানুন
@@ -380,7 +380,7 @@ export default function Home() {
         transition={{ delay: 2, duration: 0.8 }}
       >
         <motion.div
-          className="bg-purple-600 text-white p-4 rounded-full shadow-xl cursor-pointer"
+          className="bg-cyan-600 text-white p-4 rounded-full shadow-xl cursor-pointer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

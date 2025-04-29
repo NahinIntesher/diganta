@@ -89,7 +89,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="py-16 px-6 md:px-20 bg-purple-50 min-h-screen">
+    <div className="py-16 px-6 md:px-20 bg-cyan-50 min-h-screen">
       {/* Top Heading Section */}
       <motion.div
         initial="hidden"
@@ -99,13 +99,13 @@ export default function ContactUs() {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-purple-800 mb-4"
+          className="text-4xl md:text-5xl font-bold text-cyan-800 mb-4"
         >
           যোগাযোগ করুন
         </motion.h1>
         <motion.p
           variants={itemVariants}
-          className="text-purple-600 max-w-2xl mx-auto text-lg"
+          className="text-cyan-600 max-w-2xl mx-auto text-lg"
         >
           যেকোনো প্রশ্ন বা পরামর্শের জন্য আমাদের সাথে যোগাযোগ করুন
         </motion.p>
@@ -120,7 +120,7 @@ export default function ContactUs() {
           transition={{ duration: 0.6 }}
           className="bg-white p-8 rounded-xl shadow-lg"
         >
-          <h3 className="text-2xl font-semibold text-purple-800 mb-6">
+          <h3 className="text-2xl font-semibold text-cyan-800 mb-6">
             মেসেজ পাঠান
           </h3>
 
@@ -145,7 +145,7 @@ export default function ContactUs() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-purple-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 border border-cyan-200 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 placeholder="আপনার নাম লিখুন"
               />
             </div>
@@ -157,7 +157,7 @@ export default function ContactUs() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-purple-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 border border-cyan-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 placeholder="আপনার ইমেইল লিখুন"
               />
             </div>
@@ -169,14 +169,14 @@ export default function ContactUs() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-purple-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-3 border border-cyan-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 placeholder="আপনার মেসেজ লিখুন"
               ></textarea>
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`bg-purple-600 hover:bg-purple-700 font-semibold py-3 px-8 rounded-lg transition ${
+              className={`bg-cyan-600 hover:bg-cyan-700 font-semibold py-3 px-8 rounded-lg transition ${
                 isSubmitting ? "opacity-70 cursor-not-allowed" : ""
               }`}
             >
@@ -223,11 +223,11 @@ export default function ContactUs() {
             whileHover={{ x: 5 }}
             className="bg-white p-6 rounded-xl shadow-md flex items-start"
           >
-            <div className="bg-purple-100 p-3 rounded-full mr-4">
-              <FaPhoneAlt className="text-purple-600 text-xl" />
+            <div className="bg-cyan-100 p-3 rounded-full mr-4">
+              <FaPhoneAlt className="text-cyan-600 text-xl" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">
+              <h3 className="text-xl font-semibold text-cyan-800 mb-2">
                 ফোন
               </h3>
               <p className="text-gray-700">০১৫২১৭৮১১৬৮</p>
@@ -240,11 +240,11 @@ export default function ContactUs() {
             whileHover={{ x: 5 }}
             className="bg-white p-6 rounded-xl shadow-md flex items-start"
           >
-            <div className="bg-purple-100 p-3 rounded-full mr-4">
-              <FaMapMarkerAlt className="text-purple-600 text-xl" />
+            <div className="bg-cyan-100 p-3 rounded-full mr-4">
+              <FaMapMarkerAlt className="text-cyan-600 text-xl" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">
+              <h3 className="text-xl font-semibold text-cyan-800 mb-2">
                 ঠিকানা
               </h3>
               <p className="text-gray-700">
@@ -260,11 +260,11 @@ export default function ContactUs() {
             whileHover={{ x: 5 }}
             className="bg-white p-6 rounded-xl shadow-md flex items-start"
           >
-            <div className="bg-purple-100 p-3 rounded-full mr-4">
-              <FaEnvelope className="text-purple-600 text-xl" />
+            <div className="bg-cyan-100 p-3 rounded-full mr-4">
+              <FaEnvelope className="text-cyan-600 text-xl" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">
+              <h3 className="text-xl font-semibold text-cyan-800 mb-2">
                 ইমেইল
               </h3>
               <p className="text-gray-700">
@@ -278,11 +278,11 @@ export default function ContactUs() {
             whileHover={{ x: 5 }}
             className="bg-white p-6 rounded-xl shadow-md flex items-start"
           >
-            <div className="bg-purple-100 p-3 rounded-full mr-4">
-              <FaClock className="text-purple-600 text-xl" />
+            <div className="bg-cyan-100 p-3 rounded-full mr-4">
+              <FaClock className="text-cyan-600 text-xl" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">
+              <h3 className="text-xl font-semibold text-cyan-800 mb-2">
                 সময়সূচী
               </h3>
               <p className="text-gray-700">সকাল ৮:০০ - রাত ১০:০০</p>
