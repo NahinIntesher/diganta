@@ -4,7 +4,7 @@ import React from "react";
 import { FaUsers, FaBullseye, FaLightbulb, FaGlobe } from "react-icons/fa";
 
 import { FaChalkboardTeacher, FaBook } from "react-icons/fa";
-import { FaChalkboard } from "react-icons/fa"; 
+import { FaChalkboard } from "react-icons/fa";
 
 import { motion } from "framer-motion";
 export default function AboutUs() {
@@ -19,15 +19,15 @@ export default function AboutUs() {
           <div className="h-1 w-24 bg-purple-600 rounded"></div>
         </div>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          "দিগন্ত পেরিয়ে সম্ভাবনার পথে" - মাতুয়াইলের সেরা শিক্ষাপ্রতিষ্ঠান
+          "দিগন্ত পেরিয়ে সম্ভাবনার পথে" - একটি নির্ভরযোগ্য শিক্ষাপ্রতিষ্ঠান
         </p>
       </div>
       {/* Main Content Section */}
       <div className="max-w-5xl mx-auto space-y-8 text-center mb-20">
         <p className="text-gray-700 text-lg leading-relaxed">
-          ২০১০ সাল থেকে মাতুয়াইল এলাকায় শিক্ষার আলো ছড়িয়ে যাচ্ছে দিগন্ত কোচিং
-          সেন্টার। আমরা প্রায় ১০০০+ শিক্ষার্থীকে বিভিন্ন প্রতিযোগিতামূলক
-          পরীক্ষায় সাফল্য অর্জনে সহায়তা করেছি।
+          মাতুয়াইল এলাকায় শিক্ষার আলো ছড়িয়ে যাচ্ছে দিগন্ত কোচিং সেন্টার। আমরা
+          প্রায় শিক্ষার্থীকে বিভিন্ন প্রতিযোগিতামূলক পরীক্ষায় সাফল্য অর্জনে জন্য
+          প্রতিনিয়ত প্রস্তুত করছি।
         </p>
 
         <p className="text-gray-700 text-lg leading-relaxed">
@@ -92,7 +92,6 @@ export default function AboutUs() {
             <h3 className="text-xl font-bold text-purple-800 mb-4">সুবিধাদি</h3>
             <ul className="text-gray-600 text-left space-y-2">
               <li>• আধুনিক শ্রেণিকক্ষ</li>
-              <li>• সমৃদ্ধ লাইব্রেরি</li>
               <li>• নিয়মিত অভিভাবক সমাবেশ</li>
               <li>• সাপ্তাহিক প্রগ্রেস রিপোর্ট</li>
             </ul>
@@ -107,10 +106,10 @@ export default function AboutUs() {
             whileInView={{ opacity: 1 }}
             className="text-3xl font-bold text-center text-purple-800 mb-12"
           >
-            আমাদের শিক্ষকমন্ডলী
+            আমাদের শিক্ষকরা
           </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-2">
             {[
               {
                 name: "হাসিবুল হাসান শান্ত",
@@ -131,7 +130,7 @@ export default function AboutUs() {
                 image: "/images/teacherx.jpg",
               },
               {
-                name: "এরফান হোসেন রিয়াজ",
+                name: "এফরান হোসেন রিয়াজ",
                 subject: "ইলেক্ট্রিক্যাল এন্ড ইলেকট্রনিক্স",
                 qualification: "বিএস ইইই, ইউনিভার্সিটি অফ স্কলার্স",
                 image: "/images/riaz.jpg",
@@ -157,7 +156,7 @@ export default function AboutUs() {
                 whileHover={{ y: -10 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl border border-gray-300 overflow-hidden shadow-lg p-4"
+                className="bg-white rounded-xl border border-gray-300 overflow-hidden shadow-lg p-2"
               >
                 <img
                   src={teacher.image}
