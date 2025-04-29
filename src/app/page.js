@@ -165,32 +165,30 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551892589-865f69869476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-30" />
 
-        <div className="max-w-4xl mx-4 sm:mx-6 relative z-10">
+        <motion.div className="max-w-4xl mx-4 sm:mx-6 relative z-10">
           <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, type: "spring" }}
           >
-            <TextWave delay={0.2}>Diganta Coaching Center</TextWave>
+            দিগন্ত কোচিং সেন্টার
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-sm md:text-3xl font-bold text-cyan-200 mb-6 sm:mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="text-xl sm:text-sm md:text-3xl font-bold text-cyan-200 mb-6 sm:mb-8"
           >
-            <TextWave delay={0.7}>
-              Beyond the horizon, on the path of possibilities
-            </TextWave>
+            দিগন্ত পেরিয়ে সম্ভাবনার পথে
           </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 1, delay: 2 }}
           >
             <motion.a
               href="/our-courses"
@@ -216,7 +214,7 @@ export default function Home() {
               ফ্রি কাউন্সেলিং
             </motion.a>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Floating scroll indicator */}
         <motion.div
