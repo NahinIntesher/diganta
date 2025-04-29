@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white backdrop-blur-3xl sticky top-0 z-50 w-full border-b border-gray-400 ${
+      className={`bg-white backdrop-blur-3xl sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
         scrolled ? "shadow-md bg-opacity-25 py-2" : "py-2 bg-opacity-90"
       }`}
     >
