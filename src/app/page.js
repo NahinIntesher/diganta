@@ -161,13 +161,13 @@ export default function Home() {
       {/* Hero Section with Parallax Effect */}
       <motion.section
         style={{ scale, opacity }}
-        className="relative bg-gradient-to-br from-cyan-900 to-cyan-700 h-screen flex items-center justify-center text-center px-6"
+        className="relative bg-gradient-to-br from-cyan-900 to-cyan-700 h-screen flex items-center justify-center text-center px-4 sm:px-6"
       >
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551892589-865f69869476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-30" />
 
-        <div className="max-w-4xl relative z-10">
+        <div className="max-w-4xl mx-4 sm:mx-6 relative z-10">
           <motion.h1
-            className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 sm:mb-6"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, type: "spring" }}
@@ -176,7 +176,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
-            className="text-2xl md:text-3xl font-bold text-cyan-200 mb-8"
+            className="text-xl sm:text-sm md:text-3xl font-bold text-cyan-200 mb-6 sm:mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -187,14 +187,14 @@ export default function Home() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
+            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
             <motion.a
               href="/our-courses"
-              className="bg-white text-cyan-700 font-semibold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition"
+              className="bg-white text-cyan-700 font-semibold py-2.5 sm:py-3 px-5 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg hover:bg-gray-100 transition"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
@@ -203,9 +203,10 @@ export default function Home() {
             >
               আমাদের কোর্স
             </motion.a>
+
             <motion.a
               href="/contact-us"
-              className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-cyan-700 transition"
+              className="bg-transparent border-2 border-white text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg hover:bg-white hover:text-cyan-700 transition"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
@@ -219,7 +220,7 @@ export default function Home() {
 
         {/* Floating scroll indicator */}
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2"
           animate={{
             y: [0, 15, 0],
             opacity: [1, 0.5, 1],
@@ -231,11 +232,11 @@ export default function Home() {
           }}
         >
           <motion.div
-            className="w-8 h-12 border-2 border-cyan-300 rounded-full flex justify-center"
+            className="w-6 sm:w-8 h-10 sm:h-12 border-2 border-cyan-300 rounded-full flex justify-center"
             whileHover={{ scale: 1.2 }}
           >
             <motion.div
-              className="w-1 h-3 bg-cyan-300 rounded-full mt-3"
+              className="w-1 h-2 sm:h-3 bg-cyan-300 rounded-full mt-2 sm:mt-3"
               animate={{
                 y: [0, 6],
                 opacity: [1, 0],
