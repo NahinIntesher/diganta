@@ -161,7 +161,7 @@ export default function Home() {
       {/* Hero Section with Parallax Effect */}
       <motion.section
         style={{ scale, opacity }}
-        className="relative bg-gradient-to-br from-cyan-900 to-cyan-700 h-screen flex items-center justify-center text-center px-4 sm:px-6"
+        className="relative bg-gradient-to-br from-cyan-900 to-cyan-800 h-screen flex items-center justify-center text-center px-4 sm:px-6"
       >
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551892589-865f69869476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-30" />
 
@@ -363,11 +363,14 @@ export default function Home() {
                   >
                     <course.icon className="text-cyan-600 text-xl" />
                   </motion.div>
-                  <h3 className="text-xl font-semibold">{course.title}</h3>
+                  <h3 className="text-xl font-semibold ">{course.title}</h3>
                 </div>
-                <p className="text-gray-600">
-                  {course.title} এর জন্য সম্পূর্ণ গাইডলাইন ও প্র্যাকটিস
-                  ম্যাটেরিয়াল
+                <p className="text-amber-600 ">
+                  <span className="font-extrabold text-xl">{course.title}</span>
+                  <span className="text-gray-600"> এর জন্য সম্পূর্ণ</span>
+                </p>
+                <p className="text-gray-600 font-semibold">
+                  গাইডলাইন ও প্র্যাকটিস ম্যাটেরিয়াল
                 </p>
                 <motion.a
                   href="/our-courses"
@@ -391,7 +394,7 @@ export default function Home() {
         transition={{ delay: 2, duration: 0.8 }}
       >
         <a
-          href="https://wa.me/8801778286422?text=হ্যালো!%20আপনাদের%20আমি%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
+          href="https://wa.me/8801861575024?text=হ্যালো!%20আপনাদের%20আমি%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp এ চ্যাট করুন"

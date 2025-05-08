@@ -58,8 +58,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-cyan-50 backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
-        scrolled ? "shadow-md py-2" : "py-2 bg-opacity-90"
+      className={`bg-cyan-100 backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
+        scrolled ? "shadow-md py-2 " : "py-2 bg-opacity-90"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">

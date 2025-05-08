@@ -91,7 +91,7 @@ export default function EducationCenter() {
                       </div>
                     </div>
                     <div className="bg-blue-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-blue-800 transition-colors">
-                      ৭:৩০ PM - ১০:০০ PM
+                      ৭:৩০ PM - ০৯:৩০ PM
                     </div>
                   </div>
                 </div>
@@ -188,12 +188,12 @@ export default function EducationCenter() {
                         ৩,০০০ টাকা/মাস
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
+                    {/* <div className="flex justify-between items-center">
                       <span className="text-gray-700">সব বিষয় (১১শ-১২শ)</span>
                       <span className="font-bold text-cyan-800">
                         ৫,০০০ টাকা/মাস
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ const quicksand = localFont({
 });
 
 export const metadata = {
-  title: "Digonto Coaching Center - Quality Education for All",
+  title: "Digonto Coaching Center",
   description:
     "Digonto Coaching Center provides top-quality coaching for various competitive exams and academic subjects.",
 };

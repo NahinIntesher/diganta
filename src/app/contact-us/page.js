@@ -97,7 +97,7 @@ export default function ContactUs() {
       icon: <MapPin className="text-cyan-600" size={22} />,
       title: "ঠিকানা",
       content: [
-        "মসজিদ সংলগ্ন, মুসলিম নগর জিরো পয়েন্ট",
+        "মদিনা চত্বর জামে মসজিদ সংলগ্ন, মুসলিম নগর,",
         "মাতুয়াইল, ডেমরা, ঢাকা - ১৩৬২",
       ],
     },
@@ -105,7 +105,7 @@ export default function ContactUs() {
       id: 3,
       icon: <Mail className="text-cyan-600" size={22} />,
       title: "ইমেইল",
-      content: ["info.diganta.couchingcenter.edu@gmail.com"],
+      content: ["info.diganta.cochingcenter@gmail.com"],
     },
     {
       id: 4,
