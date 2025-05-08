@@ -56,6 +56,26 @@ export default function EducationCenter() {
               </h2>
 
               <div className="space-y-6">
+                {/* Morning Batch */}
+                <div className="bg-green-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-green-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600 shadow-sm">
+                        <span className="text-xl">☀️</span>
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="text-xl font-semibold text-green-800">
+                          সকাল ব্যাচ
+                        </h3>
+                        <p className="text-gray-600">প্রতিদিন ক্লাস</p>
+                      </div>
+                    </div>
+                    <div className="bg-green-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-green-800 transition-colors">
+                      ৮:০০ AM - ১১:০০ AM
+                    </div>
+                  </div>
+                </div>
+
                 {/* Afternoon Batch */}
                 <div className="bg-cyan-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-cyan-100">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -120,7 +140,7 @@ export default function EducationCenter() {
                   <div className="p-6">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-gray-700">সকল বিষয়</span>
-                      <span className="font-bold text-cyan-800 text-xl">
+                      <span className="font-bold text-cyan-800">
                         ২,৫০০ টাকা/মাস
                       </span>
                     </div>
@@ -166,7 +186,7 @@ export default function EducationCenter() {
                       <span className="text-gray-700">
                         সব বিষয় প্যাকেজ (৯ম-১০ম)
                       </span>
-                      <span className="font-bold text-cyan-800 text-xl">
+                      <span className="font-bold text-cyan-800">
                         ৩,৫০০ টাকা/মাস
                       </span>
                     </div>

@@ -196,57 +196,57 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "হাসিবুল হাসান শান্ত",
-                subject: "মার্কেটিং বিভাগ",
+                name: "মোঃ হাসিবুল ইসলাম (শান্ত)",
+                subject: "মার্কেটিং বিভাগ, ব্যবসায় শিক্ষা অনুষদ",
                 qualification: "ঢাকা বিশ্ববিদ্যালয়",
                 image: "/images/shanto.jpg",
                 bio: "৭ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
-                name: "ফয়সাল আহমেদ",
-                subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং",
-                qualification: "ইস্ট ওয়েস্ট ইউনিভার্সিটি",
-                image: "/images/faisal.jpg",
-                bio: "৫ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
                 name: "এফরান হোসেন রিয়াজ",
-                subject: "ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স ইঞ্জিনিয়ারিং",
+                subject: "ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স ইঞ্জিনিয়ারিং (EEE)",
                 qualification: "ইউনিভার্সিটি অফ স্কলার্স",
                 image: "/images/riaz.jpg",
                 bio: "৭ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
-                name: "মোঃ শুভ",
-                subject: "মার্কেটিং বিভাগ",
+                name: "ফয়সাল আহমেদ",
+                subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং (CSE)",
+                qualification: "ইস্ট ওয়েস্ট ইউনিভার্সিটি",
+                image: "/images/faisal.jpg",
+                bio: "৫ বছর শিক্ষকতার অভিজ্ঞতা",
+              },
+              {
+                name: "সাজেদুল হক শুভ",
+                subject: "একাউন্টিং বিভাগ, ব্যবসায় শিক্ষা অনুষদ",
                 qualification: "ঢাকা বিশ্ববিদ্যালয়",
                 image: "/images/shuvo.jpg",
                 bio: "২ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
                 name: "নাহিন ইনতিশার",
-                subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং",
+                subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং (CSE)",
                 qualification: "ইউনাইটেড ইন্টারন্যাশনাল ইউনিভার্সিটি",
                 image: "/images/nahin.jpg",
                 bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
                 name: "সাদাত হোসেন রানা",
-                subject: "রসায়ন বিভাগ",
+                subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
                 qualification: "ঢাকা বিশ্ববিদ্যালয়",
                 image: "/images/teacherx.png",
                 bio: "২ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
                 name: "সাবরিনা আকতার রিমি",
-                subject: "ভাষাবিজ্ঞান বিভাগ",
+                subject: "ভাষাবিজ্ঞান বিভাগ, কলা অনুষদ",
                 qualification: "ঢাকা বিশ্ববিদ্যালয়",
                 image: "/images/teachery.jpg",
                 bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
                 name: "আয়েশা খাতুন",
-                subject: "পালি এন্ড বুদ্ধিস্ট স্টাডিজ",
+                subject: "পালি এন্ড বুদ্ধিস্ট স্টাডিজ, কলা অনুষদ",
                 qualification: "ঢাকা বিশ্ববিদ্যালয়",
                 image: "/images/teachery.jpg",
                 bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
@@ -267,11 +267,11 @@ export default function AboutUs() {
                   className="w-full h-96 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-cyan-800">
+                  <h3 className="text-xl font-bold text-black">
                     {teacher.name}
                   </h3>
-                  <p className="text-cyan-600 font-medium">{teacher.subject}</p>
-                  <p className="text-gray-500 text-sm mt-1">
+                  <p className="text-black text-sm mt-2 ">{teacher.subject}</p>
+                  <p className="text-cyan-500 text-md font-extrabold  mt-2">
                     {teacher.qualification}
                   </p>
                   <p className="text-gray-600 mt-3 text-xs">{teacher.bio}</p>
