@@ -234,7 +234,7 @@ export default function AboutUs() {
                 name: "সাদাত হোসেন রানা",
                 subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
                 qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/teacherx.png",
+                image: "/images/teacherx.jpg",
                 bio: "২ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
