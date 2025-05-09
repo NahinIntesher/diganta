@@ -224,18 +224,18 @@ export default function AboutUs() {
                 bio: "২ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
+                name: "সাদাত হোসেন রানা",
+                subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
+                qualification: "ঢাকা বিশ্ববিদ্যালয়",
+                image: "/images/teacherx.jpg",
+                bio: "৩ বছর শিক্ষকতার অভিজ্ঞতা",
+              },
+              {
                 name: "নাহিন ইনতিশার",
                 subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং (CSE)",
                 qualification: "ইউনাইটেড ইন্টারন্যাশনাল ইউনিভার্সিটি",
                 image: "/images/nahin.jpg",
                 bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "সাদাত হোসেন রানা",
-                subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
-                qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/teacherx.jpg",
-                bio: "২ বছর শিক্ষকতার অভিজ্ঞতা",
               },
               {
                 name: "সাবরিনা আকতার রিমি",
