@@ -394,7 +394,7 @@ export default function Home() {
         transition={{ delay: 2, duration: 0.8 }}
       >
         <a
-          href="https://wa.me/8801861575024?text=হ্যালো!%20আপনাদের%20আমি%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
+          href="https://wa.me/8801861575024?text=হ্যালো!%20আমি%20আপনাদের%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp এ চ্যাট করুন"
