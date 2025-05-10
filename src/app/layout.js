@@ -3,9 +3,9 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import "./globals.css";
 
-const quicksand = localFont({
-  src: "../../public/fonts/Quicksand-Regular.ttf",
-  variable: "--font-quicksand",
+const anekbangla = localFont({
+  src: "../../public/fonts/BalooDa2-VariableFont_wght.ttf",
+  variable: "--font-anekbangla",
   display: "swap",
 });
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#e7fff6" />
       </head>
-      <body className={`${quicksand.className} bg-cyan-50 text-gray-900`}>
+      <body className={`${anekbangla.className} bg-cyan-50 text-gray-900`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
