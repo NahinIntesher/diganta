@@ -320,57 +320,57 @@ export default function EducationCenter() {
     {
       day: "শনিবার",
       periods: [
-        { time: "৮-৯ AM", subject: "শুভ" },
-        { time: "৯-১০ AM", subject: "শুভ" },
-        { time: "১০-১১ AM", subject: "শুভ" },
+        { time: "৮ - ৯ AM", subject: "শুভ" },
+        { time: "৯ - ১০ AM", subject: "শুভ" },
+        { time: "১০ - ১১ AM", subject: "শুভ" },
       ],
     },
     {
       day: "রবিবার",
       periods: [
-        { time: "৮-৯ AM", subject: "রিয়াজ" },
-        { time: "৯-১০ AM", subject: "রিয়াজ" },
-        { time: "১০-১১ AM", subject: "রিয়াজ" },
+        { time: "৮ - ৯ AM", subject: "রিয়াজ" },
+        { time: "৯ - ১০ AM", subject: "রিয়াজ" },
+        { time: "১০ - ১১ AM", subject: "রিয়াজ" },
       ],
     },
     {
       day: "সোমবার",
       periods: [
-        { time: "৮-৯ AM", subject: "নাহিন" },
-        { time: "৯-১০ AM", subject: "নাহিন" },
-        { time: "১০-১১ AM", subject: "নাহিন" },
+        { time: "৮ - ৯ AM", subject: "নাহিন" },
+        { time: "৯ - ১০ AM", subject: "নাহিন" },
+        { time: "১০ - ১১ AM", subject: "নাহিন" },
       ],
     },
     {
       day: "মঙ্গলবার",
       periods: [
-        { time: "৮-৯ AM", subject: "ফয়সাল" },
-        { time: "৯-১০ AM", subject: "ফয়সাল" },
-        { time: "১০-১১ AM", subject: "ফয়সাল" },
+        { time: "৮ - ৯ AM", subject: "ফয়সাল" },
+        { time: "৯ - ১০ AM", subject: "ফয়সাল" },
+        { time: "১০ - ১১ AM", subject: "ফয়সাল" },
       ],
     },
     {
       day: "বুধবার",
       periods: [
-        { time: "৮-৯ AM", subject: "কেউ নেই", noClass: true },
-        { time: "৯-১০ AM", subject: "কেউ নেই", noClass: true },
-        { time: "১০-১১ AM", subject: "কেউ নেই", noClass: true },
+        { time: "৮ - ৯ AM", subject: "ক্লাস নেই", noClass: true },
+        { time: "৯ - ১০ AM", subject: "ক্লাস নেই", noClass: true },
+        { time: "১০ - ১১ AM", subject: "ক্লাস নেই", noClass: true },
       ],
     },
     {
       day: "বৃহস্পতিবার",
       periods: [
-        { time: "৮-৯ AM", subject: "নাহিন" },
-        { time: "৯-১০ AM", subject: "নাহিন" },
-        { time: "১০-১১ AM", subject: "নাহিন" },
+        { time: "৮ - ৯ AM", subject: "নাহিন" },
+        { time: "৯ - ১০ AM", subject: "নাহিন" },
+        { time: "১০ - ১১ AM", subject: "নাহিন" },
       ],
     },
     {
       day: "শুক্রবার",
       periods: [
-        { time: "৮-৯ AM", subject: "রিয়াজ" },
-        { time: "৯-১০ AM", subject: "রিয়াজ" },
-        { time: "১০-১১ AM", subject: "রিয়াজ" },
+        { time: "৮ - ৯ AM", subject: "রিয়াজ" },
+        { time: "৯ - ১০ AM", subject: "রিয়াজ" },
+        { time: "১০ - ১১ AM", subject: "রিয়াজ" },
       ],
     },
   ];
@@ -533,34 +533,10 @@ export default function EducationCenter() {
                             {day.periods.map((period, idx) => (
                               <td
                                 key={idx}
-                                className={`px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm ${
-                                  period.noClass
-                                    ? "text-red-500"
-                                    : "text-gray-800"
-                                }`}
-                              >
-                                {period.noClass ? (
-                                  <span className="flex items-center">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      className="h-3 w-3 sm:h-4 sm:w-4 mr-1"
-                                      fill="none"
-                                      viewBox="0 0 24 24"
-                                      stroke="currentColor"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                      />
-                                    </svg>
-                                    {period.subject}
-                                  </span>
-                                ) : (
-                                  period.subject
-                                )}
-                              </td>
+                                className={`px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm text-gray-800"
+                                > 
+                                period.subject
+                             </td>
                             ))}
                           </tr>
                         ))}
