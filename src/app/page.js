@@ -165,7 +165,7 @@ export default function Home() {
         className="relative bg-gradient-to-br from-teal-900 to-teal-800 h-screen flex items-center justify-center text-center px-4 sm:px-6"
       >
         <div
-          className="absolute inset-0 bg-contain bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: `url(${bgImgage.src})` }}
         />
 
