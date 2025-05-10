@@ -174,7 +174,7 @@ export default function ContactUs() {
 
           {/* Map Preview */}
           <a
-            href="https://maps.app.goo.gl/XAhFZ2Z3e7DsWRmy6"
+            href="https://maps.app.goo.gl/JKxakQrEXtyXsfe16"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white border border-cyan-500 p-4 rounded-xl shadow-md mt-8 overflow-hidden block cursor-pointer"
