@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   FaBookOpen,
   FaUserGraduate,
@@ -10,101 +10,154 @@ import {
   FaUserFriends,
   FaAward,
   FaHeadset,
+  FaArrowRight,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const serviceVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    scale: 1,
     transition: {
-      duration: 0.6,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const serviceVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
       ease: "easeOut",
     },
   },
 };
 
+const ServiceCard = ({ service, index }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      variants={serviceVariants}
+      whileHover={{
+        y: -10,
+        boxShadow:
+          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      className="bg-white border-t-4 border-cyan-600 rounded-lg p-8 shadow-lg flex flex-col justify-between transition-all duration-300 h-full"
+    >
+      <div>
+        <div className="mb-6 flex items-center">
+          <div className="bg-cyan-50 p-4 rounded-full text-cyan-600 mr-4">
+            {<service.icon size={28} />}
+          </div>
+          <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
+        </div>
+        <ul className="text-gray-700 space-y-3 mb-6">
+          {service.features.map((feature, i) => (
+            <li key={i} className="flex items-start">
+              <span className="text-cyan-600 mr-2 mt-1">•</span>
+              <span className="text-base">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p className="text-gray-600 text-sm mb-4 italic border-l-2 border-cyan-200 pl-3">
+          {service.description}
+        </p>
+        <motion.div
+          className="mt-4 text-cyan-600 font-medium flex items-center cursor-pointer"
+          animate={{ x: isHovered ? 5 : 0 }}
+        ></motion.div>
+      </div>
+    </motion.div>
+  );
+};
+
 export default function OurServices() {
   return (
-    <section className="py-16 px-6 md:px-20 bg-cyan-50">
-      {/* Header */}
-      <div className="text-center mb-20">
+    <section className="py-24 px-6 md:px-10 lg:px-20 bg-gradient-to-b from-white to-cyan-50">
+      {/* Header with decorative elements */}
+      <div className="text-center mb-20 max-w-4xl mx-auto relative">
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-2 bg-cyan-500 rounded-full opacity-50 mb-2" />
+
         <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-cyan-800 mb-4"
+          className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight"
         >
-          আমাদের সেবাসমূহ
+          আমাদের <span className="text-cyan-600">সেবাসমূহ</span>
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-black max-w-2xl mx-auto text-lg leading-relaxed"
+          className="text-gray-600 mx-auto text-lg leading-relaxed"
         >
-          দিগন্ত কোচিং সেন্টার একাডেমিক, ভর্তি, উন্নয়ন ও অনলাইন শিক্ষার সমন্বয়ে
-          শিক্ষার্থীদের পূর্ণতা অর্জনে সহায়তা করে। আমরা বিশ্বাস করি, সঠিক
-          পরিকল্পনা ও অনুশীলনই সাফল্যের মূল চাবিকাঠি।
+          দিগন্ত কোচিং সেন্টার একাডেমিক, ভর্তি, উন্নয়ন ও অনলাইন শিক্ষার
+          সমন্বয়ে শিক্ষার্থীদের পূর্ণতা অর্জনে সহায়তা করে। আমরা বিশ্বাস করি,
+          সঠিক পরিকল্পনা ও অনুশীলনই সাফল্যের মূল চাবিকাঠি।
         </motion.p>
+
+        <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 translate-y-1/2 w-16 h-1 bg-cyan-500 rounded-full opacity-70" />
       </div>
 
-      {/* Services */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-12 max-w-7xl mx-auto">
+      {/* Services Grid */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 max-w-7xl mx-auto"
+      >
         {services.map((service, index) => (
-          <motion.div
-            key={index}
-            variants={serviceVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            whileHover={{ y: -8 }}
-            className="bg-white border border-cyan-500 rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[500px]"
-          >
-            <div>
-              <div className="flex justify-center mb-6 text-cyan-600 text-5xl">
-                {<service.icon />}
-              </div>
-              <h3 className="text-2xl font-semibold text-cyan-800 mb-4">
-                {service.title}
-              </h3>
-            </div>
-            <div>
-              <ul className="text-gray-700 space-y-2 text-left text-sm leading-relaxed">
-                {service.features.map((feature, i) => (
-                  <li key={i}>• {feature}</li>
-                ))}
-              </ul>
-              <p className="mt-4 text-gray-600 text-xs text-left leading-snug">
-                {service.description}
-              </p>
-            </div>
-          </motion.div>
+          <ServiceCard key={index} service={service} index={index} />
         ))}
-      </div>
-
+      </motion.div>
 
       {/* Call To Action */}
-      <div className="mt-32 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl font-bold text-cyan-800 mb-6"
-        >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mt-32 text-center bg-cyan-700 text-white p-12 rounded-2xl max-w-5xl mx-auto shadow-xl relative overflow-hidden"
+      >
+        {/* Decorative circles */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-600 rounded-full -translate-y-1/2 translate-x-1/2 opacity-20" />
+        <div className="absolute bottom-0 left-0 w-40 h-40 bg-cyan-800 rounded-full translate-y-1/2 -translate-x-1/2 opacity-20" />
+
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">
           আপনার সফলতার যাত্রা আজই শুরু করুন!
-        </motion.h2>
+        </h2>
+        <p className="text-cyan-100 mb-8 max-w-xl mx-auto">
+          আমাদের অভিজ্ঞ শিক্ষকমণ্ডলী আপনার সাফল্যের যাত্রায় সঙ্গী হতে প্রস্তুত।
+          আজই যোগাযোগ করুন এবং আপনার লক্ষ্য অর্জনের পথে এগিয়ে যান।
+        </p>
         <motion.button
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-cyan-700 transition-all"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
+          className="bg-white text-cyan-700 px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300 inline-flex items-center"
+          onClick={() => {
+            window.location.href = "/contact-us";
+          }}
         >
           যোগাযোগ করুন
+          <FaArrowRight className="ml-2" />
         </motion.button>
-      </div>
+      </motion.div>
     </section>
   );
 }

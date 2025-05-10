@@ -83,7 +83,7 @@ export default function Navbar() {
             <li key={item} className="relative group">
               <Link
                 href={getLink(item)}
-                className={`px-2 lg:px-3 py-2 text-sm transition-all duration-300 hover:text-cyan-500 ${
+                className={`px-2 lg:px-3 py-2 text-md transition-all duration-300 hover:text-cyan-500 ${
                   activeItem === item ? "text-cyan-600" : ""
                 }`}
                 onClick={() => handleItemClick(item)}
