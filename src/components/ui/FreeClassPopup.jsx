@@ -24,17 +24,17 @@ const FreeClassPopup = () => {
   const scheduleData = [
     {
       grade: "৬ষ্ঠ - ৮ম শ্রেণী",
-      date: "২৩-২৪ মে",
+      date: "২৮ মে - ২৫ মে",
       icon: FaChalkboardTeacher,
     },
     {
       grade: "৯ম - ১০ম শ্রেণী",
-      date: "২৫-২৮ মে",
+      date: "২৬ মে - ২৮ মে",
       icon: FaGraduationCap,
     },
     {
       grade: "১১শ - ১২শ শ্রেণী",
-      date: "২৯-৩১ মে",
+      date: "২৯ মে - ৩১ মে",
       icon: Calendar,
     },
   ];
@@ -43,7 +43,7 @@ const FreeClassPopup = () => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-tranparent bg-opacity-50 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-50 p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
