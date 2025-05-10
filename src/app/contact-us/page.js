@@ -13,10 +13,9 @@ import {
   MessageSquare,
   AtSign,
   FileText,
-  
 } from "lucide-react";
 
-// import { }
+import { motion } from "framer-motion";
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: "",
@@ -234,38 +233,34 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-cyan-50 via-white to-cyan-50 min-h-screen">
+    <div className="py-20 px-6 md:px-8 lg:px-16 bg-gradient-to-b from-cyan-50 via-white to-cyan-50 min-h-screen">
       {/* Header Section */}
-      <div
-        className="text-center mb-16 max-w-4xl mx-auto"
-        style={{
-          opacity: 0,
-          animation: "fadeIn 0.8s ease-out forwards",
-        }}
+      <motion.div
+        className="text-center mb-20 mt-10 max-w-4xl mx-auto relative px-2"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInUp}
       >
-        <h1
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-24 h-1 bg-amber-500 rounded-full opacity-70"></div>
+        <div className="absolute -top-12 left-1/4 w-3 h-3 bg-amber-500 rounded-full opacity-30"></div>
+        <div className="absolute -top-20 right-1/3 w-5 h-5 bg-cyan-500 rounded-full opacity-20"></div>
+
+        {/* Heading */}
+        <motion.h1
           className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-700 to-cyan-900 bg-clip-text text-transparent"
-          style={{
-            opacity: 0,
-            transform: "translateY(20px)",
-            animation: "slideUp 0.8s ease-out 0.2s forwards",
-          }}
+          variants={fadeInUp}
         >
           আমাদের সাথে যোগাযোগ করুন
-        </h1>
+        </motion.h1>
 
-        <p
-          className="text-cyan-700 mx-auto text-lg"
-          style={{
-            opacity: 0,
-            transform: "translateY(20px)",
-            animation: "slideUp 0.8s ease-out 0.4s forwards",
-          }}
-        >
+        {/* Subtitle */}
+        <motion.p className="text-cyan-700 mx-auto text-lg" variants={fadeInUp}>
           যেকোনো প্রশ্ন বা পরামর্শের জন্য আমাদের সাথে যোগাযোগ করুন। আমরা সবসময়
           আপনাকে সাহায্য করতে প্রস্তুত।
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
@@ -681,3 +676,30 @@ export default function ContactUs() {
     </div>
   );
 }
+export const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+export const highlightAnim = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
+export const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};

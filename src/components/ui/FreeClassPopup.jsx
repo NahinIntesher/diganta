@@ -8,7 +8,6 @@ import {
   FaChalkboardTeacher,
   FaGraduationCap,
 } from "react-icons/fa";
-import Link from "next/link";
 
 const FreeClassPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +15,7 @@ const FreeClassPopup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 4000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -24,7 +23,7 @@ const FreeClassPopup = () => {
   const scheduleData = [
     {
       grade: "৬ষ্ঠ - ৮ম শ্রেণী",
-      date: "২৮ মে - ২৫ মে",
+      date: "২৪ মে - ২৫ মে",
       icon: FaChalkboardTeacher,
     },
     {
@@ -33,7 +32,7 @@ const FreeClassPopup = () => {
       icon: FaGraduationCap,
     },
     {
-      grade: "১১শ - ১২শ শ্রেণী",
+      grade: "একাদশ - দ্বাদশ শ্রেণী",
       date: "২৯ মে - ৩১ মে",
       icon: Calendar,
     },
@@ -56,7 +55,7 @@ const FreeClassPopup = () => {
             transition={{ type: "spring", damping: 20 }}
           >
             {/* Top decorative header */}
-            <div className="bg-gradient-to-r from-cyan-700 to-cyan-500 h-16 flex items-center justify-center">
+            <div className="bg-rose-500 h-16 flex items-center justify-center">
               <motion.div
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -71,10 +70,10 @@ const FreeClassPopup = () => {
 
             {/* Close button */}
             <button
-              className="absolute top-3 right-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-1"
+              className="absolute top-3 right-3 bg-white bg-opacity-20 hover:bg-opacity-30 hover:bg-rose-800 rounded-full p-1 transition duration-200"
               onClick={() => setIsOpen(false)}
             >
-              <X className="text-black" size={20} />
+              <X className="text-black hover:text-white" size={20} />
             </button>
 
             {/* Content */}
@@ -88,20 +87,20 @@ const FreeClassPopup = () => {
                 {scheduleData.map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center p-3 bg-cyan-50 rounded-lg border border-cyan-100"
+                    className="flex items-center p-3 bg-rose-50 rounded-lg border border-rose-100"
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 + index * 0.2 }}
-                    whileHover={{ scale: 1.02, backgroundColor: "#e0f7fa" }}
+                    transition={{ delay: 0.0 + index * 0.2 }}
+                    whileHover={{ scale: 1.02, backgroundColor: "rose-500" }}
                   >
-                    <div className="bg-cyan-100 p-3 rounded-full">
-                      <item.icon className="text-cyan-600 text-xl" />
+                    <div className="bg-rose-100 p-3 rounded-full">
+                      <item.icon className="text-rose-600 text-xl" />
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-semibold text-gray-800">
                         {item.grade}
                       </h3>
-                      <div className="flex items-center text-cyan-600">
+                      <div className="flex items-center text-rose-600">
                         <FaCalendarAlt className="mr-1" />
                         <span>{item.date}</span>
                       </div>
