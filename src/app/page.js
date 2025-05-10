@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useScroll, useTransform } from "framer-motion";
-import { BrainCircuit } from "lucide-react";
+import FreeClassPopup from "@/components/ui/FreeClassPopup";
 import {
   FaWhatsapp,
   FaGraduationCap,
@@ -408,6 +408,7 @@ export default function Home() {
           </motion.div>
         </a>
       </motion.section>
+      <FreeClassPopup />
     </div>
   );
 }
