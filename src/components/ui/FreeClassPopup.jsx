@@ -16,7 +16,7 @@ const FreeClassPopup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 5000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
