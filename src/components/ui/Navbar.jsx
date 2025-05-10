@@ -75,7 +75,7 @@ export default function Navbar() {
                 alt="Diganta Coaching"
                 className="h-11 p-1 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-              <p className="text-2xl font-bold text-cyan-800 ml-1">Diganta</p>
+              <p className="text-2xl font-bold text-cyan-600 ml-1">Diganta</p>
             </div>
           </Link>
         </div>
@@ -105,7 +105,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-cyan-500 focus:outline-none transition-all duration-300 hover:text-cyan-600 transform hover:scale-110"
+          className="md:hidden text-cyan-600 focus:outline-none transition-all duration-300 hover:text-cyan-600 transform hover:scale-110"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
