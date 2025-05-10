@@ -58,7 +58,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-cyan-100 backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
+      className={`bg-cyan-50  shadow-lg sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
         scrolled ? "shadow-md py-2 " : "py-2 bg-opacity-90"
       }`}
     >
@@ -84,7 +84,7 @@ export default function Navbar() {
               <Link
                 href={getLink(item)}
                 className={`px-2 lg:px-3 py-2 text-md transition-all duration-300 hover:text-cyan-500 ${
-                  activeItem === item ? "text-cyan-600" : ""
+                  activeItem === item ? "text-cyan-600" : "text-black"
                 }`}
                 onClick={() => handleItemClick(item)}
               >

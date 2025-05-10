@@ -13,6 +13,7 @@ import {
   FaQuoteLeft,
   FaQuoteRight,
   FaStar,
+  FaArrowRight,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 

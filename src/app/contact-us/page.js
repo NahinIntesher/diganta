@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Phone,
   MapPin,
@@ -9,31 +9,14 @@ import {
   Loader,
   CheckCircle,
   AlertCircle,
+  User,
+  MessageSquare,
+  AtSign,
+  FileText,
+  
 } from "lucide-react";
-import { motion } from "framer-motion";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      duration: 0.8,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
+// import { }
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     name: "",
@@ -46,6 +29,19 @@ export default function ContactUs() {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
   const [hovered, setHovered] = useState(null);
+  const [focusedField, setFocusedField] = useState(null);
+  const [formTouched, setFormTouched] = useState(false);
+
+  // Reset status message after 6 seconds
+  useEffect(() => {
+    let timer;
+    if (submitStatus) {
+      timer = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 6000);
+    }
+    return () => clearTimeout(timer);
+  }, [submitStatus]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -66,7 +62,11 @@ export default function ContactUs() {
       }
     }
 
-    if (!formData.message.trim()) newErrors.message = "মেসেজ আবশ্যক";
+    if (!formData.message.trim()) {
+      newErrors.message = "মেসেজ আবশ্যক";
+    } else if (formData.message.trim().length < 5) {
+      newErrors.message = "বিস্তারিত মেসেজ দিন";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -74,6 +74,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormTouched(true);
 
     if (!validateForm()) return;
 
@@ -109,6 +110,7 @@ export default function ContactUs() {
           subject: "",
           message: "",
         });
+        setFormTouched(false);
         setIsSubmitting(false);
       };
 
@@ -131,12 +133,56 @@ export default function ContactUs() {
       [name]: value,
     }));
 
-    if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: null,
-      }));
+    if (formTouched) {
+      validateField(name, value);
     }
+  };
+
+  const validateField = (fieldName, value) => {
+    let fieldError = null;
+
+    switch (fieldName) {
+      case "name":
+        if (!value.trim()) fieldError = "নাম আবশ্যক";
+        break;
+      case "email":
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!value.trim()) {
+          fieldError = "ইমেইল আবশ্যক";
+        } else if (!emailRegex.test(value)) {
+          fieldError = "সঠিক ইমেইল ঠিকানা দিন";
+        }
+        break;
+      case "phone":
+        if (value) {
+          const phoneRegex = /^[0-9+\s-]{10,15}$/;
+          if (!phoneRegex.test(value)) {
+            fieldError = "সঠিক ফোন নম্বর দিন";
+          }
+        }
+        break;
+      case "message":
+        if (!value.trim()) {
+          fieldError = "মেসেজ আবশ্যক";
+        } else if (value.trim().length < 5) {
+          fieldError = "বিস্তারিত মেসেজ দিন";
+        }
+        break;
+      default:
+        break;
+    }
+
+    setErrors((prev) => ({
+      ...prev,
+      [fieldName]: fieldError,
+    }));
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    setFocusedField(null);
+    validateField(name, value);
+    setFormTouched(true);
   };
 
   const contactInfo = [
@@ -169,50 +215,85 @@ export default function ContactUs() {
     },
   ];
 
+  // Icons for form fields
+  const getFieldIcon = (fieldName) => {
+    switch (fieldName) {
+      case "name":
+        return <User size={18} className="text-cyan-600" />;
+      case "email":
+        return <AtSign size={18} className="text-cyan-600" />;
+      case "phone":
+        return <Phone size={18} className="text-cyan-600" />;
+      case "subject":
+        return <FileText size={18} className="text-cyan-600" />;
+      case "message":
+        return <MessageSquare size={18} className="text-cyan-600" />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-cyan-50 to-white min-h-screen">
+    <div className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-cyan-50 via-white to-cyan-50 min-h-screen">
       {/* Header Section */}
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
+      <div
         className="text-center mb-16 max-w-4xl mx-auto"
+        style={{
+          opacity: 0,
+          animation: "fadeIn 0.8s ease-out forwards",
+        }}
       >
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-cyan-800 mb-6"
+        <h1
+          className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-700 to-cyan-900 bg-clip-text text-transparent"
+          style={{
+            opacity: 0,
+            transform: "translateY(20px)",
+            animation: "slideUp 0.8s ease-out 0.2s forwards",
+          }}
         >
           আমাদের সাথে যোগাযোগ করুন
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={itemVariants}
+        <p
           className="text-cyan-700 mx-auto text-lg"
+          style={{
+            opacity: 0,
+            transform: "translateY(20px)",
+            animation: "slideUp 0.8s ease-out 0.4s forwards",
+          }}
         >
           যেকোনো প্রশ্ন বা পরামর্শের জন্য আমাদের সাথে যোগাযোগ করুন। আমরা সবসময়
           আপনাকে সাহায্য করতে প্রস্তুত।
-        </motion.p>
-      </motion.div>
+        </p>
+      </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
         {/* Contact Info Cards */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+        <div
           className="lg:col-span-2 space-y-6"
+          style={{
+            opacity: 0,
+            transform: "translateX(-30px)",
+            animation: "slideInLeft 0.8s ease-out 0.6s forwards",
+          }}
         >
           {contactInfo.map((item) => (
-            <motion.div
+            <div
               key={item.id}
               onMouseEnter={() => setHovered(item.id)}
               onMouseLeave={() => setHovered(null)}
-              className={`bg-white p-6 rounded-xl shadow-md flex items-start border-l-4 border-cyan-500 border transition-all duration-300 ${
-                hovered === item.id ? "shadow-lg" : ""
+              className={`bg-white p-6 rounded-xl shadow-md flex items-start border-l-4 border-cyan-500 transition-all duration-300 ${
+                hovered === item.id
+                  ? "shadow-lg shadow-cyan-100 border-cyan-600 transform -translate-y-1"
+                  : ""
               }`}
             >
-              <div className="bg-cyan-50 p-3 rounded-full mr-5">
+              <div
+                className={`p-3 rounded-full mr-5 transition-all duration-300 ${
+                  hovered === item.id ? "bg-cyan-100" : "bg-cyan-50"
+                }`}
+              >
                 {item.icon}
               </div>
               <div>
@@ -225,7 +306,7 @@ export default function ContactUs() {
                   </p>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
 
           {/* Map Preview */}
@@ -233,172 +314,319 @@ export default function ContactUs() {
             href="https://maps.app.goo.gl/JKxakQrEXtyXsfe16"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white border border-cyan-500 p-4 rounded-xl shadow-md mt-8 overflow-hidden block cursor-pointer hover:shadow-lg transition-all"
+            className="bg-white border border-cyan-200 p-4 rounded-xl shadow-md mt-8 overflow-hidden block cursor-pointer hover:shadow-lg hover:border-cyan-500 transition-all group"
+            style={{
+              background: `linear-gradient(135deg, #f0fdff 0%, #ffffff 100%)`,
+            }}
           >
-            <div className="h-64 bg-cyan-100 rounded-lg flex items-center justify-center">
-              <div className="text-center text-cyan-800">
-                <MapPin size={32} className="mx-auto mb-3" />
+            <div className="h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-cyan-50 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+              <div className="relative z-10 text-center text-cyan-800 p-4">
+                <MapPin
+                  size={32}
+                  className="mx-auto mb-3 text-cyan-600 group-hover:text-cyan-700 transition-colors"
+                />
                 <p className="font-medium mb-2">
                   মদিনা চত্বর জামে মসজিদ সংলগ্ন,
                 </p>
                 <p className="font-medium mb-2">
                   মুসলিম নগর, মাতুয়াইল, ডেমরা, ঢাকা - ১৩৬২
                 </p>
-                <p className="text-sm text-cyan-600 mt-2">
-                  ম্যাপ দেখতে ক্লিক করুন
-                </p>
+                <div className="inline-block mt-4 px-4 py-2 bg-cyan-600 text-white rounded-full transform group-hover:scale-105 transition-transform">
+                  <p className="text-sm font-medium">ম্যাপ দেখতে ক্লিক করুন</p>
+                </div>
               </div>
             </div>
           </a>
-        </motion.div>
+        </div>
 
         {/* Contact Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="lg:col-span-3 bg-gradient-to-br from-white via-cyan-50 to-white p-8 md:p-10 rounded-3xl shadow-lg border border-cyan-500"
+        <div
+          className="lg:col-span-3 bg-gradient-to-br from-white via-cyan-50 to-white p-8 md:p-10 rounded-3xl shadow-xl border border-cyan-400"
+          style={{
+            opacity: 0,
+            transform: "translateY(30px)",
+            animation: "slideUp 0.8s ease-out 0.8s forwards",
+            boxShadow: "0 10px 30px -5px rgba(0, 166, 204, 0.1)",
+          }}
         >
-          <h3 className="text-3xl font-bold text-cyan-800 mb-2 tracking-tight">
-            আমাদের মেসেজ দিন
-          </h3>
-          <p className="text-gray-600 mb-8 text-base">
-            আপনার প্রশ্ন বা মতামত আমাদের জানান
-          </p>
+          <div className="relative mb-8 pb-4 border-b border-cyan-100">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-700 to-cyan-900 bg-clip-text text-transparent mb-2 tracking-tight">
+              আমাদের মেসেজ দিন
+            </h3>
+            <p className="text-gray-600 text-base">
+              আপনার প্রশ্ন বা মতামত আমাদের জানান
+            </p>
+            <div className="absolute bottom-0 left-0 h-1 w-24 bg-gradient-to-r from-cyan-500 to-cyan-300 rounded-full"></div>
+          </div>
 
           {submitStatus && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
+            <div
+              style={{
+                opacity: 0,
+                animation: "fadeIn 0.5s ease-out forwards",
+              }}
               className={`mb-6 p-4 rounded-xl flex items-start ${
                 submitStatus.type === "success"
-                  ? "bg-green-100 text-green-900 border border-green-300"
-                  : "bg-red-100 text-red-900 border border-red-300"
+                  ? "bg-green-50 text-green-800 border border-green-200"
+                  : "bg-red-50 text-red-800 border border-red-200"
               }`}
             >
               {submitStatus.type === "success" ? (
-                <CheckCircle className="mr-3 flex-shrink-0 mt-0.5" size={20} />
+                <CheckCircle
+                  className="mr-3 flex-shrink-0 mt-0.5 text-green-600"
+                  size={20}
+                />
               ) : (
-                <AlertCircle className="mr-3 flex-shrink-0 mt-0.5" size={20} />
+                <AlertCircle
+                  className="mr-3 flex-shrink-0 mt-0.5 text-red-600"
+                  size={20}
+                />
               )}
               <span>{submitStatus.message}</span>
-            </motion.div>
+            </div>
           )}
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-gray-700 text-sm font-semibold mb-2 uppercase">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-700 text-sm font-semibold mb-2 uppercase"
+                >
                   আপনার নাম <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`w-full p-3 border ${
+                <div
+                  className={`relative rounded-lg overflow-hidden ${
                     errors.name
-                      ? "border-red-400 focus:ring-red-400 bg-red-50"
-                      : "border-gray-200 focus:ring-cyan-400 focus:bg-cyan-50"
-                  } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
-                  placeholder="আপনার নাম লিখুন"
-                />
+                      ? "ring-2 ring-red-200"
+                      : focusedField === "name"
+                      ? "ring-2 ring-cyan-300"
+                      : ""
+                  }`}
+                >
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {getFieldIcon("name")}
+                  </div>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField("name")}
+                    onBlur={handleBlur}
+                    className={`w-full p-3 pl-10 border ${
+                      errors.name
+                        ? "border-red-300 focus:ring-red-200 bg-red-50"
+                        : "border-gray-200 focus:ring-cyan-300 focus:bg-cyan-50"
+                    } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
+                    placeholder="আপনার নাম লিখুন"
+                    aria-invalid={errors.name ? "true" : "false"}
+                    aria-describedby={errors.name ? "name-error" : undefined}
+                  />
+                </div>
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                  <p
+                    id="name-error"
+                    className="mt-1.5 text-sm text-red-600 flex items-center"
+                  >
+                    <AlertCircle size={14} className="mr-1.5" />
+                    {errors.name}
+                  </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-gray-700 text-sm font-semibold mb-2 uppercase">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-700 text-sm font-semibold mb-2 uppercase"
+                >
                   ইমেইল ঠিকানা <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full p-3 border ${
+                <div
+                  className={`relative rounded-lg overflow-hidden ${
                     errors.email
-                      ? "border-red-400 focus:ring-red-400 bg-red-50"
-                      : "border-gray-200 focus:ring-cyan-400 focus:bg-cyan-50"
-                  } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
-                  placeholder="আপনার ইমেইল লিখুন"
-                />
+                      ? "ring-2 ring-red-200"
+                      : focusedField === "email"
+                      ? "ring-2 ring-cyan-300"
+                      : ""
+                  }`}
+                >
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {getFieldIcon("email")}
+                  </div>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField("email")}
+                    onBlur={handleBlur}
+                    className={`w-full p-3 pl-10 border ${
+                      errors.email
+                        ? "border-red-300 focus:ring-red-200 bg-red-50"
+                        : "border-gray-200 focus:ring-cyan-300 focus:bg-cyan-50"
+                    } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
+                    placeholder="আপনার ইমেইল লিখুন"
+                    aria-invalid={errors.email ? "true" : "false"}
+                    aria-describedby={errors.email ? "email-error" : undefined}
+                  />
+                </div>
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                  <p
+                    id="email-error"
+                    className="mt-1.5 text-sm text-red-600 flex items-center"
+                  >
+                    <AlertCircle size={14} className="mr-1.5" />
+                    {errors.email}
+                  </p>
                 )}
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-gray-700 text-sm font-semibold mb-2 uppercase">
+                <label
+                  htmlFor="phone"
+                  className="block text-gray-700 text-sm font-semibold mb-2 uppercase"
+                >
                   ফোন নম্বর
                 </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`w-full p-3 border ${
+                <div
+                  className={`relative rounded-lg overflow-hidden ${
                     errors.phone
-                      ? "border-red-400 focus:ring-red-400 bg-red-50"
-                      : "border-gray-200 focus:ring-cyan-400 focus:bg-cyan-50"
-                  } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
-                  placeholder="০১XXXXXXXXX"
-                />
+                      ? "ring-2 ring-red-200"
+                      : focusedField === "phone"
+                      ? "ring-2 ring-cyan-300"
+                      : ""
+                  }`}
+                >
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {getFieldIcon("phone")}
+                  </div>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField("phone")}
+                    onBlur={handleBlur}
+                    className={`w-full p-3 pl-10 border ${
+                      errors.phone
+                        ? "border-red-300 focus:ring-red-200 bg-red-50"
+                        : "border-gray-200 focus:ring-cyan-300 focus:bg-cyan-50"
+                    } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
+                    placeholder="০১XXXXXXXXX"
+                    aria-invalid={errors.phone ? "true" : "false"}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
+                  />
+                </div>
                 {errors.phone && (
-                  <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                  <p
+                    id="phone-error"
+                    className="mt-1.5 text-sm text-red-600 flex items-center"
+                  >
+                    <AlertCircle size={14} className="mr-1.5" />
+                    {errors.phone}
+                  </p>
                 )}
               </div>
 
               <div>
-                <label className="block text-gray-700 text-sm font-semibold mb-2 uppercase">
+                <label
+                  htmlFor="subject"
+                  className="block text-gray-700 text-sm font-semibold mb-2 uppercase"
+                >
                   বিষয়
                 </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:bg-cyan-50 focus:border-transparent transition-all text-gray-700 placeholder-gray-400"
-                  placeholder="আপনার মেসেজের বিষয়"
-                />
+                <div
+                  className={`relative rounded-lg overflow-hidden ${
+                    focusedField === "subject" ? "ring-2 ring-cyan-300" : ""
+                  }`}
+                >
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {getFieldIcon("subject")}
+                  </div>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField("subject")}
+                    onBlur={handleBlur}
+                    className="w-full p-3 pl-10 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:bg-cyan-50 focus:border-transparent transition-all text-gray-700 placeholder-gray-400"
+                    placeholder="আপনার মেসেজের বিষয়"
+                  />
+                </div>
               </div>
             </div>
 
             <div>
-              <label className="block text-gray-700 text-sm font-semibold mb-2 uppercase">
+              <label
+                htmlFor="message"
+                className="block text-gray-700 text-sm font-semibold mb-2 uppercase"
+              >
                 মেসেজ <span className="text-red-500">*</span>
               </label>
-              <textarea
-                rows="5"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className={`w-full p-4 border ${
+              <div
+                className={`relative rounded-lg overflow-hidden ${
                   errors.message
-                    ? "border-red-400 focus:ring-red-400 bg-red-50"
-                    : "border-gray-200 focus:ring-cyan-400 focus:bg-cyan-50"
-                } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
-                placeholder="আপনার মেসেজ লিখুন"
-              ></textarea>
+                    ? "ring-2 ring-red-200"
+                    : focusedField === "message"
+                    ? "ring-2 ring-cyan-300"
+                    : ""
+                }`}
+              >
+                <div className="absolute top-3 left-3 flex items-start pointer-events-none">
+                  {getFieldIcon("message")}
+                </div>
+                <textarea
+                  rows="5"
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  onFocus={() => setFocusedField("message")}
+                  onBlur={handleBlur}
+                  className={`w-full p-4 pl-10 border ${
+                    errors.message
+                      ? "border-red-300 focus:ring-red-200 bg-red-50"
+                      : "border-gray-200 focus:ring-cyan-300 focus:bg-cyan-50"
+                  } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
+                  placeholder="আপনার মেসেজ লিখুন"
+                  aria-invalid={errors.message ? "true" : "false"}
+                  aria-describedby={
+                    errors.message ? "message-error" : undefined
+                  }
+                ></textarea>
+              </div>
               {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                <p
+                  id="message-error"
+                  className="mt-1.5 text-sm text-red-600 flex items-center"
+                >
+                  <AlertCircle size={14} className="mr-1.5" />
+                  {errors.message}
+                </p>
               )}
             </div>
 
             <div className="pt-4">
-              <motion.button
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white font-semibold py-3 px-8 rounded-full transition-all flex items-center justify-center shadow-lg ${
+                className={`bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800 text-white font-semibold py-3.5 px-8 rounded-full transition-all flex items-center justify-center shadow-lg ${
                   isSubmitting
                     ? "opacity-70 cursor-not-allowed"
-                    : "hover:shadow-2xl hover:ring-2 hover:ring-cyan-400"
+                    : "hover:shadow-xl hover:shadow-cyan-100 transform hover:-translate-y-1"
                 }`}
+                style={{
+                  boxShadow: "0 4px 14px rgba(0, 120, 150, 0.2)",
+                }}
               >
                 {isSubmitting ? (
                   <span className="flex items-center">
@@ -411,11 +639,45 @@ export default function ContactUs() {
                     পাঠান
                   </span>
                 )}
-              </motion.button>
+              </button>
             </div>
           </form>
-        </motion.div>
+        </div>
       </div>
+
+      {/* Add CSS animations */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -365,7 +365,7 @@ export default function Home() {
                   </motion.div>
                   <h3 className="text-xl font-semibold ">{course.title}</h3>
                 </div>
-                <p className="text-amber-600 ">
+                <p className="text-amber-500 ">
                   <span className="font-extrabold text-xl">{course.title}</span>
                   <span className="text-gray-600"> এর জন্য সম্পূর্ণ</span>
                 </p>
