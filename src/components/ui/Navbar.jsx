@@ -75,7 +75,7 @@ export default function Navbar() {
                 alt="Diganta Coaching"
                 className="h-11 p-1 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-              <p className="text-2xl font-bold text-teal-700 ml-1">Diganta</p>
+              <p className="text-2xl font-bold text-cyan-800 ml-1">Diganta</p>
             </div>
           </Link>
         </div>
