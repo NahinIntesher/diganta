@@ -59,21 +59,24 @@ export default function Navbar() {
   return (
     <nav
       className={`bg-cyan-50  shadow-lg sticky top-0 z-50 w-full border-b text-black border-gray-400 ${
-        scrolled ? "shadow-md py-2 " : "py-2 bg-opacity-90"
+        scrolled ? "shadow-md py-3 " : "py-3 bg-opacity-90"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="relative group flex flex-">
+        <div className="relative group flex items-center">
           <Link
             href="/"
-            className="group flex items-center gap-2 text-sm font-extrabold text-cyan-500 transition-all duration-300"
+            className="group flex items-center text-sm font-extrabold text-cyan-500 transition-all duration-300"
           >
-            <Image
-              src={logo}
-              alt="Digonto Coaching"
-              className="h-12 w-25 pb-2 transition-transform duration-300 group-hover:scale-105"
-            />
+            <div className="flex items-center">
+              <Image
+                src={logo}
+                alt="Diganta Coaching"
+                className="h-11 p-1 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              <p className="text-2xl font-bold text-teal-700 ml-1">Diganta</p>
+            </div>
           </Link>
         </div>
 

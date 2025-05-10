@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useScroll, useTransform } from "framer-motion";
+import bgImgage from "../../public/images/bg.png";
 import FreeClassPopup from "@/components/ui/FreeClassPopup";
 import {
   FaWhatsapp,
@@ -161,9 +162,12 @@ export default function Home() {
       {/* Hero Section with Parallax Effect */}
       <motion.section
         style={{ scale, opacity }}
-        className="relative bg-gradient-to-br from-cyan-900 to-cyan-800 h-screen flex items-center justify-center text-center px-4 sm:px-6"
+        className="relative bg-gradient-to-br from-teal-900 to-teal-800 h-screen flex items-center justify-center text-center px-4 sm:px-6"
       >
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551892589-865f69869476?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-30" />
+        <div
+          className="absolute inset-0 bg-contain bg-center opacity-30"
+          style={{ backgroundImage: `url(${bgImgage.src})` }}
+        />
 
         <motion.div className="max-w-4xl mx-4 sm:mx-6 relative z-10">
           <motion.h1
@@ -218,7 +222,7 @@ export default function Home() {
 
             <motion.a
               href="/contact-us"
-              className="bg-transparent border-2 border-white text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg hover:bg-white hover:text-cyan-700 transition"
+              className="bg-transparent border-2 border-white text-white font-semibold py-2.5 sm:py-3 px-5 sm:px-8 rounded-lg text-sm sm:text-base md:text-lg hover:bg-white hover:text-cyan-200 transition"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(255,255,255,0.3)",
@@ -229,38 +233,6 @@ export default function Home() {
             >
               ফ্রি কাউন্সেলিং
             </motion.a>
-          </motion.div>
-        </motion.div>
-
-        {/* Floating scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2"
-          animate={{
-            y: [0, 15, 0],
-            opacity: [1, 0.5, 1],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-            ease: "easeInOut",
-          }}
-        >
-          <motion.div
-            className="w-6 sm:w-8 h-10 sm:h-12 border-2 border-cyan-300 rounded-full flex justify-center"
-            whileHover={{ scale: 1.2 }}
-          >
-            <motion.div
-              className="w-1 h-2 sm:h-3 bg-cyan-300 rounded-full mt-2 sm:mt-3"
-              animate={{
-                y: [0, 6],
-                opacity: [1, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.5,
-                delay: 0.5,
-              }}
-            />
           </motion.div>
         </motion.div>
       </motion.section>
