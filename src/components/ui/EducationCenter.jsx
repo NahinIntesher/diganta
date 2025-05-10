@@ -434,25 +434,25 @@ export default function EducationCenter() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen py-6 md:py-12 px-2 sm:px-4">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-cyan-800 mb-2">
+        <div className="text-center mb-8 md:mb-12 px-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-cyan-800 mb-2">
             শিক্ষা কেন্দ্র
           </h1>
-          <div className="h-1 w-24 bg-cyan-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600 text-lg">
+          <div className="h-1 w-20 sm:w-24 bg-cyan-600 mx-auto"></div>
+          <p className="mt-3 md:mt-4 text-gray-600 text-sm sm:text-lg">
             আপনার সাফল্যের যাত্রায় আমরা সঙ্গী
           </p>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-lg bg-gray-100 p-1">
+        <div className="flex justify-center mb-6 md:mb-8 px-2">
+          <div className="inline-flex rounded-lg bg-gray-100 p-1 overflow-x-auto w-full sm:w-auto">
             <button
               onClick={() => setActiveTab("schedule")}
-              className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-md font-medium text-sm sm:text-base transition-all duration-200 ${
                 activeTab === "schedule"
                   ? "bg-cyan-600 text-white shadow-md"
                   : "text-gray-700 hover:bg-gray-200"
@@ -462,7 +462,7 @@ export default function EducationCenter() {
             </button>
             <button
               onClick={() => setActiveTab("fees")}
-              className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+              className={`px-4 py-2 sm:px-6 sm:py-3 rounded-md font-medium text-sm sm:text-base transition-all duration-200 ${
                 activeTab === "fees"
                   ? "bg-cyan-600 text-white shadow-md"
                   : "text-gray-700 hover:bg-gray-200"
@@ -474,27 +474,27 @@ export default function EducationCenter() {
         </div>
 
         {/* Content Sections */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden mx-2 sm:mx-0">
           {/* Schedule Section */}
           {activeTab === "schedule" && (
-            <div className="p-6">
-              <h2 className="text-3xl font-bold text-center text-cyan-800 mb-8">
+            <div className="p-4 sm:p-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center text-cyan-800 mb-6 sm:mb-8">
                 ব্যাচ সময়সূচী
               </h2>
 
-              <div className="space-y-6 mb-10">
+              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
                 {/* Morning Batch */}
-                <div className="bg-green-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-green-100">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                <div className="bg-green-50 rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all hover:shadow-md duration-300 border border-green-100">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <div className="flex items-center">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600 shadow-sm">
-                        <span className="text-xl">☀️</span>
+                      <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-100 text-green-600 shadow-sm">
+                        <span className="text-lg sm:text-xl">☀️</span>
                       </div>
-                      <div className="ml-4">
-                        <h3 className="text-xl font-semibold text-green-800">
-                          সকাল ব্যাচ (ক্লাস ৬-৮)
+                      <div className="ml-3 sm:ml-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-green-800">
+                          সকাল ব্যাচ (৬ষ্ঠ - ৮ম শ্রেণি)
                         </h3>
-                        <p className="text-gray-600">
+                        <p className="text-gray-600 text-xs sm:text-sm">
                           সকাল ৮টা - ১১টা ক্লাস (১ ঘণ্টা করে তিনটি ব্যাচ)
                         </p>
                       </div>
@@ -505,16 +505,16 @@ export default function EducationCenter() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-green-50">
                         <tr>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-green-800">
                             দিন
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-green-800">
                             ৮-৯ AM
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-green-800">
                             ৯-১০ AM
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-green-800">
                             ১০-১১ AM
                           </th>
                         </tr>
@@ -527,13 +527,13 @@ export default function EducationCenter() {
                               index % 2 === 0 ? "bg-green-50/30" : "bg-white"
                             }
                           >
-                            <td className="px-4 py-3 text-sm font-medium text-gray-800">
+                            <td className="px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-medium text-gray-800 whitespace-nowrap">
                               {day.day}
                             </td>
                             {day.periods.map((period, idx) => (
                               <td
                                 key={idx}
-                                className={`px-4 py-3 text-sm ${
+                                className={`px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm ${
                                   period.noClass
                                     ? "text-red-500"
                                     : "text-gray-800"
@@ -543,7 +543,7 @@ export default function EducationCenter() {
                                   <span className="flex items-center">
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
-                                      className="h-4 w-4 mr-1"
+                                      className="h-3 w-3 sm:h-4 sm:w-4 mr-1"
                                       fill="none"
                                       viewBox="0 0 24 24"
                                       stroke="currentColor"
@@ -570,43 +570,43 @@ export default function EducationCenter() {
                 </div>
 
                 {/* Afternoon/Evening Batch */}
-                <div className="bg-blue-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 ">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-                    <div className="flex items-center ">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 text-blue-600 shadow-sm">
-                        <span className="text-xl">🌙</span>
+                <div className="bg-blue-50 rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all hover:shadow-md duration-300">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="flex items-center">
+                      <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-50 text-blue-600 shadow-sm">
+                        <span className="text-lg sm:text-xl">🌙</span>
                       </div>
-                      <div className="ml-4">
-                        <h3 className="text-xl font-semibold text-blue-900">
-                          বিকাল ও সন্ধ্যা ব্যাচ (ক্লাস ৯-১০)
+                      <div className="ml-3 sm:ml-4">
+                        <h3 className="text-lg sm:text-xl font-semibold text-blue-900">
+                          বিকাল ও সন্ধ্যা ব্যাচ (৯ম - ১০ম শ্রেণি)
                         </h3>
-                        <p className="text-gray-600">
+                        <p className="text-gray-600 text-xs sm:text-sm">
                           বিষয়ভিত্তিক ক্লাস সময়সূচী
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-lg shadow-sm overflow-x-auto border border-blue-200">
+                  <div className="bg-white rounded-lg shadow-sm overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-blue-50">
                         <tr>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-900">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-blue-900 whitespace-nowrap">
                             বার/সময়
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-900">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-blue-900 whitespace-nowrap">
                             বিকাল ৪টা - বিকাল ৫টা
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-900">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-blue-900 whitespace-nowrap">
                             বিকাল ৫টা - সন্ধ্যা ৬টা
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-900">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-blue-900 whitespace-nowrap">
                             সন্ধ্যা ৬টা - সন্ধ্যা ৭টা
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-900">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-blue-900 whitespace-nowrap">
                             সন্ধ্যা ৭টা - রাত ৮টা
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-900">
+                          <th className="px-3 py-2 sm:px-4 sm:py-3 text-left text-xs sm:text-sm font-medium text-blue-900 whitespace-nowrap">
                             রাত ৮টা - রাত ৯টা
                           </th>
                         </tr>
@@ -619,34 +619,37 @@ export default function EducationCenter() {
                               index % 2 === 0 ? "bg-blue-50/30" : "bg-white"
                             }
                           >
-                            <td className="px-4 py-3 text-sm font-medium text-gray-800">
+                            <td className="px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-medium text-gray-800 whitespace-nowrap">
                               {day.day}
                             </td>
                             {day.slots.map((slot, idx) => (
-                              <td key={idx} className="px-4 py-3 text-sm">
+                              <td
+                                key={idx}
+                                className="px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm"
+                              >
                                 {slot.subject ? (
                                   <span
-                                    className={`inline-block text-sm ${getSubjectColor(
+                                    className={`inline-block ${getSubjectColor(
                                       slot
                                     )}`}
                                   >
                                     {slot.subject}
-                                    <p className="text-xs text-gray-500">
+                                    <p className="text-xxs xs:text-xs text-gray-500">
                                       ({slot.grade} {slot.group})
                                     </p>
                                     {slot.note && (
-                                      <p className="text-xs text-green-600">
+                                      <p className="text-xxs xs:text-xs text-green-600">
                                         ({slot.note})
                                       </p>
                                     )}
                                     {slot.teacher && (
-                                      <p className="text-xs text-gray-500">
+                                      <p className="text-xxs xs:text-xs text-gray-500">
                                         ({slot.teacher} স্যার)
                                       </p>
                                     )}
                                   </span>
                                 ) : (
-                                  <span className="text-gray-400">
+                                  <span className="text-gray-400 text-xs">
                                     ক্লাস নেই
                                   </span>
                                 )}
@@ -661,199 +664,211 @@ export default function EducationCenter() {
               </div>
             </div>
           )}
-        </div>
 
-        {/* Fees Section */}
-        {activeTab === "fees" && (
-          <div className="p-8">
-            <h2 className="text-3xl font-bold text-center text-cyan-800 mb-8">
-              কোর্স ফি
-            </h2>
+          {/* Fees Section */}
+          {activeTab === "fees" && (
+            <div className="p-4 sm:p-6 md:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center text-cyan-800 mb-6 sm:mb-8">
+                কোর্স ফি
+              </h2>
 
-            {/* Junior Classes */}
-            <div className="mb-8 bg-green-100 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-green-100">
-              <h3 className="text-xl font-semibold text-cyan-800 mb-4 border-b pb-2">
-                জুনিয়র ক্লাস
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {feeStructure.juniorClasses.map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
-                  >
-                    <div className="p-6">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-700">{item.level}</span>
-                        <span className="font-bold text-cyan-800">
-                          {item.fee}
-                        </span>
+              {/* Junior Classes */}
+              <div className="mb-6 sm:mb-8 bg-green-100 rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all hover:shadow-md duration-300 border border-green-100">
+                <h3 className="text-lg sm:text-xl font-semibold text-cyan-800 mb-3 sm:mb-4 border-b pb-2">
+                  জুনিয়র ক্লাস
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  {feeStructure.juniorClasses.map((item, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                    >
+                      <div className="p-4 sm:p-6">
+                        <div className="flex justify-between items-center mb-1 sm:mb-2">
+                          <span className="text-xs sm:text-sm text-gray-700">
+                            {item.level}
+                          </span>
+                          <span className="font-bold text-sm sm:text-base text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* SSC Classes */}
-            <div className="mb-8 bg-purple-100 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-purple-100">
-              <h3 className="text-xl font-semibold text-cyan-800 mb-4 border-b pb-2">
-                {feeStructure.ssc.title}
-              </h3>
+              {/* SSC Classes */}
+              <div className="mb-6 sm:mb-8 bg-purple-100 rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all hover:shadow-md duration-300 border border-purple-100">
+                <h3 className="text-lg sm:text-xl font-semibold text-cyan-800 mb-3 sm:mb-4 border-b pb-2">
+                  {feeStructure.ssc.title}
+                </h3>
 
-              <div className="mb-6">
-                <h4 className="font-medium text-cyan-700 mb-3">
-                  বিষয়ভিত্তিক ফি
-                </h4>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden shadow-sm p-6">
-                  <div className="space-y-3">
-                    {feeStructure.ssc.individual.map((item, index) => (
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
+                    বিষয়ভিত্তিক ফি
+                  </h4>
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg sm:rounded-xl overflow-hidden shadow-sm p-4 sm:p-6">
+                    <div className="space-y-2 sm:space-y-3">
+                      {feeStructure.ssc.individual.map((item, index) => (
+                        <div
+                          key={index}
+                          className={`flex justify-between items-center ${
+                            index !== feeStructure.ssc.individual.length - 1
+                              ? "border-b pb-2"
+                              : ""
+                          }`}
+                        >
+                          <span className="text-xs sm:text-sm text-gray-700">
+                            {item.subjects}
+                          </span>
+                          <span className="font-bold text-sm sm:text-base text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
+                    পূর্ণাঙ্গ প্যাকেজ
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {feeStructure.ssc.fullPackage.map((item, index) => (
                       <div
                         key={index}
-                        className={`flex justify-between items-center ${
-                          index !== feeStructure.ssc.individual.length - 1
-                            ? "border-b pb-2"
-                            : ""
-                        }`}
+                        className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                       >
-                        <span className="text-gray-700">{item.subjects}</span>
-                        <span className="font-bold text-cyan-800">
-                          {item.fee}
-                        </span>
+                        <div className="bg-cyan-700 text-white p-2 sm:p-3 text-center">
+                          <h3 className="font-semibold text-sm sm:text-base">
+                            {item.group}
+                          </h3>
+                        </div>
+                        <div className="p-3 sm:p-4 text-center">
+                          <span className="font-bold text-sm sm:text-base text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div>
-                <h4 className="font-medium text-cyan-700 mb-3">
-                  পূর্ণাঙ্গ প্যাকেজ
-                </h4>
-                <div className="grid md:grid-cols-3 gap-4">
-                  {feeStructure.ssc.fullPackage.map((item, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
-                    >
-                      <div className="bg-cyan-700 text-white p-3 text-center">
-                        <h3 className="font-semibold">{item.group}</h3>
-                      </div>
-                      <div className="p-4 text-center">
-                        <span className="font-bold text-cyan-800">
-                          {item.fee}
-                        </span>
-                      </div>
+              {/* HSC Classes */}
+              <div className="mb-6 sm:mb-8 bg-blue-100 rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all hover:shadow-md duration-300 border border-blue-100">
+                <h3 className="text-lg sm:text-xl font-semibold text-cyan-800 mb-3 sm:mb-4 border-b pb-2">
+                  {feeStructure.hsc.title}
+                </h3>
+
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
+                    বিষয়ভিত্তিক ফি
+                  </h4>
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg sm:rounded-xl overflow-hidden shadow-sm p-4 sm:p-6">
+                    <div className="space-y-2 sm:space-y-3">
+                      {feeStructure.hsc.individual.map((item, index) => (
+                        <div
+                          key={index}
+                          className={`flex justify-between items-center ${
+                            index !== feeStructure.hsc.individual.length - 1
+                              ? "border-b pb-2"
+                              : ""
+                          }`}
+                        >
+                          <span className="text-xs sm:text-sm text-gray-700">
+                            {item.subjects}
+                          </span>
+                          <span className="font-bold text-sm sm:text-base text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            {/* HSC Classes */}
-            <div className="mb-8 bg-blue-100 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-blue-100">
-              <h3 className="text-xl font-semibold text-cyan-800 mb-4 border-b pb-2">
-                {feeStructure.hsc.title}
-              </h3>
-
-              <div className="mb-6">
-                <h4 className="font-medium text-cyan-700 mb-3">
-                  বিষয়ভিত্তিক ফি
-                </h4>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden shadow-sm p-6">
-                  <div className="space-y-3">
-                    {feeStructure.hsc.individual.map((item, index) => (
+                <div>
+                  <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
+                    পূর্ণাঙ্গ প্যাকেজ
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                    {feeStructure.hsc.fullPackage.map((item, index) => (
                       <div
                         key={index}
-                        className={`flex justify-between items-center ${
-                          index !== feeStructure.hsc.individual.length - 1
-                            ? "border-b pb-2"
-                            : ""
-                        }`}
+                        className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                       >
-                        <span className="text-gray-700">{item.subjects}</span>
-                        <span className="font-bold text-cyan-800">
-                          {item.fee}
-                        </span>
+                        <div className="bg-cyan-700 text-white p-2 sm:p-3 text-center">
+                          <h3 className="font-semibold text-sm sm:text-base">
+                            {item.group}
+                          </h3>
+                        </div>
+                        <div className="p-3 sm:p-4 text-center">
+                          <span className="font-bold text-sm sm:text-base text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div>
-                <h4 className="font-medium text-cyan-700 mb-3">
-                  পূর্ণাঙ্গ প্যাকেজ
-                </h4>
-                <div className="grid md:grid-cols-3 gap-4">
-                  {feeStructure.hsc.fullPackage.map((item, index) => (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              <div className="mt-6 sm:mt-10 p-3 sm:p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 bg-amber-100 rounded-full p-1 sm:p-2">
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div className="bg-cyan-700 text-white p-3 text-center">
-                        <h3 className="font-semibold">{item.group}</h3>
-                      </div>
-                      <div className="p-4 text-center">
-                        <span className="font-bold text-cyan-800">
-                          {item.fee}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div className="ml-2 sm:ml-3">
+                    <p className="text-amber-800 text-xs sm:text-sm">
+                      ভর্তির জন্য যোগাযোগ করুন অথবা সরাসরি আমাদের কেন্দ্রে আসুন
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+          )}
 
-            <div className="mt-10 p-4 bg-amber-50 rounded-lg border border-amber-200">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 bg-amber-100 rounded-full p-2">
-                  <svg
-                    className="w-6 h-6 text-amber-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </div>
-                <div className="ml-3">
-                  <p className="text-amber-800">
-                    ভর্তির জন্য যোগাযোগ করুন অথবা সরাসরি আমাদের কেন্দ্রে আসুন
-                  </p>
-                </div>
+          {/* Contact Section */}
+          <div className="bg-gradient-to-r from-cyan-700 to-blue-700 text-white p-4 sm:p-6 rounded-b-xl md:rounded-b-2xl">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+              <div>
+                <h3 className="text-base sm:text-lg font-semibold">
+                  যোগাযোগ করুন
+                </h3>
+                <p className="text-xs sm:text-sm">
+                  আমাদের সাথে যোগাযোগ করতে নিচের লিঙ্কে ক্লিক করুন
+                </p>
               </div>
+              <Link
+                href="/contact-us"
+                className="bg-white text-cyan-700 px-3 py-1 sm:px-4 sm:py-2 rounded-md shadow-md hover:bg-gray-100 transition duration-200 text-sm sm:text-base whitespace-nowrap"
+              >
+                যোগাযোগ
+              </Link>
             </div>
-          </div>
-        )}
-
-        {/* Contact Section */}
-        <div className="bg-gradient-to-r from-cyan-700 to-blue-700 text-white p-6 rounded-b-2xl">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-semibold">যোগাযোগ করুন</h3>
-              <p className="text-sm">
-                আমাদের সাথে যোগাযোগ করতে নিচের লিঙ্কে ক্লিক করুন
+            <div className="mt-3 sm:mt-4">
+              <p className="text-xs sm:text-sm">
+                আমাদের সাথে যোগাযোগ করতে পারেন: <br />
+                ফোন: +8801234567890 <br />
+                ইমেইল: info.diganta.coachingcenter@gmail.com
               </p>
             </div>
-            <Link
-              href="/contact-us"
-              className="bg-white text-cyan-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 transition duration-200"
-            >
-              যোগাযোগ
-            </Link>
-          </div>
-          <div className="">
-            <p className="mt-4 text-sm">
-              আমাদের সাথে যোগাযোগ করতে পারেন: <br />
-              ফোন: +8801234567890 <br />
-              ইমেইল: info.diganta.coachingcenter@gmail.com
-            </p>
           </div>
         </div>
       </div>
