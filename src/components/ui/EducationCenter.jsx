@@ -6,6 +6,226 @@ import { Clock, Moon } from "lucide-react";
 export default function EducationCenter() {
   const [activeTab, setActiveTab] = useState("schedule");
 
+  // Weekly schedule data from the images
+  const weeklySchedule = [
+    {
+      day: "শনিবার",
+      slots: [
+        { time: "বিকাল ৪টা - বিকাল ৫টা", subject: "পৌরনীতি", grade: "১০ম" },
+        {
+          time: "বিকাল ৫টা - সন্ধ্যা ৬টা",
+          subject: "হিসাববিজ্ঞান",
+          grade: "৯ম",
+        },
+        { time: "সন্ধ্যা ৬টা - সন্ধ্যা ৭টা", subject: "রসায়ন", grade: "৯ম" },
+        {
+          time: "সন্ধ্যা ৭টা - রাত ৮টা",
+          subject: "পদার্থবিজ্ঞান",
+          grade: "১০ম",
+        },
+        { time: "রাত ৮টা - রাত ৯টা", subject: "ব্যবসায় উদ্যোগ", grade: "১০ম" },
+      ],
+    },
+    {
+      day: "রবিবার",
+      slots: [
+        { time: "বিকাল ৪টা - বিকাল ৫টা", subject: "ভূগোল", grade: "৯ম" },
+        {
+          time: "বিকাল ৫টা - সন্ধ্যা ৬টা",
+          subject: "ব্যবসায় উদ্যোগ",
+          grade: "৯ম",
+        },
+        {
+          time: "সন্ধ্যা ৬টা - সন্ধ্যা ৭টা",
+          subject: "পদার্থবিজ্ঞান",
+          grade: "৯ম",
+        },
+        { time: "সন্ধ্যা ৭টা - রাত ৮টা", subject: "উচ্চতর গণিত", grade: "১০ম" },
+        { time: "রাত ৮টা - রাত ৯টা", subject: "আধুনিক বিজ্ঞান", grade: "১০ম" },
+      ],
+    },
+    {
+      day: "সোমবার",
+      slots: [
+        { time: "বিকাল ৪টা - বিকাল ৫টা", subject: "অর্থনীতি", grade: "৯ম" },
+        {
+          time: "বিকাল ৫টা - সন্ধ্যা ৬টা",
+          subject: "ফিন্যান্স ও ব্যাংকিং",
+          grade: "৯ম",
+        },
+        {
+          time: "সন্ধ্যা ৬টা - সন্ধ্যা ৭টা",
+          subject: "উচ্চতর গণিত",
+          grade: "৯ম",
+        },
+        { time: "সন্ধ্যা ৭টা - রাত ৮টা", subject: "জীববিজ্ঞান", grade: "১০ম" },
+        {
+          time: "রাত ৮টা - রাত ৯টা",
+          subject: "ফিন্যান্স ও ব্যাংকিং",
+          grade: "১০ম",
+        },
+      ],
+    },
+    {
+      day: "মঙ্গলবার",
+      slots: [
+        { time: "বিকাল ৫টা - সন্ধ্যা ৬টা", subject: "পৌরনীতি", grade: "৯ম" },
+        { time: "সন্ধ্যা ৬টা - সন্ধ্যা ৭টা", subject: "রসায়ন", grade: "১০ম" },
+        {
+          time: "সন্ধ্যা ৭টা - রাত ৮টা",
+          subject: "সাধারণ বিজ্ঞান",
+          grade: "১০ম",
+        },
+        { time: "রাত ৮টা - রাত ৯টা", subject: "জীববিজ্ঞান", grade: "৯ম" },
+      ],
+    },
+    {
+      day: "বুধবার",
+      slots: [
+        { time: "বিকাল ৫টা - সন্ধ্যা ৬টা", subject: "অর্থনীতি", grade: "১০ম" },
+        { time: "সন্ধ্যা ৬টা - সন্ধ্যা ৭টা", subject: "অর্থনীতি", grade: "৯ম" },
+        { time: "সন্ধ্যা ৭টা - রাত ৮টা", subject: "সাধারণ গণিত", grade: "৯ম" },
+        { time: "রাত ৮টা - রাত ৯টা", subject: "হিসাববিজ্ঞান", grade: "১০ম" },
+      ],
+    },
+    {
+      day: "বৃহস্পতিবার",
+      slots: [
+        { time: "বিকাল ৫টা - সন্ধ্যা ৬টা", subject: "ভূগোল", grade: "১০ম" },
+        {
+          time: "সন্ধ্যা ৬টা - সন্ধ্যা ৭টা",
+          subject: "সাধারণ বিজ্ঞান",
+          grade: "৯ম",
+        },
+        { time: "সন্ধ্যা ৭টা - রাত ৮টা", subject: "সাধারণ গণিত", grade: "১০ম" },
+      ],
+    },
+    {
+      day: "শুক্রবার",
+      slots: [
+        { time: "সকাল ৮টা - ১১টা", subject: "ইংরেজি", grade: "৯ম/১০ম" },
+        {
+          time: "বিকাল ৪টা - সন্ধ্যা ৬টা",
+          subject: "ব্যবসায় শিক্ষা",
+          grade: "১০ম",
+          note: "Imp Sub",
+        },
+        {
+          time: "সন্ধ্যা ৬টা - সন্ধ্যা ৮টা",
+          subject: "ব্যবসায় শিক্ষা",
+          grade: "৯ম",
+          note: "Imp Sub",
+        },
+        {
+          time: "সন্ধ্যা ৮টা - রাত ৯টা",
+          subject: "বিজ্ঞান",
+          grade: "১০ম",
+          note: "Imp Sub",
+        },
+        {
+          time: "রাত ৯টা - রাত ১০টা",
+          subject: "বিজ্ঞান",
+          grade: "৯ম",
+          note: "Imp Sub",
+        },
+      ],
+    },
+  ];
+
+  // Morning class schedule data from Image 2
+  const morningClasses = [
+    {
+      day: "শনিবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "শুভ" },
+        { time: "৯-১০ AM", subject: "শুভ" },
+        { time: "১০-১১ AM", subject: "শুভ" },
+      ],
+    },
+    {
+      day: "রবিবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "রিয়াজ" },
+        { time: "৯-১০ AM", subject: "রিয়াজ" },
+        { time: "১০-১১ AM", subject: "রিয়াজ" },
+      ],
+    },
+    {
+      day: "সোমবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "নাহিদ" },
+        { time: "৯-১০ AM", subject: "নাহিদ" },
+        { time: "১০-১১ AM", subject: "নাহিদ" },
+      ],
+    },
+    {
+      day: "মঙ্গলবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "ফয়সাল" },
+        { time: "৯-১০ AM", subject: "ফয়সাল" },
+        { time: "১০-১১ AM", subject: "ফয়সাল" },
+      ],
+    },
+    {
+      day: "বুধবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "কেউ নেই", noClass: true },
+        { time: "৯-১০ AM", subject: "কেউ নেই", noClass: true },
+        { time: "১০-১১ AM", subject: "কেউ নেই", noClass: true },
+      ],
+    },
+    {
+      day: "বৃহস্পতিবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "নাহিদ" },
+        { time: "৯-১০ AM", subject: "নাহিদ" },
+        { time: "১০-১১ AM", subject: "নাহিদ" },
+      ],
+    },
+    {
+      day: "শুক্রবার",
+      periods: [
+        { time: "৮-৯ AM", subject: "রিয়াজ" },
+        { time: "৯-১০ AM", subject: "রিয়াজ" },
+        { time: "১০-১১ AM", subject: "রিয়াজ" },
+      ],
+    },
+  ];
+
+  // Fee structure data from the images
+  const feeStructure = {
+    juniorClasses: [
+      { level: "ক্লাস ৬–৭ (সকল বিষয়)", fee: "২,০০০ টাকা" },
+      { level: "ক্লাস ৮ (সকল বিষয়)", fee: "২,২০০ টাকা" },
+    ],
+    ssc: {
+      title: "এসএসসি (৯ম - ১০ম শ্রেণি)",
+      individual: [
+        { subjects: "১ বিষয়", fee: "১,০০০ টাকা" },
+        { subjects: "২ বিষয়", fee: "১,৭০০ টাকা" },
+        { subjects: "৩ বিষয়", fee: "২,০০০ টাকা" },
+      ],
+      fullPackage: [
+        { group: "বিজ্ঞান", fee: "৩,০০০ টাকা" },
+        { group: "বাণিজ্য", fee: "২,৫০০ টাকা" },
+        { group: "মানবিক", fee: "২,৫০০ টাকা" },
+      ],
+    },
+    hsc: {
+      title: "এইচএসসি (১১শ - ১২শ শ্রেণি)",
+      individual: [
+        { subjects: "১ বিষয়", fee: "১,০০০ টাকা" },
+        { subjects: "২ বিষয়", fee: "১,৭০০ টাকা" },
+        { subjects: "৩ বিষয়", fee: "২,০০০ টাকা" },
+      ],
+      fullPackage: [
+        { group: "বিজ্ঞান", fee: "৩,৫০০ টাকা" },
+        { group: "বাণিজ্য", fee: "৩,০০০ টাকা" },
+        { group: "মানবিক", fee: "২,৫০০ টাকা" },
+      ],
+    },
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-cyan-50 to-blue-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
@@ -50,69 +270,187 @@ export default function EducationCenter() {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Schedule Section */}
           {activeTab === "schedule" && (
-            <div className="p-8">
+            <div className="p-6">
               <h2 className="text-3xl font-bold text-center text-cyan-800 mb-8">
                 ব্যাচ সময়সূচী
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-6 mb-10">
                 {/* Morning Batch */}
                 <div className="bg-green-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-green-100">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600 shadow-sm">
                         <span className="text-xl">☀️</span>
                       </div>
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-green-800">
-                          সকাল ব্যাচ
+                          সকাল ব্যাচ (ক্লাস ৬-৮)
                         </h3>
-                        <p className="text-gray-600">প্রতিদিন ক্লাস</p>
+                        <p className="text-gray-600">
+                          সকাল ৮টা - ১১টা ক্লাস (১ ঘণ্টা করে তিনটি ব্যাচ)
+                        </p>
                       </div>
                     </div>
-                    <div className="bg-green-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-green-800 transition-colors">
-                      ৮:০০ AM - ১১:০০ AM
-                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-lg shadow-sm overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <thead className="bg-green-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                            দিন
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                            ৮-৯ AM
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                            ৯-১০ AM
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-green-800">
+                            ১০-১১ AM
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {morningClasses.map((day, index) => (
+                          <tr
+                            key={index}
+                            className={
+                              index % 2 === 0 ? "bg-green-50/30" : "bg-white"
+                            }
+                          >
+                            <td className="px-4 py-3 text-sm font-medium text-gray-800">
+                              {day.day}
+                            </td>
+                            {day.periods.map((period, idx) => (
+                              <td
+                                key={idx}
+                                className={`px-4 py-3 text-sm ${
+                                  period.noClass
+                                    ? "text-red-500"
+                                    : "text-gray-800"
+                                }`}
+                              >
+                                {period.noClass ? (
+                                  <span className="flex items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      className="h-4 w-4 mr-1"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M6 18L18 6M6 6l12 12"
+                                      />
+                                    </svg>
+                                    {period.subject}
+                                  </span>
+                                ) : (
+                                  period.subject
+                                )}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
 
-                {/* Afternoon Batch */}
-                <div className="bg-cyan-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-cyan-100">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="flex items-center">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-600 shadow-sm">
-                        <span className="text-xl">🕓</span>
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-xl font-semibold text-cyan-800">
-                          বিকাল ব্যাচ
-                        </h3>
-                        <p className="text-gray-600">প্রতিদিন ক্লাস</p>
-                      </div>
-                    </div>
-                    <div className="bg-cyan-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-cyan-800 transition-colors">
-                      ৪:০০ PM - ৭:০০ PM
-                    </div>
-                  </div>
-                </div>
-
-                {/* Evening Batch */}
+                {/* Afternoon/Evening Batch */}
                 <div className="bg-blue-50 rounded-xl p-6 transition-all hover:shadow-md duration-300 border border-blue-100">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center">
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 shadow-sm">
                         <span className="text-xl">🌙</span>
                       </div>
                       <div className="ml-4">
                         <h3 className="text-xl font-semibold text-blue-800">
-                          সান্ধ্যকালীন ব্যাচ
+                          বিকাল ও সন্ধ্যা ব্যাচ (ক্লাস ৯-১০)
                         </h3>
-                        <p className="text-gray-600">প্রতিদিন ক্লাস</p>
+                        <p className="text-gray-600">
+                          বিষয়ভিত্তিক ক্লাস সময়সূচী
+                        </p>
                       </div>
                     </div>
-                    <div className="bg-blue-700 text-white py-2 px-6 rounded-full font-medium shadow-sm hover:bg-blue-800 transition-colors">
-                      ৭:৩০ PM - ০৯:৩০ PM
-                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-lg shadow-sm overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <thead className="bg-blue-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-800">
+                            বার/সময়
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-800">
+                            বিকাল ৪টা - বিকাল ৫টা
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-800">
+                            বিকাল ৫টা - সন্ধ্যা ৬টা
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-800">
+                            সন্ধ্যা ৬টা - সন্ধ্যা ৭টা
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-800">
+                            সন্ধ্যা ৭টা - রাত ৮টা
+                          </th>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-blue-800">
+                            রাত ৮টা - রাত ৯টা
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {weeklySchedule.map((day, index) => (
+                          <tr
+                            key={index}
+                            className={
+                              index % 2 === 0 ? "bg-blue-50/30" : "bg-white"
+                            }
+                          >
+                            <td className="px-4 py-3 text-sm font-medium text-gray-800">
+                              {day.day}
+                            </td>
+                            {day.slots.map((slot, idx) => (
+                              <td key={idx} className="px-4 py-3 text-sm">
+                                {slot.subject ? (
+                                  <span
+                                    className={`inline-block text-sm ${
+                                      slot.subject === "রিয়াজ"
+                                        ? "text-blue-600"
+                                        : slot.subject === "শুভ"
+                                        ? "text-orange-600"
+                                        : slot.subject === "নাহিদ"
+                                        ? "text-blue-800"
+                                        : slot.subject === "ফয়সাল"
+                                        ? "text-fuchsia-600"
+                                        : "text-gray-800"
+                                    }`}
+                                  >
+                                    {slot.subject}
+                                    <span className="text-xs ml-1 text-gray-500">
+                                      ({slot.grade})
+                                    </span>
+                                    {slot.note && (
+                                      <span className="text-xs ml-1 text-green-600">
+                                        {" "}
+                                        {slot.note}
+                                      </span>
+                                    )}
+                                  </span>
+                                ) : (
+                                  <span className="text-gray-400">-</span>
+                                )}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
@@ -130,90 +468,136 @@ export default function EducationCenter() {
                 কোর্স ফি
               </h2>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="bg-cyan-700 text-white p-4">
-                    <h3 className="text-xl font-semibold text-center">
-                      ৬ষ্ঠ - ৮ম শ্রেনি
-                    </h3>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700">সকল বিষয়</span>
-                      <span className="font-bold text-cyan-800">
-                        ২,৫০০ টাকা/মাস
-                      </span>
+              {/* Junior Classes */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-cyan-800 mb-4 border-b pb-2">
+                  জুনিয়র ক্লাস
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {feeStructure.juniorClasses.map((item, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                    >
+                      <div className="p-6">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-gray-700">{item.level}</span>
+                          <span className="font-bold text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* SSC Classes */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-cyan-800 mb-4 border-b pb-2">
+                  {feeStructure.ssc.title}
+                </h3>
+
+                <div className="mb-6">
+                  <h4 className="font-medium text-cyan-700 mb-3">
+                    বিষয়ভিত্তিক ফি
+                  </h4>
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden shadow-sm p-6">
+                    <div className="space-y-3">
+                      {feeStructure.ssc.individual.map((item, index) => (
+                        <div
+                          key={index}
+                          className={`flex justify-between items-center ${
+                            index !== feeStructure.ssc.individual.length - 1
+                              ? "border-b pb-2"
+                              : ""
+                          }`}
+                        >
+                          <span className="text-gray-700">{item.subjects}</span>
+                          <span className="font-bold text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="bg-blue-700 text-white p-4">
-                    <h3 className="text-xl font-semibold text-center">
-                      ৯ম - ১০ম শ্রেনি
-                    </h3>
+                <div>
+                  <h4 className="font-medium text-cyan-700 mb-3">
+                    পূর্ণাঙ্গ প্যাকেজ
+                  </h4>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {feeStructure.ssc.fullPackage.map((item, index) => (
+                      <div
+                        key={index}
+                        className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="bg-cyan-700 text-white p-3 text-center">
+                          <h3 className="font-semibold">{item.group}</h3>
+                        </div>
+                        <div className="p-4 text-center">
+                          <span className="font-bold text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="p-6 space-y-3">
-                    <div className="flex justify-between items-center border-b pb-2">
-                      <span className="text-gray-700">এক বিষয়</span>
-                      <span className="font-bold text-cyan-800">
-                        ১,০০০ টাকা/মাস
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center border-b pb-2">
-                      <span className="text-gray-700">দুই বিষয়</span>
-                      <span className="font-bold text-cyan-800">
-                        ১,৮০০ টাকা/মাস
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-700">তিন বিষয়</span>
-                      <span className="font-bold text-cyan-800">
-                        ২,২০০ টাকা/মাস
-                      </span>
+                </div>
+              </div>
+
+              {/* HSC Classes */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-cyan-800 mb-4 border-b pb-2">
+                  {feeStructure.hsc.title}
+                </h3>
+
+                <div className="mb-6">
+                  <h4 className="font-medium text-cyan-700 mb-3">
+                    বিষয়ভিত্তিক ফি
+                  </h4>
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden shadow-sm p-6">
+                    <div className="space-y-3">
+                      {feeStructure.hsc.individual.map((item, index) => (
+                        <div
+                          key={index}
+                          className={`flex justify-between items-center ${
+                            index !== feeStructure.hsc.individual.length - 1
+                              ? "border-b pb-2"
+                              : ""
+                          }`}
+                        >
+                          <span className="text-gray-700">{item.subjects}</span>
+                          <span className="font-bold text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="bg-cyan-700 text-white p-4">
-                    <h3 className="text-xl font-semibold text-center">
-                      বিজ্ঞান বিভাগ
-                    </h3>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700">
-                        সব বিষয় প্যাকেজ (৯ম-১০ম)
-                      </span>
-                      <span className="font-bold text-cyan-800">
-                        ৩,৫০০ টাকা/মাস
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="bg-blue-700 text-white p-4">
-                    <h3 className="text-xl font-semibold text-center">
-                      ব্যবসায় বিভাগ
-                    </h3>
-                  </div>
-                  <div className="p-6 space-y-3">
-                    <div className="flex justify-between items-center border-b pb-2">
-                      <span className="text-gray-700">
-                        সব বিষয় প্যাকেজ (৯ম-১০ম)
-                      </span>
-                      <span className="font-bold text-cyan-800">
-                        ৩,০০০ টাকা/মাস
-                      </span>
-                    </div>
-                    {/* <div className="flex justify-between items-center">
-                      <span className="text-gray-700">সব বিষয় (১১শ-১২শ)</span>
-                      <span className="font-bold text-cyan-800">
-                        ৫,০০০ টাকা/মাস
-                      </span>
-                    </div> */}
+                <div>
+                  <h4 className="font-medium text-cyan-700 mb-3">
+                    পূর্ণাঙ্গ প্যাকেজ
+                  </h4>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {feeStructure.hsc.fullPackage.map((item, index) => (
+                      <div
+                        key={index}
+                        className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="bg-cyan-700 text-white p-3 text-center">
+                          <h3 className="font-semibold">{item.group}</h3>
+                        </div>
+                        <div className="p-4 text-center">
+                          <span className="font-bold text-cyan-800">
+                            {item.fee}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -247,17 +631,28 @@ export default function EducationCenter() {
           )}
 
           {/* Contact Section */}
-          <div className="bg-gradient-to-r from-cyan-700 to-blue-700 p-8 text-white text-center rounded-xl shadow-md">
-            <h3 className="text-2xl font-bold mb-2">আজই ভর্তি হোন</h3>
-            <p className="text-lg mb-6">
-              আপনার শিক্ষা যাত্রায় আমরা সাহায্য করতে প্রস্তুত
-            </p>
-            <Link
-              href="/contact-us"
-              className="inline-block bg-white text-cyan-700 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-cyan-100 transition-colors duration-300"
-            >
-              যোগাযোগ করুন
-            </Link>
+          <div className="bg-gradient-to-r from-cyan-700 to-blue-700 text-white p-6 rounded-b-2xl">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold">যোগাযোগ করুন</h3>
+                <p className="text-sm">
+                  আমাদের সাথে যোগাযোগ করতে নিচের লিঙ্কে ক্লিক করুন
+                </p>
+              </div>
+              <Link
+                href="/contact-us"
+                className="bg-white text-cyan-700 px-4 py-2 rounded-md shadow-md hover:bg-gray-100 transition duration-200"
+              >
+                যোগাযোগ
+              </Link>
+            </div>
+            <div className="">
+              <p className="mt-4 text-sm">
+                আমাদের সাথে যোগাযোগ করতে পারেন: <br />
+                ফোন: +8801234567890 <br />
+                ইমেইল: info.diganta.coachingcenter@gmail.com
+              </p>
+            </div>
           </div>
         </div>
       </div>
