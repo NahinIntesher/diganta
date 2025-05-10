@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaBookOpen,
@@ -146,17 +146,13 @@ export default function OurServices() {
           আমাদের অভিজ্ঞ শিক্ষকমণ্ডলী আপনার সাফল্যের যাত্রায় সঙ্গী হতে প্রস্তুত।
           আজই যোগাযোগ করুন এবং আপনার লক্ষ্য অর্জনের পথে এগিয়ে যান।
         </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
+        <Link
           className="bg-white text-cyan-700 px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300 inline-flex items-center"
-          onClick={() => {
-            window.location.href = "/contact-us";
-          }}
+          href="/contact-us"
         >
           যোগাযোগ করুন
           <FaArrowRight className="ml-2" />
-        </motion.button>
+        </Link>
       </motion.div>
     </section>
   );

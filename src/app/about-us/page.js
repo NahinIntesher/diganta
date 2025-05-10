@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import {
   FaUsers,
   FaBullseye,
@@ -504,14 +505,13 @@ export default function AboutUs() {
             সহযোগিতা দিতে প্রস্তুত। আমাদের সাথে যোগাযোগ করে আপনার শিক্ষার্থীর
             জন্য সঠিক পরিকল্পনা করুন।
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => (window.location.href = "/contact-us")}
-            className="px-8 py-4 bg-white text-cyan-600 font-bold rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+          <Link
+            className="bg-white text-cyan-700 px-8 py-4 rounded-full font-bold hover:shadow-lg transition-all duration-300 inline-flex items-center"
+            href="/contact-us"
           >
             যোগাযোগ করুন
-          </motion.button>
+            <FaArrowRight className="ml-2" />
+          </Link>
         </div>
       </motion.div>
     </div>
