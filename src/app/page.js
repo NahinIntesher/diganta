@@ -162,7 +162,7 @@ export default function Home() {
       {/* Hero Section with Parallax Effect */}
       <motion.section
         style={{ scale, opacity }}
-        className="relative bg-gradient-to-br from-teal-900 to-teal-800 h-screen flex items-center justify-center text-center px-4 sm:px-6"
+        className="relative bg-gradient-to-br from-cyan-900 to-cyan-800 h-screen flex items-center justify-center text-center px-4 sm:px-6"
       >
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
