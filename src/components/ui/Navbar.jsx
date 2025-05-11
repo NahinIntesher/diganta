@@ -183,7 +183,11 @@ export default function Navbar() {
 
       {/* Fixed Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-[72px] left-0 right-0 bg-white text-cyan-900 shadow-lg z-40">
+        <div
+          className={`md:hidden fixed left-0 right-0 bg-white text-cyan-900 shadow-lg z-40 ${
+            scrolled ? "top-[68px]" : "top-[72px]"
+          }`}
+        >
           <div className="container mx-auto px-4 py-3">
             <ul className="flex flex-col space-y-1 mb-4">
               {navItems.map((item) => (
