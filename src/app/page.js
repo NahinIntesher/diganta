@@ -191,9 +191,10 @@ export default function Home() {
               delay: 1.2,
               ease: "easeInOut",
             }}
-            className="text-xl sm:text-sm md:text-3xl font-bold text-cyan-200 mb-6 sm:mb-8"
+            className="text-xl sm:text-sm md:text-3xl  text-cyan-200 mb-6 sm:mb-8"
           >
-            দিগন্ত পেরিয়ে সম্ভাবনার পথে
+            নতুন প্রজন্মের জন্য আধুনিক ও ফলপ্রসূ শিক্ষা নিশ্চিত করতেই আমাদের
+            যাত্রা
           </motion.p>
 
           <motion.div
@@ -291,7 +292,7 @@ export default function Home() {
                   নিয়মিত মূল্যায়ন
                 </h3>
                 <p className="text-gray-600">
-                  দুর্বলতা খুঁজে বের করে নির্দিষ্ট সমাধান প্রদান
+                  প্রত্যেক শিক্ষার্থীর দুর্বলতা খুঁজে বের করে নির্দিষ্ট সমাধান প্রদান করা হয়
                 </p>
               </div>
             </FloatingCard>
@@ -310,8 +311,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "৬ষ্ঠ - ৮ম", icon: FaUniversity },
-              { title: "৯ম - ১০ম", icon: FaBook },
+              { title: "৬ষ্ঠ - ৮ম শ্রেণি", icon: FaUniversity },
+              { title: "৯ম - ১০ম শ্রেণি", icon: FaBook },
               { title: "এসএসসি প্রস্তুতি", icon: FaGraduationCap },
               { title: "বিশেষ কেয়ার ব্যাচ", icon: MessageSquare },
             ].map((course, index) => (

@@ -6,27 +6,28 @@ export default function NotFoundPage({ activeTab }) {
     <div>
       {activeTab === "schedule" && (
         <motion.div
-          className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white via-blue-50 to-blue-100 text-center px-4"
+          className="min-h-screen flex flex-col items-center justify-center bg-white  text-center px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          <>
-            <h1 className="text-6xl sm:text-7xl font-bold text-blue-800 mb-4">
-              404
-            </h1>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-2">
-              খুঁজে পাওয়া যায়নি
-            </h2>
-            <p className="text-gray-600 mb-6 text-sm sm:text-base">
-              আপনি যে বিষয়টি খুঁজছেন তা হয় অস্তিত্ব নেই অথবা সরিয়ে ফেলা
-              হয়েছে।
-            </p>
-            <Link href="/our-courses">
-              <div className="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white transition text-sm sm:text-base shadow">
+          <div className="flex flex-1 items-center justify-center">
+            <div className="mx-auto max-w-xl px-4 py-8 text-center">
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                404 - Page Not Found
+              </h1>
+              <p className="mt-4 text-gray-500">
+                যে পৃষ্ঠাটি আপনি খুঁজছেন তা পাওয়া যায়নি। এটি সরানো হয়েছে, নাম
+                পরিবর্তন করা হয়েছে, অথবা অস্থায়ীভাবে অপ্রাপ্য।
+              </p>
+
+              <Link
+                href="/"
+                className="mt-6 inline-block rounded-xl bg-cyan-600 px-5 py-3 text-sm font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring"
+              >
                 হোম পৃষ্ঠায় ফিরে যান
-              </div>
-            </Link>
-          </>
+              </Link>
+            </div>
+          </div>
         </motion.div>
       )}
     </div>

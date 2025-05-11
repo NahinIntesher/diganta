@@ -76,7 +76,7 @@ export default function EducationCenter() {
           <FeeSection activeTab={activeTab} />
 
           {/* Contact Section */}
-          <div className="bg-gradient-to-r from-cyan-700 to-blue-700 text-white p-4 sm:p-6 rounded-b-xl md:rounded-b-2xl">
+          <div className="bg-gradient-to-b from-cyan-700 to-blue-700 text-white p-4 sm:p-6 rounded-b-xl md:rounded-b-2xl">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
               <div>
                 <h3 className="text-base sm:text-lg font-semibold">

@@ -69,7 +69,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="py-28 px-6 md:px-10 lg:px-20 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+    <div className="py-28 px-6 md:px-10 lg:px-20 bg-gradient-to-b from-white  to-cyan-50 overflow-hidden">
       {/* Header Section with decorative elements */}
       <motion.div
         className="text-center mb-24 relative"

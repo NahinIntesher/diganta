@@ -49,7 +49,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <div className="py-20 px-6 md:px-8 lg:px-16 bg-gradient-to-b from-cyan-50 via-white to-cyan-50 min-h-screen">
+    <div className="py-20 px-6 md:px-8 lg:px-16 bg-gradient-to-b from-white  to-cyan-50 min-h-screen">
       {/* Header Section */}
       <motion.div
         className="text-center mb-20 mt-10 max-w-4xl mx-auto relative px-2"
@@ -131,11 +131,11 @@ export default function ContactUs() {
             }}
           >
             <div className="h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-cyan-50 opacity-60 group-hover:opacity-80 transition-opacity"></div>
-              <div className="relative z-10 text-center text-cyan-800 p-4">
+              <div className="absolute inset-0 bg-teal-50 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+              <div className="relative z-10 text-center text-teal-800 p-4">
                 <MapPin
                   size={32}
-                  className="mx-auto mb-3 text-cyan-600 group-hover:text-cyan-700 transition-colors"
+                  className="mx-auto mb-3 text-teal-600 group-hover:text-teal-700 transition-colors"
                 />
                 <p className="font-medium mb-2">
                   মদিনা চত্বর জামে মসজিদ সংলগ্ন,
@@ -143,7 +143,7 @@ export default function ContactUs() {
                 <p className="font-medium mb-2">
                   মুসলিম নগর, মাতুয়াইল, ডেমরা, ঢাকা - ১৩৬২
                 </p>
-                <div className="inline-block mt-4 px-4 py-2 bg-cyan-600 text-white rounded-full transform group-hover:scale-105 transition-transform">
+                <div className="inline-block mt-4 px-4 py-2 bg-teal-600 text-white rounded-full transform group-hover:scale-105 transition-transform">
                   <p className="text-sm font-medium">ম্যাপ দেখতে ক্লিক করুন</p>
                 </div>
               </div>

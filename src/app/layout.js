@@ -13,13 +13,19 @@ export const metadata = {
   title: "Digonto Coaching Center",
   description:
     "Digonto Coaching Center provides top-quality coaching for various competitive exams and academic subjects.",
+  icons: {
+    icon: {
+      url: "/images/digantaLogo.svg",
+      type: "image/svg+xml",
+    },
+    shortcut: { url: "/images/digantaLogo.svg", type: "image/svg+xml" },
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/images/DigantaLogo.svg" type="image/svg+xml" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#e7fff6" />
       </head>

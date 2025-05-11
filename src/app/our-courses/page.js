@@ -37,7 +37,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="py-16 px-6 md:px-20 bg-cyan-50">
+    <div className="py-16 px-6 md:px-20 bg-gradient-to-b from-white to-cyan-50">
       {/* Courses Section */}
       <section className="py-12">
         <div className="max-w-6xl mx-auto">
