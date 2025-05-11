@@ -135,7 +135,7 @@ export default function AboutUs() {
       </section>
 
       {/* Teachers Section */}
-      <section id="second-section" className="py-16 mt-20 bg-cyan-50">
+      <section id="teachers" className="py-16 mt-20 bg-cyan-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             className="text-center mb-24 relative"

@@ -197,7 +197,7 @@ export default function HomePageSectionBottom() {
                 লক্ষ্য।
               </p>
               <Link
-                href="/our-courses"
+                href="/our-courses#teachers"
                 className="bg-white text-cyan-700 font-semibold py-3 px-8 rounded-lg text-lg inline-block hover:bg-cyan-100 transition-colors"
               >
                 সবাইকে দেখুন
