@@ -10,7 +10,7 @@ export default function EducationCenter() {
   const [activeTab, setActiveTab] = useState("schedule");
 
   return (
-    <div className="min-h-screen py-6 md:py-12 px-2 sm:px-4">
+    <div className="min-h-screen mt-20 py-6 md:py-12 px-2 sm:px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
