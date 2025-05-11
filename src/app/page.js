@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useScroll, useTransform } from "framer-motion";
-import bgImgage from "../../public/images/bg.png";
+import bgImgage from "../../public/images/bg.jpg";
 import FreeClassPopup from "@/components/ui/FreeClassPopup";
 import {
   FaWhatsapp,
