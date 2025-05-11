@@ -165,15 +165,7 @@ export default function Navbar() {
             rounded-full font-medium text-sm shadow-sm hover:shadow-md transition-all duration-300 
             hover:translate-y-[-2px] active:translate-y-[0px]"
           >
-            লগইন
-          </Link>
-          <Link
-            href="/login"
-            className="ml-4 px-5 py-1.5 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white 
-            rounded-full font-medium text-sm shadow-sm hover:shadow-md transition-all duration-300 
-            hover:translate-y-[-2px] active:translate-y-[0px]"
-          >
-            রেজিস্টার
+            লগ ইন
           </Link>
         </div>
 
@@ -224,14 +216,6 @@ export default function Navbar() {
                 transition-all duration-200"
               >
                 লগ ইন
-              </Link>
-              <Link
-                href="/signup"
-                className="flex-1 text-center px-4 py-2.5 bg-gray-100 text-gray-800 
-                rounded-lg font-medium text-sm hover:bg-gray-200 
-                transition-all duration-200"
-              >
-                রেজিস্টার
               </Link>
             </div>
           </div>
