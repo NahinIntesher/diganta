@@ -347,7 +347,7 @@ export default function HomePageSectionBottom() {
 
                   <div className="flex flex-wrap gap-4 justify-center mt-4">
                     <Link
-                      href="https://wa.me/8801861575024?text=হ্যালো!%20আমি%20আপনাদের%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
+                      href="https://wa.me/8801815808291?text=হ্যালো!%20আমি%20আপনাদের%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="WhatsApp এ চ্যাট করুন"
