@@ -1,122 +1,40 @@
 "use client";
 import React from "react";
-import {
-  FaUsers,
-  FaBullseye,
-  FaBook,
-  FaChalkboardTeacher,
-  FaGraduationCap,
-  FaFlask,
-  FaCalculator,
-  FaGlobeAmericas,
-  FaLaptopCode,
-} from "react-icons/fa";
 import { motion } from "framer-motion";
 import EducationCenter from "@/components/ui/EducationCenter";
+import { Teachers } from "@/components/Teachers";
+import { courses } from "@/components/Courses";
 
 export default function AboutUs() {
-  const courses = [
-    {
-      title: "৬ষ্ঠ শ্রেণি থেকে অষ্টম শ্রেণি",
-      icon: <FaUsers className="text-4xl text-cyan-600" />,
-      description: "মাধ্যমিক স্তরের জন্য কোর্স",
-      subjects: ["বাংলা", "ইংরেজি", "গণিত", "বিজ্ঞান", "অন্যান্য সকল বিষয়"],
-      features: [
-        "ছাত্র-শিক্ষক অনুপাত ১:১০",
-        "বেসিক ক্লিয়ারেন্স ক্লাস",
-        "অতিরিক্ত প্র্যাকটিস সেশন",
-      ],
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
-    {
-      title: "এসএসসি প্রস্তুতি",
-      icon: <FaGraduationCap className="text-4xl text-cyan-600" />,
-      description: "ক্লাস ৯-১০ এর জন্য সম্পূর্ণ কোর্স",
-      subjects: [
-        "পদার্থবিজ্ঞান",
-        "রসায়ন",
-        "জীববিজ্ঞান",
-        "উচ্চতর গণিত",
-        "সাধারন গণিত",
-        "হিসাববিজ্ঞান",
-        "ফিন্যান্স ও ব্যাংকিং",
-        "ব্যবসায় শিক্ষা",
-        "সাধারন বিজ্ঞান",
-        "অর্থনীতি",
-        "পৌরনীতি ও নাগরিকত্ব",
-        "ভূগোল",
-        "ইংরেজি",
-      ],
-      features: [
-        "সাপ্তাহিক মডেল টেস্ট",
-        "বিষয়ভিত্তিক বিশেষ ক্লাস",
-        "গাইড লাইন বই সহ",
-      ],
+  };
+
+  const highlightAnim = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4, ease: "easeOut" },
     },
-    {
-      title: "এইচএসসি প্রস্তুতি",
-      icon: <FaBook className="text-4xl text-cyan-600" />,
-      description: "ক্লাস ১১-১২ এর জন্য বিশেষায়িত কোর্স",
-      subjects: [
-        "পদার্থবিজ্ঞান",
-        "রসায়ন",
-        "জীববিজ্ঞান",
-        "উচ্চতর গণিত",
-        "সাধারন গণিত",
-        "হিসাববিজ্ঞান",
-        "ফিন্যান্স ও ব্যাংকিং",
-        "ব্যবসায় শিক্ষা",
-        "সাধারন বিজ্ঞান",
-        "অর্থনীতি",
-        "ভূগোল",
-        "পৌরনীতি ও নাগরিকত্ব",
-        "ইংরেজি",
-      ],
-      features: [
-        "বোর্ড পরীক্ষার সিলেবাস অনুসরণ",
-        "প্র্যাকটিক্যাল ল্যাব সুবিধা",
-        "নিয়মিত অ্যাসাইনমেন্ট",
-      ],
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
     },
-    {
-      title: "মেডিকেল ভর্তি প্রস্তুতি (upcoming)",
-      icon: <FaFlask className="text-4xl text-cyan-600" />,
-      description: "মেডিকেল কলেজ ভর্তি পরীক্ষার জন্য কোর্স",
-      subjects: [
-        "পদার্থবিজ্ঞান",
-        "রসায়ন",
-        "জীববিজ্ঞান",
-        "ইংরেজি",
-        "সাধারণ জ্ঞান",
-      ],
-      features: [
-        "এমসিকিউ সলভিং টেকনিক",
-        "নিয়মিত মডেল টেস্ট",
-        "স্পেশাল মক টেস্ট সিরিজ",
-      ],
-    },
-    {
-      title: "বিশ্ববিদ্যালয় ভর্তি প্রস্তুতি (upcoming)",
-      icon: <FaGlobeAmericas className="text-4xl text-cyan-600" />,
-      description: "বিভিন্ন বিশ্ববিদ্যালয়ের ভর্তি পরীক্ষার কোর্স",
-      subjects: ["গণিত", "ইংরেজি", "সাধারণ জ্ঞান", "বাংলা", "মানসিক দক্ষতা"],
-      features: [
-        "বিশ্ববিদ্যালয় ভিত্তিক প্রস্তুতি",
-        "পূর্ববর্তী বছরের প্রশ্ন ব্যাংক",
-        "টাইম ম্যানেজমেন্ট ট্রেনিং",
-      ],
-    },
-    {
-      title: "ইঞ্জিনিয়ারিং প্রস্তুতি (upcoming)",
-      icon: <FaLaptopCode className="text-4xl text-cyan-600" />,
-      description: "বুয়েট ও প্রাইভেট বিশ্ববিদ্যালয় ভর্তি কোর্স",
-      subjects: ["পদার্থবিজ্ঞান", "রসায়ন", "গণিত", "ইংরেজি"],
-      features: [
-        "বুয়েট প্যাটার্ন অনুসরণ",
-        "স্পেশাল প্রোবলেম সলভিং ক্লাস",
-        "ফিজিক্স ও ম্যাথ ওয়ার্কশপ",
-      ],
-    },
-  ];
+  };
 
   return (
     <div className="py-16 px-6 md:px-20 bg-cyan-50">
@@ -128,6 +46,7 @@ export default function AboutUs() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
           >
             {/* Decorative elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-24 h-1 bg-amber-500 rounded-full opacity-70"></div>
@@ -135,7 +54,10 @@ export default function AboutUs() {
             <div className="absolute -top-20 right-1/3 w-5 h-5 bg-cyan-500 rounded-full opacity-20"></div>
 
             {/* Highlight Text (optional heading or badge) */}
-            <motion.span className="inline-block text-sm uppercase tracking-wider text-amber-500 font-bold mb-4">
+            <motion.span
+              variants={highlightAnim}
+              className="inline-block text-sm uppercase tracking-wider text-amber-500 font-bold mb-4"
+            >
               কোর্স তালিকা
             </motion.span>
 
@@ -180,7 +102,7 @@ export default function AboutUs() {
 
                   <div className="mb-4">
                     <h4 className="font-semibold text-gray-700 mb-2">
-                      বিষয়সমূহ:
+                      বিষয়সমূহ:
                     </h4>
                     <ul className="grid grid-cols-2 gap-2">
                       {course.subjects.map((subject, i) => (
@@ -251,64 +173,7 @@ export default function AboutUs() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "মোঃ হাসিবুল ইসলাম (শান্ত)",
-                subject: "মার্কেটিং বিভাগ, ব্যবসায় শিক্ষা অনুষদ",
-                qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/shanto.jpg",
-                bio: "৬ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "এফরান হোসেন রিয়াজ",
-                subject: "ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স ইঞ্জিনিয়ারিং (EEE)",
-                qualification: "ইউনিভার্সিটি অফ স্কলার্স",
-                image: "/images/riaz.jpg",
-                bio: "৬ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "ফয়সাল আহমেদ",
-                subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং (CSE)",
-                qualification: "ইস্ট ওয়েস্ট ইউনিভার্সিটি",
-                image: "/images/faisal.jpg",
-                bio: "৫ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "সাজেদুল হক শুভ",
-                subject: "একাউন্টিং বিভাগ, ব্যবসায় শিক্ষা অনুষদ",
-                qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/shuvo.jpg",
-                bio: "২ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "সাদাত হোসেন রানা",
-                subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
-                qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/teacherx.jpg",
-                bio: "৩ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "নাহিন ইনতিশার",
-                subject: "কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং (CSE)",
-                qualification: "ইউনাইটেড ইন্টারন্যাশনাল ইউনিভার্সিটি",
-                image: "/images/nahin.jpg",
-                bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "সাবরিনা আকতার রিমি",
-                subject: "ভাষাবিজ্ঞান বিভাগ, কলা অনুষদ",
-                qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/teachery.jpg",
-                bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-              {
-                name: "আয়েশা খাতুন",
-                subject: "পালি এন্ড বুদ্ধিস্ট স্টাডিজ, কলা অনুষদ",
-                qualification: "ঢাকা বিশ্ববিদ্যালয়",
-                image: "/images/teachery.jpg",
-                bio: "১ বছর শিক্ষকতার অভিজ্ঞতা",
-              },
-            ].map((teacher, index) => (
+            {Teachers.map((teacher, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -344,30 +209,3 @@ export default function AboutUs() {
     </div>
   );
 }
-export const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-export const highlightAnim = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
-export const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
-    },
-  },
-};
