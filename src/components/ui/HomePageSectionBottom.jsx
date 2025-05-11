@@ -13,6 +13,7 @@ import { Star, MessageSquare } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import Link from "next/link";
+import FreeClassAnnouncement from "./FreeClassAnnouncement";
 
 export default function HomePageSectionBottom() {
   const FadeIn = ({ children, delay = 0 }) => {
@@ -110,79 +111,12 @@ export default function HomePageSectionBottom() {
             </p>
           </FadeIn>
 
+          {/* Free Class Announcement */}
           <FadeIn delay={0.3}>
-            <div className="bg-white p-6 rounded-xl shadow-lg mb-12 text-center">
-              <p className="text-cyan-600 font-semibold mb-2">বিশেষ ঘোষণা</p>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                নিয়মিত ফ্রি ক্লাস!
-              </h3>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                এর বাইরেও কিছু সময় পর পরই আমাদের বিশেষ ফ্রি ক্লাস থাকতে পারে।
-                আপডেট পেতে আমাদের সাথে যোগাযোগে থাকুন অথবা সোশ্যাল মিডিয়ায় ফলো
-                করুন।
-              </p>
-            </div>
+            <FreeClassAnnouncement month="মে" />
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                grade: "৬ষ্ঠ - ৮ম শ্রেণী",
-                date: "২৪ মে - ২৫ মে",
-                icon: FaChalkboardTeacher,
-              },
-              {
-                grade: "৯ম - ১০ম শ্রেণী",
-                date: "২৬ মে - ২৮ মে",
-                icon: FaGraduationCap,
-              },
-              {
-                grade: "একাদশ - দ্বাদশ শ্রেণী",
-                date: "২৯ মে - ৩১ মে",
-                icon: FaUniversity,
-              },
-            ].map((schedule, index) => (
-              <FloatingCard key={index} delay={index * 0.2}>
-                <div className="bg-cyan-50 p-8 rounded-xl shadow-md border border-cyan-100 text-center">
-                  <div className="flex justify-center mb-4">
-                    <motion.div
-                      className="bg-cyan-600 p-4 rounded-full text-white"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 1 }}
-                    >
-                      <schedule.icon className="text-2xl" />
-                    </motion.div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    {schedule.grade}
-                  </h3>
-                  <div className="flex items-center justify-center text-cyan-600 mb-4">
-                    <FaRegClock className="mr-2" />
-                    <span className="font-semibold">{schedule.date}</span>
-                  </div>
-                  <motion.a
-                    href="/contact-us"
-                    className="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    যোগাযোগ করুন
-                  </motion.a>
-                </div>
-              </FloatingCard>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <motion.a
-              href="/contact-us"
-              className="bg-cyan-600 text-white font-semibold py-3 px-8 rounded-lg text-lg inline-block hover:bg-cyan-700 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              ফ্রি ক্লাসে যোগ দিন
-            </motion.a>
-          </div>
+          
         </div>
       </section>
 
@@ -243,7 +177,7 @@ export default function HomePageSectionBottom() {
                     {teacher.university}
                   </p>
                   <div className="flex justify-center items-center mb-4">
-                    <span className="bg-amber-600 text-white text-sm px-3 py-1 rounded-full">
+                    <span className="bg-amber-500 text-white text-sm px-3 py-1 rounded-full">
                       {teacher.experience}
                     </span>
                   </div>
@@ -278,7 +212,7 @@ export default function HomePageSectionBottom() {
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
-              আমাদের <span className="text-cyan-600">সুবিধাসমূহ</span>
+              আমাদের <span className="text-amber-500">সুবিধাসমূহ</span>
             </h2>
           </FadeIn>
 
@@ -380,16 +314,16 @@ export default function HomePageSectionBottom() {
                     <FaPhone className="text-cyan-300 text-xl mt-1 mr-4 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-lg">ফোন</h3>
-                      <p className="text-cyan-100">০১৮৬১৫৭৫০২৪</p>
+                      <p className="text-cyan-100">০১৮৬১৫৭৫০২৪, ০১৮১৫৮০৮২৯১</p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
                     <FaRegClock className="text-cyan-300 text-xl mt-1 mr-4 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-lg">অফিস টাইম</h3>
+                      <h3 className="font-semibold text-lg">কোচিং টাইম</h3>
                       <p className="text-cyan-100">
-                        সকাল ৯টা - রাত ৮টা (সপ্তাহে ৭ দিন)
+                        বিকাল ৪টা - রাত ৯টা (সপ্তাহে ৭ দিন)
                       </p>
                     </div>
                   </div>
@@ -400,8 +334,8 @@ export default function HomePageSectionBottom() {
             <div className="transform transition-all duration-700 translate-x-0">
               <div className="bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50 p-6 rounded-3xl shadow-xl border border-cyan-200 max-w-xl mx-auto relative overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-1 bg-blue-400"></div>
-                <div className="absolute -top-12 -right-12 w-24 h-24 rounded-full bg-cyan-100 opacity-50"></div>
-                <div className="absolute -bottom-12 -left-12 w-24 h-24 rounded-full bg-blue-100 opacity-50"></div>
+                <div className="absolute -bottom-12 -right-12 w-24 h-24 rounded-full bg-cyan-200 opacity-50"></div>
+                <div className="absolute -bottom-12 -left-12 w-24 h-24 rounded-full bg-cyan-200 opacity-50"></div>
 
                 <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-5 border border-blue-100 relative z-10">
                   <h3 className="text-2xl font-semibold text-gray-800 text-center mb-4">
@@ -412,15 +346,27 @@ export default function HomePageSectionBottom() {
                   </h3>
 
                   <div className="flex flex-wrap gap-4 justify-center mt-4">
-                    <button className="bg-green-50 hover:bg-green-100 text-green-700 px-5 py-3 rounded-xl flex items-center gap-2 transition-all hover:shadow-md border border-green-200">
+                    <Link
+                      href="https://wa.me/8801861575024?text=হ্যালো!%20আমি%20আপনাদের%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="WhatsApp এ চ্যাট করুন"
+                      className="bg-green-50 hover:bg-green-100 text-green-700 px-5 py-3 rounded-xl flex items-center gap-2 transition-all hover:shadow-md border border-green-200"
+                    >
                       <FaWhatsapp className="text-2xl" />
                       <span className="font-bold">WhatsApp এ মেসেজ দিন</span>
-                    </button>
+                    </Link>
 
-                    <button className="bg-amber-50 hover:bg-amber-100 text-amber-700 px-5 py-3 rounded-xl flex items-center gap-2 transition-all hover:shadow-md border border-amber-200">
+                    <Link
+                      href="tel:+8801861575024"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="কল করুন"
+                      className="bg-amber-50 hover:bg-amber-100 text-amber-700 px-5 py-3 rounded-xl flex items-center gap-2 transition-all hover:shadow-md border border-amber-200"
+                    >
                       <FaPhone className="text-xl" />
                       <span className="font-bold">কল করুন</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -435,7 +381,7 @@ export default function HomePageSectionBottom() {
           <FadeIn>
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
               অভিভাবক ও{" "}
-              <span className="text-cyan-600">শিক্ষার্থীদের মতামত</span>
+              <span className="text-amber-500">শিক্ষার্থীদের মতামত</span>
             </h2>
           </FadeIn>
 
