@@ -183,7 +183,7 @@ export default function Navbar() {
 
       {/* Fixed Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-[96px] left-0 right-0 bg-white text-cyan-900 shadow-lg z-40">
+        <div className="md:hidden fixed top-[80px] left-0 right-0 bg-white text-cyan-900 shadow-lg z-40">
           <div className="container mx-auto px-4 py-3">
             <ul className="flex flex-col space-y-1 mb-4">
               {navItems.map((item) => (
