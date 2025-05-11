@@ -23,6 +23,9 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import HomePageSectionBottom from "@/components/ui/HomePageSectionBottom";
+import HomePageSectionMiddle from "@/components/ui/HomePageSectionMiddle";
+import Link from "next/link";
 
 // Animation components
 const FadeIn = ({ children, delay = 0 }) => {
@@ -36,44 +39,6 @@ const FadeIn = ({ children, delay = 0 }) => {
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const SlideIn = ({ children, direction = "left", delay = 0 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const x = direction === "left" ? -50 : 50;
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.8, delay, type: "spring", stiffness: 100 }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const ScaleIn = ({ children, delay = 0 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={inView ? { scale: 1, opacity: 1 } : {}}
       transition={{ duration: 0.6, delay }}
     >
       {children}
@@ -103,6 +68,26 @@ const TextWave = ({ children, delay = 0 }) => {
         </motion.span>
       ))}
     </span>
+  );
+};
+
+const SlideIn = ({ children, direction = "left", delay = 0 }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const x = direction === "left" ? -50 : 50;
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.8, delay, type: "spring", stiffness: 100 }}
+    >
+      {children}
+    </motion.div>
   );
 };
 
@@ -292,7 +277,8 @@ export default function Home() {
                   নিয়মিত মূল্যায়ন
                 </h3>
                 <p className="text-gray-600">
-                  প্রত্যেক শিক্ষার্থীর দুর্বলতা খুঁজে বের করে নির্দিষ্ট সমাধান প্রদান করা হয়
+                  প্রত্যেক শিক্ষার্থীর দুর্বলতা খুঁজে বের করে নির্দিষ্ট সমাধান
+                  প্রদান করা হয়
                 </p>
               </div>
             </FloatingCard>
@@ -313,7 +299,7 @@ export default function Home() {
             {[
               { title: "৬ষ্ঠ - ৮ম শ্রেণি", icon: FaUniversity },
               { title: "৯ম - ১০ম শ্রেণি", icon: FaBook },
-              { title: "এসএসসি প্রস্তুতি", icon: FaGraduationCap },
+              { title: "এইচএসসি প্রস্তুতি", icon: FaGraduationCap },
               { title: "বিশেষ কেয়ার ব্যাচ", icon: MessageSquare },
             ].map((course, index) => (
               <motion.div
@@ -359,6 +345,10 @@ export default function Home() {
         </div>
       </section>
 
+      <HomePageSectionMiddle />
+
+      <HomePageSectionBottom />
+
       {/* Floating WhatsApp Contact Button */}
       <motion.section
         className="fixed bottom-8 right-8 z-50"
@@ -366,7 +356,7 @@ export default function Home() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2, duration: 0.8 }}
       >
-        <a
+        <Link
           href="https://wa.me/8801861575024?text=হ্যালো!%20আমি%20আপনাদের%20কোর্স%20সম্পর্কে%20জানতে%20চাই।"
           target="_blank"
           rel="noopener noreferrer"
@@ -379,7 +369,7 @@ export default function Home() {
           >
             <FaWhatsapp className="text-2xl" />
           </motion.div>
-        </a>
+        </Link>
       </motion.section>
       <FreeClassPopup />
     </div>

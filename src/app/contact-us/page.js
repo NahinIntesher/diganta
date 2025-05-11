@@ -153,7 +153,7 @@ export default function ContactUs() {
 
         {/* Contact Form */}
         <div
-          className="lg:col-span-3 bg-gradient-to-br from-white via-cyan-50 to-white p-8 md:p-10 rounded-3xl shadow-xl border border-cyan-400"
+          className="lg:col-span-3 bg-gradient-to-br from-white via-cyan-50 to-white p-8 md:p-10 rounded-3xl shadow-xl border border-cyan-200"
           style={{
             opacity: 0,
             transform: "translateY(30px)",
