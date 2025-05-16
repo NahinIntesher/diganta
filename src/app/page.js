@@ -227,17 +227,17 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-3xl font-bold text-gray-800 mb-10">
               আমাদের <span className="text-cyan-600">বিশেষ সুবিধা</span>
             </h2>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
+          {/* <FadeIn delay={0.2}>
             <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
               নতুন প্রজন্মের জন্য আধুনিক ও ফলপ্রসূ শিক্ষা নিশ্চিত করতেই দিগন্ত
               কোচিং সেন্টার
             </p>
-          </FadeIn>
+          </FadeIn> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FloatingCard delay={0.3}>

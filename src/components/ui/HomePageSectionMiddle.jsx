@@ -85,19 +85,20 @@ export default function HomePageSectionMiddle() {
                   আমাদের দর্শন
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  শিক্ষার মাধ্যমে প্রতিটি শিক্ষার্থীর সম্ভাবনাকে পূর্ণরূপে
-                  বিকশিত করা এবং তাদের মধ্যে আত্মবিশ্বাস, সৃজনশীলতা ও
-                  যুক্তিপূর্ণ চিন্তার বীজ রোপণ করা।
+                  আমরা বিশ্বাস করি যে শিক্ষার মাধ্যমে প্রতিটি শিক্ষার্থীর
+                  সম্ভাবনা পূর্ণরূপে বিকশিত করা সম্ভব এবং তাদের মধ্যে
+                  আত্মবিশ্বাস, সৃজনশীলতা এবং যুক্তিপূর্ণ চিন্তার বীজ রোপণ করা
+                  উচিত।
                 </p>
                 <p className="text-gray-600">
-                  আমরা বিশ্বাস করি শিক্ষা শুধু বইয়ের জ্ঞান নয়, বরং জীবনের সকল
-                  দিক বিকাশের মাধ্যম।
+                  আমাদের মতে, শিক্ষা শুধু বইয়ের জ্ঞান অর্জন নয়, বরং এটি জীবনের
+                  সকল দিকের উন্নতির একটি উপায়।
                 </p>
               </div>
             </SlideIn>
 
             <SlideIn direction="right">
-              <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-cyan-500">
+              <div className="bg-white p-5 rounded-xl shadow-lg border-l-4 border-cyan-500">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   আমাদের লক্ষ্য
                 </h3>
@@ -105,27 +106,29 @@ export default function HomePageSectionMiddle() {
                   <li className="flex items-start">
                     <Award className="text-cyan-500 mr-2 mt-1 flex-shrink-0" />
                     <span>
-                      প্রতিটি শিক্ষার্থীর ব্যক্তিগত প্রয়োজন অনুযায়ী শিক্ষাদান
+                      প্রতিটি শিক্ষার্থীর ব্যক্তিগত প্রয়োজন অনুযায়ী উপযুক্ত
+                      শিক্ষাদান প্রদান
                     </span>
                   </li>
                   <li className="flex items-start">
                     <Award className="text-cyan-500 mr-2 mt-1 flex-shrink-0" />
                     <span>
                       আধুনিক শিক্ষা পদ্ধতির মাধ্যমে শিক্ষার্থীদের সর্বাঙ্গীণ
-                      বিকাশ
+                      বিকাশে সহায়তা করা
                     </span>
                   </li>
                   <li className="flex items-start">
                     <Award className="text-cyan-500 mr-2 mt-1 flex-shrink-0" />
                     <span>
-                      দেশের শিক্ষা ব্যবস্থায় ইতিবাচক পরিবর্তন আনতে অবদান রাখা
+                      দেশের শিক্ষা ব্যবস্থায় ইতিবাচক পরিবর্তন আনার জন্য অবদান
+                      রাখা
                     </span>
                   </li>
                   <li className="flex items-start">
                     <Award className="text-cyan-500 mr-2 mt-1 flex-shrink-0" />
                     <span>
-                      অভিভাবক, শিক্ষার্থী এবং শিক্ষকদের মধ্যে দৃঢ় যোগাযোগ
-                      স্থাপন
+                      অভিভাবক, শিক্ষার্থী এবং শিক্ষকদের মধ্যে দৃঢ় এবং কার্যকরী
+                      যোগাযোগ স্থাপন করা 
                     </span>
                   </li>
                 </ul>

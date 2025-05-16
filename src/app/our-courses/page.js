@@ -6,7 +6,6 @@ import { Teachers } from "@/components/Teachers";
 import { courses } from "@/components/Courses";
 
 export default function AboutUs() {
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
