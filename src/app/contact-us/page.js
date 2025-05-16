@@ -40,12 +40,6 @@ export default function ContactUs() {
       title: "ইমেইল",
       content: ["info.diganta.cochingcenter@gmail.com"],
     },
-    {
-      id: 4,
-      icon: <Clock className="text-cyan-600" size={22} />,
-      title: "সময়সূচী",
-      content: ["বিকাল ৪:০০ - রাত ১০:০০"],
-    },
   ];
 
   return (
@@ -94,16 +88,14 @@ export default function ContactUs() {
               key={item.id}
               onMouseEnter={() => setHovered(item.id)}
               onMouseLeave={() => setHovered(null)}
-              className={`bg-white p-6 rounded-xl shadow-md flex items-start border-l-4 border-cyan-500 transition-all duration-300 ${
-                hovered === item.id
+              className={`bg-white p-6 rounded-xl shadow-md flex items-start border-l-4 border-cyan-500 transition-all duration-300 ${hovered === item.id
                   ? "shadow-lg shadow-cyan-100 border-cyan-600 transform -translate-y-1"
                   : ""
-              }`}
+                }`}
             >
               <div
-                className={`p-3 rounded-full mr-5 transition-all duration-300 ${
-                  hovered === item.id ? "bg-cyan-100" : "bg-cyan-50"
-                }`}
+                className={`p-3 rounded-full mr-5 transition-all duration-300 ${hovered === item.id ? "bg-cyan-100" : "bg-cyan-50"
+                  }`}
               >
                 {item.icon}
               </div>
@@ -177,11 +169,10 @@ export default function ContactUs() {
                 opacity: 0,
                 animation: "fadeIn 0.5s ease-out forwards",
               }}
-              className={`mb-6 p-4 rounded-xl flex items-start ${
-                submitStatus.type === "success"
+              className={`mb-6 p-4 rounded-xl flex items-start ${submitStatus.type === "success"
                   ? "bg-green-50 text-green-800 border border-green-200"
                   : "bg-red-50 text-red-800 border border-red-200"
-              }`}
+                }`}
             >
               {submitStatus.type === "success" ? (
                 <CheckCircle

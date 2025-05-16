@@ -56,19 +56,19 @@ export default function FreeClassAnnouncement({ month }) {
           {
             grade: "৬ষ্ঠ - ৮ম শ্রেণীর ফ্রি ক্লাস",
             date: "২০২৫-০৫-২৪/২০২৫-০৫-২৫", // ISO format for calendar
-            displayDate: "২৪ মে - ২৫ মে",
+            displayDate: "২৪ মে - ২৭ মে",
             icon: FaChalkboardTeacher,
           },
           {
             grade: "৯ম - ১০ম শ্রেণীর ফ্রি ক্লাস",
             date: "২০২৫-০৫-২৬/২০২৫-০৫-২৮",
-            displayDate: "২৬ মে - ২৮ মে",
+            displayDate: "২৬ মে - ২৯ মে",
             icon: FaGraduationCap,
           },
           {
             grade: "১১দশ - ১২দশ শ্রেণীর ফ্রি ক্লাস",
             date: "২০২৫-০৫-২৯/২০২৫-০৫-৩১",
-            displayDate: "২৯ মে - ৩১ মে",
+            displayDate: "২৮ মে - ২৯ মে",
             icon: FaUniversity,
           },
         ].map((schedule, index) => {
