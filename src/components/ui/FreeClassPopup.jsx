@@ -23,17 +23,17 @@ const FreeClassPopup = () => {
   const scheduleData = [
     {
       grade: "৬ষ্ঠ - ৮ম শ্রেণী",
-      date: "২৪ মে - ২৫ মে",
+      date: "২৪ মে - ২৭ মে",
       icon: FaChalkboardTeacher,
     },
     {
       grade: "৯ম - ১০ম শ্রেণী",
-      date: "২৬ মে - ২৮ মে",
+      date: "২৬ মে - ২৯ মে",
       icon: FaGraduationCap,
     },
     {
       grade: "একাদশ - দ্বাদশ শ্রেণী",
-      date: "২৯ মে - ৩১ মে",
+      date: "২৮ মে - ২৯ মে",
       icon: Calendar,
     },
   ];
