@@ -115,8 +115,6 @@ export default function HomePageSectionBottom() {
           <FadeIn delay={0.3}>
             <FreeClassAnnouncement month="মে" />
           </FadeIn>
-
-          
         </div>
       </section>
 
@@ -304,8 +302,8 @@ export default function HomePageSectionBottom() {
                     <div>
                       <h3 className="font-semibold text-lg">ঠিকানা</h3>
                       <p className="text-cyan-100">
-                        মদিনা চত্বর জামে মসজিদ সংলগ্ন, মুসলিম নগর, মাতুয়াইল,
-                        ডেমরা, ঢাকা - ১৩৬২
+                        মুসলিম নগর (মদিনা চত্ত্বর জামে মসজিদ সংলগ্ন), মাতুয়াইল,
+                        ডেমরা, ঢাকা -১৩৬২
                       </p>
                     </div>
                   </div>

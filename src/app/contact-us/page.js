@@ -30,7 +30,7 @@ export default function ContactUs() {
       icon: <MapPin className="text-cyan-600" size={22} />,
       title: "ঠিকানা",
       content: [
-        "মদিনা চত্বর জামে মসজিদ সংলগ্ন, মুসলিম নগর,",
+        "মুসলিম নগর (মদিনা চত্ত্বর জামে মসজিদ সংলগ্ন),",
         "মাতুয়াইল, ডেমরা, ঢাকা - ১৩৬২",
       ],
     },
