@@ -202,9 +202,6 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-
-      {/* Batch and Class Schedule */}
-      <EducationCenter />
     </div>
   );
 }
