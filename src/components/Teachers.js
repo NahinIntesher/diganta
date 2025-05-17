@@ -7,6 +7,13 @@ export const Teachers = [
     bio: "৬ বছর শিক্ষকতার অভিজ্ঞতা",
   },
   {
+    name: "সাদাত হোসেন রানা",
+    subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
+    qualification: "ঢাকা বিশ্ববিদ্যালয়",
+    image: "/images/rana.jpg",
+    bio: "৩ বছর শিক্ষকতার অভিজ্ঞতা",
+  },
+  {
     name: "এফরান হোসেন রিয়াজ",
     subject: "ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স ইঞ্জিনিয়ারিং (EEE)",
     qualification: "ইউনিভার্সিটি অফ স্কলার্স",
@@ -19,13 +26,6 @@ export const Teachers = [
     qualification: "ইস্ট ওয়েস্ট ইউনিভার্সিটি",
     image: "/images/faisal.jpg",
     bio: "৫ বছর শিক্ষকতার অভিজ্ঞতা",
-  },
-  {
-    name: "সাদাত হোসেন রানা",
-    subject: "রসায়ন বিভাগ, বিজ্ঞান অনুষদ",
-    qualification: "ঢাকা বিশ্ববিদ্যালয়",
-    image: "/images/rana.jpg",
-    bio: "৩ বছর শিক্ষকতার অভিজ্ঞতা",
   },
   {
     name: "সাজেদুল হক শুভ",

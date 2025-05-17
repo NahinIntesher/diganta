@@ -41,7 +41,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="/our-courses" className="hover:underline">
-                ১১শ ও ১২শ শ্রেণী শুধু কমার্স বিভাগ
+                একাদশ ও দ্বাদশ শ্রেণী শুধু কমার্স বিভাগ
               </a>
             </li>
           </ul>

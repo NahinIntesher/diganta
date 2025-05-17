@@ -21,7 +21,7 @@ export default function FeeSection({ activeTab }) {
       ],
     },
     hsc: {
-      title: "এইচএসসি (১১শ - ১২শ শ্রেণি)",
+      title: "এইচএসসি (একাদশ - দ্বাদশ শ্রেণি)",
       individual: [
         { subjects: "১ বিষয়", fee: "১,২০০ টাকা" },
         { subjects: "২ বিষয়", fee: "২০০০ টাকা" },
