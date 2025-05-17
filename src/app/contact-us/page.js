@@ -130,10 +130,10 @@ export default function ContactUs() {
                   className="mx-auto mb-3 text-teal-600 group-hover:text-teal-700 transition-colors"
                 />
                 <p className="font-medium mb-2">
-                  মদিনা চত্বর জামে মসজিদ সংলগ্ন,
+                  মুসলিম নগর (মদিনা চত্ত্বর জামে মসজিদ সংলগ্ন),
                 </p>
                 <p className="font-medium mb-2">
-                  মুসলিম নগর, মাতুয়াইল, ডেমরা, ঢাকা - ১৩৬২
+                   মাতুয়াইল, ডেমরা, ঢাকা - ১৩৬২
                 </p>
                 <div className="inline-block mt-4 px-4 py-2 bg-teal-600 text-white rounded-full transform group-hover:scale-105 transition-transform">
                   <p className="text-sm font-medium">ম্যাপ দেখতে ক্লিক করুন</p>

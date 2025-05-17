@@ -12,7 +12,7 @@ import {
 
 export const courses = [
   {
-    title: "৬ষ্ঠ শ্রেণি থেকে অষ্টম শ্রেণি",
+    title: "৬ষ্ঠ শ্রেণি থেকে ৮ম শ্রেণি",
     icon: <FaUsers className="text-4xl text-cyan-600" />,
     description: "মাধ্যমিক স্তরের জন্য কোর্স",
     subjects: ["গণিত", "ইংরেজি", "বিজ্ঞান", "বাংলাদেশ ও বিশ্বপরিচয়", "বাংলা", "অন্যান্য সকল বিষয়"],
@@ -23,7 +23,7 @@ export const courses = [
     ],
   },
   {
-    title: "এসএসসি প্রস্তুতি",
+    title: "৯ম - ১০ম শ্রেণি (এসএসসি প্রস্তুতি)",
     icon: <FaGraduationCap className="text-4xl text-cyan-600" />,
     description: "ক্লাস ৯-১০ এর জন্য সম্পূর্ণ কোর্স",
     subjects: [
@@ -50,7 +50,8 @@ export const courses = [
     ],
   },
   {
-    title: "এইচএসসি প্রস্তুতি",
+    title: "একাদশ - দ্বাদশ (এইচএসসি প্রস্তুতি)",
+
     icon: <FaBook className="text-4xl text-cyan-600" />,
     description: "ক্লাস ১১-১২ এর জন্য বিশেষায়িত কোর্স",
     subjects: [
