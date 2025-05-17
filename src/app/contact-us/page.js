@@ -38,7 +38,7 @@ export default function ContactUs() {
       id: 3,
       icon: <Mail className="text-cyan-600" size={22} />,
       title: "ইমেইল",
-      content: ["info.diganta.cochingcenter@gmail.com"],
+      content: ["info.diganta.coachingcenter@gmail.com"],
     },
   ];
 
