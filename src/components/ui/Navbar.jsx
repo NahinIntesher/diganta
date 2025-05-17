@@ -9,6 +9,8 @@ import logo from "../../../public/images/digantaLogo.svg";
 const navItems = [
   "হোম",
   "আমাদের কোর্সসমূহ",
+  "কোর্স ফি",
+  "আমাদের শিক্ষকরা",
   "আমাদের সেবা",
   "আমাদের সম্পর্কে",
   "যোগাযোগ করুন",
@@ -18,6 +20,8 @@ const getLink = (item) => {
   const links = {
     হোম: "/",
     "আমাদের কোর্সসমূহ": "/our-courses",
+    "কোর্স ফি": "/course-fee",
+    "আমাদের শিক্ষকরা": "/our-teachers",
     "আমাদের সেবা": "/our-services",
     "আমাদের সম্পর্কে": "/about-us",
     "যোগাযোগ করুন": "/contact-us",
@@ -31,6 +35,8 @@ const getActiveItemFromPath = (pathname) => {
   for (const [key, value] of Object.entries({
     হোম: "/",
     "আমাদের কোর্সসমূহ": "/our-courses",
+    "কোর্স ফি": "/course-fee",
+    "আমাদের শিক্ষকরা": "/our-teachers",
     "আমাদের সেবা": "/our-services",
     "আমাদের সম্পর্কে": "/about-us",
     "যোগাযোগ করুন": "/contact-us",

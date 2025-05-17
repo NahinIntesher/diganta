@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FeeSection({ activeTab }) {
+export default function FeeSection({ activeTab}) {
   // Fee structure data from the imagess
   const feeStructure = {
     juniorClasses: [

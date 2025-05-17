@@ -96,7 +96,7 @@ export default function EducationCenter() {
             <div className="mt-3 sm:mt-4">
               <p className="text-xs sm:text-sm">
                 আমাদের সাথে যোগাযোগ করতে পারেন: <br />
-                ফোন: +8801234567890 <br />
+                ফোন: ০১৮৬১৫৭৫০২৪, ০১৮১৫৮০৮২৯১ <br />
                 ইমেইল: info.diganta.coachingcenter@gmail.com
               </p>
             </div>
