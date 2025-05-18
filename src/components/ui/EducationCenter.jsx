@@ -75,32 +75,7 @@ export default function EducationCenter() {
           {/* Fee Section */}
           <FeeSection activeTab={activeTab} />
 
-          {/* Contact Section */}
-          <div className="bg-gradient-to-b from-cyan-700 to-blue-700 text-white p-4 sm:p-6 rounded-b-xl md:rounded-b-2xl">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
-              <div>
-                <h3 className="text-base sm:text-lg font-semibold">
-                  যোগাযোগ করুন
-                </h3>
-                <p className="text-xs sm:text-sm">
-                  আমাদের সাথে যোগাযোগ করতে নিচের লিঙ্কে ক্লিক করুন
-                </p>
-              </div>
-              <Link
-                href="/contact-us"
-                className="bg-white text-cyan-700 px-3 py-1 sm:px-4 sm:py-2 rounded-md shadow-md hover:bg-gray-100 transition duration-200 text-sm sm:text-base whitespace-nowrap"
-              >
-                যোগাযোগ
-              </Link>
-            </div>
-            <div className="mt-3 sm:mt-4">
-              <p className="text-xs sm:text-sm">
-                আমাদের সাথে যোগাযোগ করতে পারেন: <br />
-                ফোন: ০১৮৬১৫৭৫০২৪, ০১৮১৫৮০৮২৯১ <br />
-                ইমেইল: info.diganta.coachingcenter@gmail.com
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

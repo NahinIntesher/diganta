@@ -35,6 +35,51 @@ export default function AboutUs() {
     },
   };
 
+  // Function to render subjects based on course structure
+  const renderSubjects = (course) => {
+    if (course.subjectGroups) {
+      // For courses with subject groups (like SSC)
+      return (
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-700 mb-2">বিষয়সমূহ:</h4>
+          <div className="space-y-3">
+            {Object.entries(course.subjectGroups).map(([key, group]) => (
+              <div key={key}>
+                <p className="text-sm font-medium text-cyan-700 mb-1 flex items-center">
+                  <span className="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
+                  {group.title}:
+                </p>
+                <ul className="grid grid-cols-2 gap-1 pl-4">
+                  {group.subjects.map((subject, i) => (
+                    <li key={i} className="flex items-center text-sm">
+                      <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-1.5"></span>
+                      <span className="text-gray-600">{subject}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    } else {
+      // For courses with simple subject lists
+      return (
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-700 mb-2">বিষয়সমূহ:</h4>
+          <ul className="grid grid-cols-2 gap-2">
+            {course.subjects.map((subject, i) => (
+              <li key={i} className="flex items-center">
+                <span className="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
+                <span className="text-gray-600">{subject}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="py-16 px-6 md:px-20 bg-gradient-to-b from-white to-cyan-50">
       {/* Courses Section */}
@@ -76,7 +121,7 @@ export default function AboutUs() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="courses">
             {courses.map((course, index) => (
               <motion.div
                 key={index}
@@ -99,19 +144,8 @@ export default function AboutUs() {
                     {course.description}
                   </p>
 
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-700 mb-2">
-                      বিষয়সমূহ:
-                    </h4>
-                    <ul className="grid grid-cols-2 gap-2">
-                      {course.subjects.map((subject, i) => (
-                        <li key={i} className="flex items-center">
-                          <span className="w-2 h-2 bg-cyan-500 rounded-full mr-2"></span>
-                          <span className="text-gray-600">{subject}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {/* Render subjects based on course structure */}
+                  {renderSubjects(course)}
 
                   <div>
                     <h4 className="font-semibold text-gray-700 mb-2">
