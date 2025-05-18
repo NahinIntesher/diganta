@@ -5,7 +5,7 @@ import EducationCenter from "@/components/ui/EducationCenter";
 import { Teachers } from "@/components/Teachers";
 import { courses } from "@/components/Courses";
 
-export default function AboutUs() {
+export default function OurCourses() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -79,6 +79,7 @@ export default function AboutUs() {
       );
     }
   };
+  let courseCardKey = 0;
 
   return (
     <div className="py-16 px-6 md:px-20 bg-gradient-to-b from-white to-cyan-50">
@@ -121,10 +122,11 @@ export default function AboutUs() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="courses">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course, index) => (
               <motion.div
                 key={index}
+                id={`course-card-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -10 }}

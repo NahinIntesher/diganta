@@ -140,7 +140,7 @@ export default function HomePageSectionBottom() {
                 image: "/images/shantoBig.jpg",
                 role: "মার্কেটিং বিভাগ, ব্যবসায় শিক্ষা অনুষদ",
                 university: "ঢাকা বিশ্ববিদ্যালয়",
-                experience: "৬ বছরের অভিজ্ঞতা",
+                experience: "৬ বছরের শিক্ষকতার অভিজ্ঞতা",
                 description:
                   "ঢাকা বিশ্ববিদ্যালয় থেকে গণিতে স্নাতক ও স্নাতকোত্তর। বিভিন্ন প্রতিষ্ঠানে শিক্ষকতার অভিজ্ঞতা।",
               },
@@ -149,7 +149,7 @@ export default function HomePageSectionBottom() {
                 image: "/images/reazBig.jpg",
                 role: "ইলেক্ট্রিক্যাল এন্ড ইলেক্ট্রনিক্স ইঞ্জিনিয়ারিং (EEE)",
                 university: "ইউনিভার্সিটি অফ স্কলার্স",
-                experience: "৬ বছরের অভিজ্ঞতা",
+                experience: "৬ বছরের শিক্ষকতার অভিজ্ঞতা",
                 description:
                   "ইউনিভার্সিটি অফ স্কলার্স এ অধ্যয়নরত। বিভিন্ন শ্রেণির ছাত্রদের শিক্ষকতার অভিজ্ঞতা।",
               },
@@ -195,7 +195,7 @@ export default function HomePageSectionBottom() {
                 লক্ষ্য।
               </p>
               <Link
-                href="/our-courses#teachers"
+                href="/our-teachers#teachers"
                 className="bg-white text-cyan-700 font-semibold py-3 px-8 rounded-lg text-lg inline-block hover:bg-cyan-100 transition-colors"
               >
                 সবাইকে দেখুন
@@ -229,9 +229,9 @@ export default function HomePageSectionBottom() {
                 icon: FaUniversity,
               },
               {
-                title: "অনলাইন শিক্ষা",
+                title: "রেকর্ডেড ক্লাস প্রদান",
                 description:
-                  "প্রজেক্টর ও স্মার্টবোর্ডের মাধ্যমে আধুনিক টেকনোলজি ব্যবহার করে শিক্ষাদান",
+                  "রেকর্ডেড ক্লাস ব্যবহার করে শিক্ষাদান যা শিক্ষার্থীদের প্রয়োজনে সহায়ক",
                 icon: FaChalkboardTeacher,
               },
               {

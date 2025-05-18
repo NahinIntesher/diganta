@@ -49,7 +49,6 @@ export default function DetailSubmittingForm() {
       newErrors.email = "সঠিক ইমেইল ঠিকানা দিন";
     }
 
-    // Phone is optional - only validate format if provided
     if (!formData.phone.trim()) {
       newErrors.phone = "ফোন নম্বর আবশ্যক";
     } else if (formData.phone.trim()) {
@@ -151,12 +150,11 @@ export default function DetailSubmittingForm() {
         }
         break;
       case "phone":
-        // Fixed: Phone is optional, only validate if provided
-        if (value.trim()) {
-          const phoneRegex = /^[0-9+\s-]{10,15}$/;
-          if (!phoneRegex.test(value)) {
-            fieldError = "সঠিক ফোন নম্বর দিন";
-          }
+        const phoneRegex = /^[0-9+\s-]{10,15}$/;
+        if (!value.trim()) {
+          fieldError = "ফোন নাম্বার আবশ্যক";
+        } else if (!phoneRegex.test(value)) {
+          fieldError = "সঠিক ফোন নাম্বার দিন";
         }
         break;
       case "message":
@@ -334,7 +332,7 @@ export default function DetailSubmittingForm() {
               htmlFor="phone"
               className="block text-gray-700 text-sm font-semibold mb-2 uppercase"
             >
-              ফোন নম্বর
+              ফোন নম্বর <span className="text-red-500">*</span>
             </label>
             <div
               className={`relative rounded-lg overflow-hidden ${
@@ -361,7 +359,7 @@ export default function DetailSubmittingForm() {
                     ? "border-red-300 focus:ring-red-200 bg-red-50"
                     : "border-gray-200 focus:ring-cyan-300 focus:bg-cyan-50"
                 } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
-                placeholder="০১XXXXXXXXX"
+                placeholder="01XXXXXXXXX"
                 aria-invalid={errors.phone ? "true" : "false"}
                 aria-describedby={errors.phone ? "phone-error" : undefined}
               />
@@ -401,7 +399,9 @@ export default function DetailSubmittingForm() {
                 onFocus={() => setFocusedField("subject")}
                 onBlur={handleBlur}
                 className="w-full p-3 pl-10 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:bg-cyan-50 focus:border-transparent transition-all text-gray-700 placeholder-gray-400"
-                placeholder="আপনার মেসেজের বিষয়"
+                placeholder="আপনার মেসেজের বিষয় লিখুন"
+                aria-invalid={errors.subject ? "true" : "false"}
+                aria-describedby={errors.subject ? "subject-error" : undefined}
               />
             </div>
           </div>
@@ -439,7 +439,7 @@ export default function DetailSubmittingForm() {
                   ? "border-red-300 focus:ring-red-200 bg-red-50"
                   : "border-gray-200 focus:ring-cyan-300 focus:bg-cyan-50"
               } rounded-lg focus:outline-none focus:ring-2 focus:border-transparent transition-all text-gray-700 placeholder-gray-400`}
-              placeholder="আপনার মেসেজ লিখুন"
+              placeholder="আপনার মেসেজ বিস্তারিতভাবে লিখুন"
               aria-invalid={errors.message ? "true" : "false"}
               aria-describedby={errors.message ? "message-error" : undefined}
             ></textarea>

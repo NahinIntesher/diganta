@@ -37,16 +37,23 @@ const feeStructure = {
 
 function FeeSection() {
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 lg:p-8">
+    <div className="bg-white p-4 sm:p-6 lg:p-8">
       <div className="p-4 sm:p-6 md:p-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-cyan-800 mb-6 sm:mb-8">
           কোর্স ফি
         </h2>
         {/* Junior Classes */}
         <div className="mb-6 sm:mb-8 bg-green-100 rounded-lg sm:rounded-xl p-4 sm:p-6 transition-all hover:shadow-md duration-300 border border-green-100">
-          <h3 className="text-lg sm:text-xl font-semibold text-cyan-800 mb-3 sm:mb-4 border-b pb-2">
+          <h3 className="flex text-lg sm:text-xl font-semibold text-cyan-800 mb-3 sm:mb-4 border-b pb-2">
             জুনিয়র ক্লাস
+            <Link
+              href={`/our-courses#course-card-${0}`}
+              className="ml-2 text-xs text-white  border bg-cyan-600 rounded-lg px-2 py-1 hover:bg-cyan-800 transition duration-200"
+            >
+              প্যাকেজের কোর্সসমূহ দেখুন
+            </Link>
           </h3>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {feeStructure.juniorClasses.map((item, index) => (
               <div
@@ -63,6 +70,12 @@ function FeeSection() {
                     </span>
                   </div>
                 </div>
+                <Link
+                  href={`/our-courses#course-card-${0}`}
+                  className="ml-2 text-xs text-white  text-center border bg-cyan-600 rounded-lg px-2 py-1 hover:bg-cyan-800 transition duration-200"
+                >
+                  প্যাকেজের কোর্সসমূহ দেখুন
+                </Link>
               </div>
             ))}
           </div>
@@ -101,8 +114,14 @@ function FeeSection() {
           </div>
 
           <div>
-            <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
+            <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3 flex">
               পূর্ণাঙ্গ প্যাকেজ
+              <Link
+                href={`/our-courses#course-card-${1}`}
+                className="ml-2 text-xs text-white  border bg-cyan-600 rounded-lg px-2 py-1 hover:bg-cyan-800 transition duration-200"
+              >
+                প্যাকেজের কোর্সসমূহ দেখুন
+              </Link>
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
               {feeStructure.ssc.fullPackage.map((item, index) => (
@@ -159,11 +178,11 @@ function FeeSection() {
           </div>
 
           <div>
-            <h4 className="font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
+            <h4 className="flex font-medium text-sm sm:text-base text-cyan-700 mb-2 sm:mb-3">
               পূর্ণাঙ্গ প্যাকেজ
               <Link
-                href="/our-courses#courses"
-                className="ml-4 text-xs text-white  border bg-cyan-600 rounded-lg px-2 py-1 hover:bg-cyan-800 transition duration-200"
+                href={`/our-courses#course-card-${2}`}
+                className="ml-2 text-xs text-white  border bg-cyan-600 rounded-lg px-2 py-1 hover:bg-cyan-800 transition duration-200"
               >
                 প্যাকেজের কোর্সসমূহ দেখুন
               </Link>
